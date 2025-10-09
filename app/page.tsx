@@ -96,28 +96,7 @@ export default function HomePage() {
             これにより、構成比較・SMEレビュー・本番監視が同一データで回る。
           </p>
         </div>
-      </Section>
-
-      {/* SDK / API */}
-      <Section title="SDK / API（クイックスタート）">
-        <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
-          <pre className="whitespace-pre-wrap text-sm leading-relaxed">{`from monitly import Client
-client = Client(api_key="YOUR_KEY")
-client.log_event({
-  "query": "Who won the World Cup?",
-  "response": "Spain",
-  "latency_ms": 420,
-  "cost_usd": 0.0012,
-  "score": 0.95,
-  "variant": "retriever=v2,prompt=short"
-})`}</pre>
-          <a href="/contact" className="inline-block mt-4 text-[#0056FF] font-semibold">
-            デモの相談 →
-          </a>
-        </div>
-      </Section>
-
-      {/* 導入フロー */}
+      </Section>{/* 導入フロー */}
       <Section title="導入フロー" bg="soft2">
         <div className="grid md:grid-cols-3 gap-6">
           {[
