@@ -5,97 +5,92 @@ export default function SolutionsPage() {
   return (
     <main className="py-16 md:py-24 bg-white text-neutral-800">
       <Container>
-        {/* Header */}
         <h1 className="text-4xl md:text-5xl font-bold mb-4">ソリューション</h1>
         <p className="text-neutral-600 max-w-3xl">
-          Monitly.AIは、生成AIの「評価・比較・運用改善」を中核に、導入前後の意思決定を加速させます。
-          本ページでは<strong>導入パターン</strong>、<strong>ユースケース</strong>、<strong>導入プロセス</strong>、<strong>パートナー連携</strong>を具体的に示します。
+          Monitly.AIは、生成AIの導入と運用を「測れる仕組み」で支える評価プラットフォームです。
+          上流のデータ整備から、導入・運用・改善まで、実践的なアプローチで支援します。
         </p>
 
-        {/* 導入パターン（比較） */}
+        {/* 上流：AI導入のための土台づくり */}
         <section className="mt-16">
-          <h2 className="text-2xl font-semibold mb-6">導入パターン（3つの選択肢）</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "A. Monitly単体（評価SaaS）",
-                desc: "既存のRAG/エージェントやLLM運用に、評価・監視・比較を追加。",
-                points: ["ログ連携だけで開始", "精度/コスト/レイテンシの一元可視化", "A/B/多腕比較とSMEレビュー"],
-                cta: { href: "/contact", label: "PoCを相談" },
-              },
-              {
-                title: "B. パートナー経由導入",
-                desc: "RAG/エージェントの構築はパートナー、評価はMonitlyで一体運用。",
-                points: ["要件定義〜実装まで一気通貫", "Monitly連携で改善サイクルを標準化", "特別条件の組込提供に対応"],
-                cta: { href: "/partners", label: "パートナープログラム" },
-              },
-              {
-                title: "C. ローカルLLM導入（オンプレ）",
-                desc: "社内/閉域でモデルを運用し、評価はMonitlyで実施（Air-gappedに配慮）。",
-                points: ["機密データ対応", "モデル・プロンプト最適化", "評価ログの匿名化/最小化設計"],
-                cta: { href: "/contact", label: "相談する" },
-              },
-            ].map((card, i) => (
-              <div key={i} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
-                <div className="text-lg font-semibold">{card.title}</div>
-                <p className="mt-2 text-sm text-neutral-600">{card.desc}</p>
-                <ul className="mt-3 text-sm space-y-1 list-disc list-inside">
-                  {card.points.map((p, j) => <li key={j}>{p}</li>)}
-                </ul>
-                <Link href={card.cta.href} className="inline-block mt-4 text-[#0056FF] font-semibold">
-                  {card.cta.label} →
-                </Link>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ユースケース（重複回避して深掘り） */}
-        <section className="mt-16">
-          <h2 className="text-2xl font-semibold mb-6">ユースケース（改善観点を具体化）</h2>
+          <h2 className="text-2xl font-semibold mb-6">上流：AI導入のための土台づくり</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            {[
-              {
-                title: "カスタマーサポート自動応答",
-                kpi: ["解決率↑", "平均応答時間↓", "逸脱応答率↓"],
-                desc: "FAQ/RAGの評価テンプレとしきい値通知で、品質劣化を先手で検知。",
-              },
-              {
-                title: "社内ナレッジRAG",
-                kpi: ["正答率↑", "引用妥当性↑", "コスト/req↓"],
-                desc: "Retriever/Prompt/モデル差分を構成単位で比較、改善履歴を知見化。",
-              },
-              {
-                title: "販売・提案支援エージェント",
-                kpi: ["受注率↑", "提案リードタイム↓"],
-                desc: "SMEレビュー（合議）をフロー化。人手評価と自動評価を同一指標化。",
-              },
-              {
-                title: "オンプレLLM（機密ドメイン）",
-                kpi: ["漏洩リスク回避", "監査容易性↑"],
-                desc: "閉域での推論＋匿名化ログで評価。運用監査ログを自動でトレーサブルに。",
-              },
-            ].map((u, i) => (
-              <div key={i} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
-                <div className="font-semibold">{u.title}</div>
-                <div className="text-xs text-neutral-500 mt-1">改善KPI: {u.kpi.join(" / ")}</div>
-                <p className="mt-3 text-sm text-neutral-700">{u.desc}</p>
-              </div>
-            ))}
+            <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+              <div className="font-semibold text-lg">データ基盤構築（AIが使える状態に整える）</div>
+              <p className="mt-2 text-sm text-neutral-700">
+                生成AIの導入は、まずデータを「活かせる状態」にすることから始まります。
+                社内に散らばる情報や文書を整理し、AIが正確に理解・検索できるように構造化します。
+                これにより、誤答や回答漏れを減らし、RAG・エージェントの精度向上に直結します。
+              </p>
+              <ul className="mt-3 text-sm list-disc list-inside text-neutral-600 space-y-1">
+                <li>社内文書・FAQ・ナレッジの統合整理</li>
+                <li>検索しやすいデータ設計・メタ情報整備</li>
+                <li>AI活用を見据えた情報整理・運用ルール設計</li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+              <div className="font-semibold text-lg">プロンプト評価・改善設計支援</div>
+              <p className="mt-2 text-sm text-neutral-700">
+                生成AIの出力品質は、プロンプトの設計と評価方法で大きく変わります。
+                Monitlyでは、評価観点の設計から、改善サイクルの回し方までを体系的に支援。
+                チームが共通の基準でプロンプトを改善できるようにします。
+              </p>
+              <ul className="mt-3 text-sm list-disc list-inside text-neutral-600 space-y-1">
+                <li>評価観点（精度・自然さ・一貫性など）の設計</li>
+                <li>SME（専門家）評価の仕組みづくり</li>
+                <li>改善効果を数値で比較・検証</li>
+              </ul>
+            </div>
           </div>
         </section>
 
-        {/* 機能マップ（TOPと被らない粒度） */}
+        {/* 中流：RAG・エージェント導入支援 */}
         <section className="mt-16">
-          <h2 className="text-2xl font-semibold mb-6">機能マップ（運用を仕組み化）</h2>
+          <h2 className="text-2xl font-semibold mb-6">中流：RAG・エージェント導入支援（パートナー連携）</h2>
+          <p className="text-neutral-700 mb-6">
+            RAG構築やエージェント開発は、Monitlyの認定パートナーと連携して提供します。
+            パートナーが開発・実装を担当し、Monitlyが「評価と改善の仕組み」を組み込みます。
+            Monitlyを使わない導入支援も可能です。
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+              <div className="font-semibold text-lg">協業による導入支援</div>
+              <ul className="mt-3 text-sm list-disc list-inside text-neutral-600 space-y-1">
+                <li>要件定義から構築までをワンストップで支援</li>
+                <li>Monitlyによる評価設計・効果測定を併走</li>
+                <li>技術検証（PoC）から本番導入まで一貫対応</li>
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+              <div className="font-semibold text-lg">主なパートナー例</div>
+              <ul className="mt-3 text-sm list-disc list-inside text-neutral-600 space-y-1">
+                <li>ジンベイ株式会社：生成AIソリューション開発支援</li>
+                <li>Irwin & Co 株式会社：AI導入コンサルティング支援</li>
+                <li>その他、今後順次拡大予定</li>
+              </ul>
+              <Link href="/partners" className="inline-block mt-4 text-[#0056FF] font-semibold">
+                パートナープログラムを見る →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* 下流：運用評価・継続改善 */}
+        <section className="mt-16">
+          <h2 className="text-2xl font-semibold mb-6">下流：運用評価と継続改善</h2>
+          <p className="text-neutral-700 mb-6">
+            Monitly.AIプラットフォームの中心機能である「運用評価」。
+            精度・コスト・レイテンシなどの指標を一元管理し、改善のサイクルを継続的に回します。
+          </p>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              ["構成比較", "Retriever/Prompt/Model/Index/Paramsを構成IDで管理し、A/B/多腕で差分を数値化。"],
-              ["SMEレビュー統合", "評価観点テンプレ＋合議ワークフロー。人手評価と自動評価の指標を統一。"],
-              ["本番監視", "品質・コスト・レイテンシをダッシュボードで一元監視。しきい値通知に対応。"],
-              ["改善履歴", "誰が何を変え、どう良くなったかを時系列で可視化。因果メモをナレッジ化。"],
-              ["データ連携", "SDK/API/Webhookでイベント連携。匿名化/マスキング/タグ付けに対応。"],
-              ["監査・再現性", "評価条件・バージョン・モデル差分を記録し、再現可能な検証を標準化。"],
+              ["構成比較", "モデル・プロンプト・Retrieverなど、構成ごとの性能を比較し、最適化。"],
+              ["SMEレビュー統合", "人手評価と自動評価を組み合わせ、評価基準を統一。"],
+              ["本番監視", "運用中の品質・コスト・応答速度をモニタリング。劣化兆候を検知。"],
+              ["改善履歴の可視化", "誰がどの変更を行い、どう良くなったかを時系列で追跡。"],
+              ["データ連携", "ログ連携・タグ付け・匿名化設定など柔軟に対応。"],
+              ["再現性・監査", "実験・検証条件を記録し、再現性を確保。"],
             ].map(([t, d], i) => (
               <div key={i} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
                 <div className="font-semibold">{t}</div>
@@ -105,15 +100,15 @@ export default function SolutionsPage() {
           </div>
         </section>
 
-        {/* 導入プロセス（責任分界も明示） */}
+        {/* 導入プロセス */}
         <section className="mt-16 bg-[#F7F9FA] rounded-2xl p-8">
-          <h2 className="text-2xl font-semibold mb-6">導入プロセス（2〜8週間目安）</h2>
+          <h2 className="text-2xl font-semibold mb-6">導入プロセス（最短2〜8週間）</h2>
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              ["1. 現状診断", "ログ/要件の棚卸し・KPI仮説合意（Monitly）"],
-              ["2. 設計", "評価観点/比較計画を設計（Monitly）"],
-              ["3. 実装", "RAG/Agent構築（パートナー）＋評価連携（Monitly）"],
-              ["4. 本番運用", "ダッシュボード運用・月次レビュー（Monitly/貴社/パートナー）"],
+              ["1. 現状診断", "データ環境・業務課題を整理し、AI導入の方向性を明確化。"],
+              ["2. 設計", "評価指標・運用ルール・改善サイクルを設計。"],
+              ["3. 実装", "RAG/エージェント構築＋Monitly評価基盤を接続。"],
+              ["4. 運用・改善", "定期レビューと継続改善を実施。"],
             ].map(([t, d], i) => (
               <div key={i} className="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
                 <div className="text-sm text-neutral-500">Step {i + 1}</div>
@@ -122,37 +117,27 @@ export default function SolutionsPage() {
               </div>
             ))}
           </div>
-          <p className="mt-4 text-xs text-neutral-500">
-            ※ RAG/エージェントの構築自体は原則パートナーが担当。Monitlyは評価・改善基盤を提供。ローカルLLM導入はMonitlyで対応可能。
-          </p>
-        </section>
-
-        {/* パートナー連携（詳細は /partners ） */}
-        <section className="mt-16 text-center">
-          <h2 className="text-2xl font-semibold mb-3">パートナー連携による導入加速</h2>
-          <p className="text-neutral-600 max-w-2xl mx-auto">
-            RAG/エージェント導入はパートナーと共創し、Monitlyで継続改善を回します。
-            パートナー向けには<strong>特別条件での組込提供（Embedded/OEM）</strong>にも対応しています。
-          </p>
-          <Link
-            href="/partners"
-            className="inline-block mt-4 bg-[#0056FF] text-white px-6 py-3 rounded-xl font-semibold"
-          >
-            パートナープログラムを見る →
-          </Link>
         </section>
 
         {/* CTA */}
         <section className="mt-20 grid md:grid-cols-2 gap-6">
           <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
             <div className="font-semibold">PoC相談（無料）</div>
-            <p className="mt-2 text-neutral-600 text-sm">評価テンプレとログ連携で、最短2週間の効果検証。</p>
-            <Link href="/contact" className="inline-block mt-3 text-[#0056FF] font-semibold">お問い合わせ →</Link>
+            <p className="mt-2 text-neutral-600 text-sm">
+              最短2週間で評価設計・改善効果の検証を行います。
+            </p>
+            <Link href="/contact" className="inline-block mt-3 text-[#0056FF] font-semibold">
+              お問い合わせ →
+            </Link>
           </div>
           <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
             <div className="font-semibold">パートナーとして協業</div>
-            <p className="mt-2 text-neutral-600 text-sm">RAG/Agent構築やOEM組込で共に市場を拡大。</p>
-            <Link href="/partners" className="inline-block mt-3 text-[#0056FF] font-semibold">詳細を見る →</Link>
+            <p className="mt-2 text-neutral-600 text-sm">
+              RAG・エージェント開発や評価連携で共に市場を拡大します。
+            </p>
+            <Link href="/partners" className="inline-block mt-3 text-[#0056FF] font-semibold">
+              詳細を見る →
+            </Link>
           </div>
         </section>
       </Container>
