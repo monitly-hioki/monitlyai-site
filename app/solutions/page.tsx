@@ -12,7 +12,7 @@ export default function SolutionsPage() {
           </h1>
           <p className="mt-4 text-neutral-600 max-w-3xl">
             Monitly.AIは、生成AIの“結果を改善し続ける”ための<strong>評価プラットフォーム</strong>です。
-モデルやプロンプトを変える前に「何が良く、何が課題か」を見える化し、
+モデルや指示文（プロンプト）を変える前に「何が良く、何が課題か」を見える化し、
 導入後の成果を<strong>定量的に</strong>高めます。
           </p>
 
@@ -22,21 +22,21 @@ export default function SolutionsPage() {
               <div className="text-sm text-neutral-500">提供の中心</div>
               <div className="mt-1 font-semibold">Monitlyプロダクト（SaaS）</div>
               <p className="mt-2 text-sm text-neutral-700">
-                精度・コスト・レイテンシを一元管理。構成比較、SMEレビュー、本番監視に対応。
+                精度・コスト・レイテンシを一元管理。パターン比較、専門担当者レビュー、本番監視に対応。
               </p>
             </div>
             <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
               <div className="text-sm text-neutral-500">開始方法</div>
               <div className="mt-1 font-semibold">一気通貫 もしくは フェーズ単位</div>
               <p className="mt-2 text-sm text-neutral-700">
-                全体導入に加え、<strong>「評価だけ先に」</strong>など部分導入から着手可能。既存RAG/エージェントにも後付けできます。
+                全体導入に加え、<strong>「評価だけ先に」</strong>など部分導入から着手可能。既存RAG/対話型AI（エージェント）にも後付けできます。
               </p>
             </div>
             <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
               <div className="text-sm text-neutral-500">実装パートナー</div>
               <div className="mt-1 font-semibold">必要に応じて連携</div>
               <p className="mt-2 text-sm text-neutral-700">
-                RAG/エージェントの構築はパートナーと協業可能。<strong>評価は常にMonitlyが中核</strong>です。
+                検索統合AI（RAG)/対話型AI（エージェント）の構築はパートナーと協業可能。<strong>評価は常にMonitlyが中核</strong>です。
               </p>
             </div>
           </div>
@@ -68,7 +68,7 @@ export default function SolutionsPage() {
             {[
               ["データの整理と設計", "社内文書・FAQ・ナレッジを整理し、検索されやすい形へ。"],
               ["評価軸の明確化", "精度/自然さ/一貫性/コスト/応答速度など、測る基準を決める。"],
-              ["プロンプト改善の設計", "評価→改善→再評価の流れを仕組み化し、再現可能に。"],
+              ["指示文（プロンプト）改善の設計", "評価→改善→再評価の流れを仕組み化し、再現可能に。"],
             ].map(([t, d], i) => (
               <div key={i} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
                 <div className="font-semibold">{t}</div>
@@ -88,13 +88,13 @@ export default function SolutionsPage() {
         <Container>
           <h2 className="text-2xl md:text-3xl font-bold">フェーズ2｜実装と導入支援（パートナー連携）</h2>
           <p className="mt-3 text-neutral-700 max-w-3xl">
-            RAG/エージェントの構築は、貴社チームまたはパートナーと連携して実施。Monitlyの評価を前提設計に組み込みます。
+            検索統合AI（RAG)/対話型AI（エージェント）の構築は、貴社チームまたはパートナーと連携して実施。Monitlyの評価を前提設計に組み込みます。
           </p>
           <div className="mt-8 grid md:grid-cols-3 gap-6">
             {[
-              ["RAG・エージェント導入", "要件定義〜実装までを並走。導入時点から評価連携。"],
+              ["検索統合AI（RAG)・対話型AI（エージェント）導入", "要件定義〜実装までを並走。導入時点から評価連携。"],
               ["ローカルLLM対応", "機密要件に応じてオンプレ/閉域構成を支援。"],
-              ["評価を中核に", "モデル/プロンプト/検索の比較検証を前提に設計。"],
+              ["評価を中核に", "モデル/指示文（プロンプト）/検索の比較検証を前提に設計。"],
             ].map(([t, d], i) => (
               <div key={i} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
                 <div className="font-semibold">{t}</div>
@@ -114,12 +114,12 @@ export default function SolutionsPage() {
         <Container>
           <h2 className="text-2xl md:text-3xl font-bold">フェーズ3｜運用と継続的な改善（Monitlyの中核）</h2>
           <p className="mt-3 text-neutral-700 max-w-3xl">
-            導入して終わりにしない。Monitlyのダッシュボードで、日々の結果を測り、最適な構成に更新し続けます。
+            導入して終わりにしない。Monitlyのダッシュボード（結果可視化)で、日々の結果を測り、最適な構成に更新し続けます。
           </p>
           <div className="mt-8 grid md:grid-cols-3 gap-6">
             {[
-              ["構成比較とA/B/多腕", "モデル・プロンプト・Retriever等を構成IDで比較し、差分を数値化。"],
-              ["SMEレビュー統合", "専門家/チーム評価を仕組み化。人手評価と自動評価の指標を統一。"],
+              ["パターン比較とA/B/複数パターン比較", "モデル・指示文（プロンプト）・Retriever等を構成IDで比較し、差分を数値化。"],
+              ["専門担当者レビュー統合", "専門家/チーム評価を仕組み化。人手評価と自動評価の指標を統一。"],
               ["本番監視とアラート", "品質・コスト・レイテンシを1画面で監視し、劣化兆候を検知。"],
               ["改善履歴と因果メモ", "誰が何を変え、どう良くなったかを時系列で可視化。"],
               ["データ連携と匿名化", "SDK/API/Webhookで柔軟に連携。匿名化・マスキングに対応。"],
@@ -128,7 +128,7 @@ export default function SolutionsPage() {
               <div key={i} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
                 <div className="font-semibold">{t}</div>
                 <p className="mt-2 text-sm text-neutral-700">{d}</p>
-                {i===0 && <p className="mt-3 text-xs text-neutral-500">※ 他社構築のRAG/エージェントにも後付け可能です。</p>}
+                {i===0 && <p className="mt-3 text-xs text-neutral-500">※ 他社構築のRAG/対話型AI（エージェント）にも後付け可能です。</p>}
               </div>
             ))}
           </div>

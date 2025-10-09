@@ -12,7 +12,7 @@ export default function PartnerProgramPage() {
             パートナー企業との共創を通じて、より高品質で持続的なAI運用の実現を目指しています。
           </p>
           <p>
-            RAG構築、エージェント設計、LLM統合、データ基盤整備など、
+            RAG構築、対話型AI（エージェント）設計、LLM統合、データ基盤整備など、
             各社の強みとMonitlyの評価基盤を組み合わせ、
             “導入で終わらない生成AI”を共に創り上げます。
           </p>
@@ -69,7 +69,7 @@ export default function PartnerProgramPage() {
           <ul className="space-y-2 list-disc list-inside text-sm">
             <li>ジンベイ株式会社：生成AIソリューション開発・RAG構築支援</li>
             <li>Irwin & Co 株式会社：AI戦略コンサルティング・企業導入支援</li>
-            <li>※今後、教育・インフラ・プロンプトエンジニアリング領域へも拡大予定</li>
+            <li>※今後、教育・インフラ・指示文（プロンプト）エンジニアリング領域へも拡大予定</li>
           </ul>
         </section>
 

@@ -13,10 +13,10 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                製品 — 測れる運用で、RAG/Agentを強くする。
+                製品 — 測れる運用で、検索統合AI（RAG)/Agentを強くする。
               </h1>
               <p className="mt-5 text-lg text-neutral-600 max-w-xl">
-                精度・コスト・レイテンシを<strong>同一指標</strong>で継続監視。構成比較とSMEレビューを仕組み化し、
+                精度・コスト・レイテンシを<strong>同一指標</strong>で継続監視。パターン比較と専門担当者レビューを仕組み化し、
                 「なぜ良くなったか」を再現できる状態にする。
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
@@ -49,9 +49,9 @@ export default function HomePage() {
       <Section title="現状の課題" bg="soft">
         <div className="grid md:grid-cols-3 gap-6">
           {[
-            ["属人的な運用", "プロンプトやデータの変更が記録・比較されず、再現性が低い。"],
+            ["属人的な運用", "指示文（プロンプト）やデータの変更が記録・比較されず、再現性が低い。"],
             ["指標の不統一", "精度/コスト/レイテンシが別管理で、意思決定が遅い。"],
-            ["本番のブラックボックス化", "失敗事例やSMEレビューが改善サイクルに戻らない。"],
+            ["本番のブラックボックス化", "失敗事例や専門担当者レビューが改善サイクルに戻らない。"],
           ].map(([t, d], i) => (
             <div key={i} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
               <div className="font-semibold">{t}</div>
@@ -65,9 +65,9 @@ export default function HomePage() {
       <Section title="コア機能">
         <div className="space-y-12">
           {[
-            ["構成比較（A/B/多腕）", "Retriever / Prompt / Index / Model / Parameters を構成単位で比較。差分を数値化。"],
-            ["SMEレビュー統合", "テンプレ化した評価観点＋合議ワークフロー。人手評価を仕組み化。"],
-            ["本番監視（KPIダッシュボード）", "品質・コスト・レイテンシを1画面で。閾値通知・インシデント注記に対応。"],
+            ["パターン比較（A/B/複数パターン比較）", "Retriever / Prompt / Index / Model / Parameters を構成単位で比較。差分を数値化。"],
+            ["専門担当者レビュー統合", "テンプレ化した評価観点＋合議ワークフロー。人手評価を仕組み化。"],
+            ["本番監視（KPIダッシュボード（結果可視化)）", "品質・コスト・レイテンシを1画面で。閾値通知・インシデント注記に対応。"],
             ["改善履歴と因果メモ", "誰が何を変えてどう良くなったかを時系列で可視化。再現可能な知見として蓄積。"],
           ].map(([t, d], i) => (
             <div key={i} className={`grid md:grid-cols-2 gap-8 items-start ${i % 2 ? "md:grid-flow-dense" : ""}`}>
@@ -93,7 +93,7 @@ export default function HomePage() {
           <p className="text-neutral-600 text-sm">
             各リクエストを「Event」として記録：<strong>query</strong> / <strong>response</strong> / <strong>context</strong> / <strong>latency</strong> /
             <strong>cost</strong> / <strong>scores</strong>（複数指標） / <strong>variant</strong>（構成ID） / <strong>tags</strong>（ユースケース） など。
-            これにより、構成比較・SMEレビュー・本番監視が同一データで回る。
+            これにより、パターン比較・専門担当者レビュー・本番監視が同一データで回る。
           </p>
         </div>
       </Section>
@@ -122,7 +122,7 @@ client.log_event({
         <div className="grid md:grid-cols-3 gap-6">
           {[
             ["現状評価（1〜2週）", "既存データの取り込み・KPI仮説の合意形成"],
-            ["改善サイクル設計（2〜4週）", "評価テンプレ・SMEフロー・A/B計画の確立"],
+            ["改善サイクル設計（2〜4週）", "評価テンプレ・専門担当者フロー・A/B計画の確立"],
             ["本番運用へ移行", "閾値設定・通知・月次レビューによる継続改善"],
           ].map(([t, d], i) => (
             <div key={i} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">

@@ -4,7 +4,7 @@ import Container from "@/components/Container";
 type Sol = { title: string; lead: string; bullets: string[]; ctaHref: string; cta: string; };
 const solutions: Sol[] = [
   { title: "RAG評価ソリューション", lead: "Retriever / Index / Prompt / Model を構成単位で比較し、精度・コスト・レイテンシを同一指標で可視化。",
-    bullets: ["構成比較（A/B/多腕）：Recall/Precision/Hit@k を自動集計","データ起因エラーの特定：ドキュメント粒度での貢献度/リーク検知","SMEレビュー統合：評価テンプレ＋合議フローで“人の判断”を仕組み化"], ctaHref: "/product", cta: "製品機能を見る →" },
+    bullets: ["構成比較（A/B/多腕）：Recall/Precision/Hit@k を自動集計","データ起因エラーの特定：ドキュメント粒度での貢献度/リーク検知","専門担当者レビュー統合：評価テンプレ＋合議フローで“人の判断”を仕組み化"], ctaHref: "/product", cta: "製品機能を見る →" },
   { title: "AIエージェント運用ソリューション", lead: "ツール使用ログ、分岐、失敗理由を可視化。成功条件を定義し、再現可能な運用へ。",
     bullets: ["ツール呼び出しトレース：成功/失敗と前後関係を時系列で可視化","成功条件（SLO）定義：業務KPIに直結する閾値とアラート","改善ループ：失敗パターン→対策のナレッジ化、リグレッション防止"], ctaHref: "/company", cta: "会社情報 →" },
   { title: "エンタープライズ対応", lead: "セキュリティ要件・運用統制に合わせた導入。オンプレ/プライベートネットワークにも対応。",

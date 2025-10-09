@@ -8,7 +8,7 @@ export default function CompanyPage() {
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">会社情報</h1>
-            <p className="mt-5 text-lg text-neutral-600 max-w-xl">RAGとAIエージェントの「運用品質」を可視化し、継続的に改善する土台を提供します。</p>
+            <p className="mt-5 text-lg text-neutral-600 max-w-xl">RAGとAI対話型AI（エージェント）の「運用品質」を可視化し、継続的に改善する土台を提供します。</p>
           </div>
           <div className="relative">
             <Image src="/dashboard.png" alt="Monitly.AI" width={800} height={480} className="rounded-2xl shadow-xl w-full" />

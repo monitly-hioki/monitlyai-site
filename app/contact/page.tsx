@@ -8,11 +8,11 @@ const CHALLENGES = [
   "精度が安定しない",
   "回答が遅い（レイテンシ）",
   "コストが高い",
-  "プロンプト改善が回らない",
+  "指示文（プロンプト）改善が回らない",
   "評価指標が定まっていない",
   "データが散在している／活用しづらい",
   "本番監視ができていない",
-  "RAG/エージェント導入支援が欲しい",
+  "検索統合AI（RAG)/対話型AI（エージェント）導入支援が欲しい",
   "ローカルLLMを検討している",
 ];
 
@@ -178,8 +178,8 @@ export default function ContactPage() {
                     {[
                       "Monitlyの評価導入",
                       "データ整備（AIが使える状態に）",
-                      "プロンプト評価/改善",
-                      "RAG/エージェント導入支援（パートナー）",
+                      "指示文（プロンプト）評価/改善",
+                      "検索統合AI（RAG)/対話型AI（エージェント）導入支援（パートナー）",
                       "運用改善ワークショップ",
                     ].map((n) => (
                       <label key={n} className="flex items-center gap-2 rounded-xl border border-neutral-200 p-2">
@@ -233,7 +233,7 @@ export default function ContactPage() {
                 </div>
                 <ul className="mt-4 text-sm text-neutral-600 list-disc list-inside space-y-1">
                   <li>評価からの小さなPoC開始が可能</li>
-                  <li>既存RAG/エージェントにも後付け導入OK</li>
+                  <li>既存RAG/対話型AI（エージェント）にも後付け導入OK</li>
                   <li>パートナー連携の特別条件あり</li>
                 </ul>
               </div>

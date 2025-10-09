@@ -10,10 +10,10 @@ export default function ProductPage() {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                製品 — 測れる運用で、RAG/Agentを強くする。
+                製品 — 測れる運用で、検索統合AI（RAG)/Agentを強くする。
               </h1>
               <p className="mt-5 text-lg text-neutral-600 max-w-xl">
-                精度・コスト・レイテンシを同一指標で継続監視。構成比較とSMEレビューを仕組み化し、
+                精度・コスト・レイテンシを同一指標で継続監視。パターン比較と専門担当者レビューを仕組み化し、
                 「なぜ良くなったか」を再現できる状態にする。
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
@@ -41,9 +41,9 @@ export default function ProductPage() {
       <Section title="コア機能">
         <div className="space-y-12">
           {[
-            ["構成比較（A/B/多腕）", "Retriever / Prompt / Index / Model / Parameters を構成単位で比較。差分を数値化。"],
-            ["SMEレビュー統合", "テンプレ化した評価観点＋合議ワークフロー。人手評価を仕組みに組み込む。"],
-            ["本番監視（KPIダッシュボード）", "品質・コスト・レイテンシを1画面で。閾値通知・インシデント注記に対応。"],
+            ["パターン比較（A/B/複数パターン比較）", "Retriever / Prompt / Index / Model / Parameters を構成単位で比較。差分を数値化。"],
+            ["専門担当者レビュー統合", "テンプレ化した評価観点＋合議ワークフロー。人手評価を仕組みに組み込む。"],
+            ["本番監視（KPIダッシュボード（結果可視化)）", "品質・コスト・レイテンシを1画面で。閾値通知・インシデント注記に対応。"],
             ["改善履歴と因果メモ", "誰が何を変えてどう良くなったかを時系列で可視化。再現可能な知見として蓄積。"],
           ].map(([t, d], i) => (
             <div key={i} className={`grid md:grid-cols-2 gap-8 items-start ${i % 2 ? "md:grid-flow-dense" : ""}`}>
