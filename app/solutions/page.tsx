@@ -3,94 +3,98 @@ import Link from "next/link";
 
 export default function SolutionsPage() {
   return (
-    <main className="py-16 md:py-24 bg-white text-neutral-800">
-      <Container>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">ソリューション</h1>
-        <p className="text-neutral-600 max-w-3xl">
-          Monitly.AIは、生成AIの導入と運用を「測れる仕組み」で支える評価プラットフォームです。
-          上流のデータ整備から、導入・運用・改善まで、実践的なアプローチで支援します。
-        </p>
+    <main className="bg-white text-neutral-800">
+      {/* Hero */}
+      <section className="bg-gradient-to-b from-[#EAF2FF] to-white py-16 md:py-24">
+        <Container>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+            生成AIの成果を、評価の仕組みで継続的に高める。
+          </h1>
+          <p className="mt-4 text-neutral-600 max-w-3xl">
+            Monitly.AIは<strong>評価・比較・運用改善のためのプロダクト</strong>です。
+            モデルやプロンプトを変える前に、まず「測れる」状態をつくり、
+            導入後はダッシュボードで改善を回し続けます。
+          </p>
 
-        {/* 上流：AI導入のための土台づくり */}
-        <section className="mt-16">
-          <h2 className="text-2xl font-semibold mb-6">上流：AI導入のための土台づくり</h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          {/* 提供形態（プロダクト主導を明示） */}
+          <div className="mt-8 grid md:grid-cols-3 gap-6">
             <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
-              <div className="font-semibold text-lg">データ基盤構築（AIが使える状態に整える）</div>
+              <div className="text-sm text-neutral-500">提供の中心</div>
+              <div className="mt-1 font-semibold">Monitlyプロダクト（SaaS）</div>
               <p className="mt-2 text-sm text-neutral-700">
-                生成AIの導入は、まずデータを「活かせる状態」にすることから始まります。
-                社内に散らばる情報や文書を整理し、AIが正確に理解・検索できるように構造化します。
-                これにより、誤答や回答漏れを減らし、RAG・エージェントの精度向上に直結します。
+                精度・コスト・レイテンシを一元管理。構成比較、SMEレビュー、本番監視に対応。
               </p>
-              <ul className="mt-3 text-sm list-disc list-inside text-neutral-600 space-y-1">
-                <li>社内文書・FAQ・ナレッジの統合整理</li>
-                <li>検索しやすいデータ設計・メタ情報整備</li>
-                <li>AI活用を見据えた情報整理・運用ルール設計</li>
-              </ul>
             </div>
-
             <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
-              <div className="font-semibold text-lg">プロンプト評価・改善設計支援</div>
+              <div className="text-sm text-neutral-500">開始方法</div>
+              <div className="mt-1 font-semibold">一気通貫 もしくは フェーズ単位</div>
               <p className="mt-2 text-sm text-neutral-700">
-                生成AIの出力品質は、プロンプトの設計と評価方法で大きく変わります。
-                Monitlyでは、評価観点の設計から、改善サイクルの回し方までを体系的に支援。
-                チームが共通の基準でプロンプトを改善できるようにします。
+                全体導入に加え、<strong>「評価だけ先に」</strong>など部分導入から着手可能。既存RAG/エージェントにも後付けできます。
               </p>
-              <ul className="mt-3 text-sm list-disc list-inside text-neutral-600 space-y-1">
-                <li>評価観点（精度・自然さ・一貫性など）の設計</li>
-                <li>SME（専門家）評価の仕組みづくり</li>
-                <li>改善効果を数値で比較・検証</li>
-              </ul>
+            </div>
+            <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+              <div className="text-sm text-neutral-500">実装パートナー</div>
+              <div className="mt-1 font-semibold">必要に応じて連携</div>
+              <p className="mt-2 text-sm text-neutral-700">
+                RAG/エージェントの構築はパートナーと協業可能。<strong>評価は常にMonitlyが中核</strong>です。
+              </p>
             </div>
           </div>
-        </section>
 
-        {/* 中流：RAG・エージェント導入支援 */}
-        <section className="mt-16">
-          <h2 className="text-2xl font-semibold mb-6">中流：RAG・エージェント導入支援（パートナー連携）</h2>
-          <p className="text-neutral-700 mb-6">
-            RAG構築やエージェント開発は、Monitlyの認定パートナーと連携して提供します。
-            パートナーが開発・実装を担当し、Monitlyが「評価と改善の仕組み」を組み込みます。
-            Monitlyを使わない導入支援も可能です。
-          </p>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
-              <div className="font-semibold text-lg">協業による導入支援</div>
-              <ul className="mt-3 text-sm list-disc list-inside text-neutral-600 space-y-1">
-                <li>要件定義から構築までをワンストップで支援</li>
-                <li>Monitlyによる評価設計・効果測定を併走</li>
-                <li>技術検証（PoC）から本番導入まで一貫対応</li>
-              </ul>
-            </div>
-            <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
-              <div className="font-semibold text-lg">主なパートナー例</div>
-              <ul className="mt-3 text-sm list-disc list-inside text-neutral-600 space-y-1">
-                <li>ジンベイ株式会社：生成AIソリューション開発支援</li>
-                <li>Irwin & Co 株式会社：AI導入コンサルティング支援</li>
-                <li>その他、今後順次拡大予定</li>
-              </ul>
-              <Link href="/partners" className="inline-block mt-4 text-[#0056FF] font-semibold">
-                パートナープログラムを見る →
-              </Link>
-            </div>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link href="/contact" className="inline-flex items-center rounded-2xl bg-[#0056FF] text-white px-6 py-3 font-semibold">
+              PoC相談をする
+            </Link>
+            <Link href="/contact" className="inline-flex items-center rounded-2xl border border-[#0056FF] text-[#0056FF] bg-white px-6 py-3 font-semibold">
+              資料を請求する
+            </Link>
           </div>
-        </section>
 
-        {/* 下流：運用評価・継続改善 */}
-        <section className="mt-16">
-          <h2 className="text-2xl font-semibold mb-6">下流：運用評価と継続改善</h2>
-          <p className="text-neutral-700 mb-6">
-            Monitly.AIプラットフォームの中心機能である「運用評価」。
-            精度・コスト・レイテンシなどの指標を一元管理し、改善のサイクルを継続的に回します。
+          {/* 1文で“両方可”を宣言 */}
+          <p className="mt-4 text-sm text-neutral-500">
+            ※ Monitlyは評価プラットフォームを中心に、一気通貫でもフェーズ単位でも導入できます。
           </p>
-          <div className="grid md:grid-cols-3 gap-6">
+        </Container>
+      </section>
+
+      {/* フェーズ1：導入準備と基盤整備（用語は平易に） */}
+      <section className="py-16 md:py-24 bg-[#F7F9FA]">
+        <Container>
+          <h2 className="text-2xl md:text-3xl font-bold">フェーズ1｜導入準備と基盤整備</h2>
+          <p className="mt-3 text-neutral-700 max-w-3xl">
+            初期の躓きは多くが「データの散在」と「評価軸の不在」です。まずはAIが使える土台を整えます。
+          </p>
+          <div className="mt-8 grid md:grid-cols-3 gap-6">
             {[
-              ["構成比較", "モデル・プロンプト・Retrieverなど、構成ごとの性能を比較し、最適化。"],
-              ["SMEレビュー統合", "人手評価と自動評価を組み合わせ、評価基準を統一。"],
-              ["本番監視", "運用中の品質・コスト・応答速度をモニタリング。劣化兆候を検知。"],
-              ["改善履歴の可視化", "誰がどの変更を行い、どう良くなったかを時系列で追跡。"],
-              ["データ連携", "ログ連携・タグ付け・匿名化設定など柔軟に対応。"],
-              ["再現性・監査", "実験・検証条件を記録し、再現性を確保。"],
+              ["データの整理と設計", "社内文書・FAQ・ナレッジを整理し、検索されやすい形へ。"],
+              ["評価軸の明確化", "精度/自然さ/一貫性/コスト/応答速度など、測る基準を決める。"],
+              ["プロンプト改善の設計", "評価→改善→再評価の流れを仕組み化し、再現可能に。"],
+            ].map(([t, d], i) => (
+              <div key={i} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+                <div className="font-semibold">{t}</div>
+                <p className="mt-2 text-sm text-neutral-700">{d}</p>
+                <p className="mt-3 text-xs text-neutral-500">※ このフェーズのみの支援から開始可能です。</p>
+              </div>
+            ))}
+          </div>
+          <Link href="/contact" className="inline-block mt-6 text-[#0056FF] font-semibold">
+            無料相談で現状を診断 →
+          </Link>
+        </Container>
+      </section>
+
+      {/* フェーズ2：実装と導入支援（パートナー連携） */}
+      <section className="py-16 md:py-24 bg-white">
+        <Container>
+          <h2 className="text-2xl md:text-3xl font-bold">フェーズ2｜実装と導入支援（パートナー連携）</h2>
+          <p className="mt-3 text-neutral-700 max-w-3xl">
+            RAG/エージェントの構築は、貴社チームまたはパートナーと連携して実施。Monitlyの評価を前提設計に組み込みます。
+          </p>
+          <div className="mt-8 grid md:grid-cols-3 gap-6">
+            {[
+              ["RAG・エージェント導入", "要件定義〜実装までを並走。導入時点から評価連携。"],
+              ["ローカルLLM対応", "機密要件に応じてオンプレ/閉域構成を支援。"],
+              ["評価を中核に", "モデル/プロンプト/検索の比較検証を前提に設計。"],
             ].map(([t, d], i) => (
               <div key={i} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
                 <div className="font-semibold">{t}</div>
@@ -98,49 +102,65 @@ export default function SolutionsPage() {
               </div>
             ))}
           </div>
-        </section>
+          <p className="mt-4 text-xs text-neutral-500">※ 実装はパートナー連携可。Monitlyは評価プラットフォームを提供し続けます。</p>
+          <Link href="/partners" className="inline-block mt-6 text-[#0056FF] font-semibold">
+            パートナープログラムを見る →
+          </Link>
+        </Container>
+      </section>
 
-        {/* 導入プロセス */}
-        <section className="mt-16 bg-[#F7F9FA] rounded-2xl p-8">
-          <h2 className="text-2xl font-semibold mb-6">導入プロセス（最短2〜8週間）</h2>
-          <div className="grid md:grid-cols-4 gap-6">
+      {/* フェーズ3：運用と継続的な改善（プロダクトのコア） */}
+      <section className="py-16 md:py-24 bg-[#F7F9FA]">
+        <Container>
+          <h2 className="text-2xl md:text-3xl font-bold">フェーズ3｜運用と継続的な改善（Monitlyの中核）</h2>
+          <p className="mt-3 text-neutral-700 max-w-3xl">
+            導入して終わりにしない。Monitlyのダッシュボードで、日々の結果を測り、最適な構成に更新し続けます。
+          </p>
+          <div className="mt-8 grid md:grid-cols-3 gap-6">
             {[
-              ["1. 現状診断", "データ環境・業務課題を整理し、AI導入の方向性を明確化。"],
-              ["2. 設計", "評価指標・運用ルール・改善サイクルを設計。"],
-              ["3. 実装", "RAG/エージェント構築＋Monitly評価基盤を接続。"],
-              ["4. 運用・改善", "定期レビューと継続改善を実施。"],
+              ["構成比較とA/B/多腕", "モデル・プロンプト・Retriever等を構成IDで比較し、差分を数値化。"],
+              ["SMEレビュー統合", "専門家/チーム評価を仕組み化。人手評価と自動評価の指標を統一。"],
+              ["本番監視とアラート", "品質・コスト・レイテンシを1画面で監視し、劣化兆候を検知。"],
+              ["改善履歴と因果メモ", "誰が何を変え、どう良くなったかを時系列で可視化。"],
+              ["データ連携と匿名化", "SDK/API/Webhookで柔軟に連携。匿名化・マスキングに対応。"],
+              ["再現性・監査", "評価条件・バージョン・差分を記録し、いつでも再現・説明可能に。"],
             ].map(([t, d], i) => (
-              <div key={i} className="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
-                <div className="text-sm text-neutral-500">Step {i + 1}</div>
-                <div className="mt-1 font-semibold">{t}</div>
+              <div key={i} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+                <div className="font-semibold">{t}</div>
                 <p className="mt-2 text-sm text-neutral-700">{d}</p>
+                {i===0 && <p className="mt-3 text-xs text-neutral-500">※ 他社構築のRAG/エージェントにも後付け可能です。</p>}
               </div>
             ))}
           </div>
-        </section>
+          <div className="mt-6 flex flex-wrap gap-4">
+            <Link href="/contact" className="inline-flex items-center rounded-2xl bg-[#0056FF] text-white px-6 py-3 font-semibold">
+              運用改善のデモを見る
+            </Link>
+            <Link href="/contact" className="inline-flex items-center rounded-2xl border border-[#0056FF] text-[#0056FF] bg-white px-6 py-3 font-semibold">
+              PoCから始める
+            </Link>
+          </div>
+        </Container>
+      </section>
 
-        {/* CTA */}
-        <section className="mt-20 grid md:grid-cols-2 gap-6">
-          <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
-            <div className="font-semibold">PoC相談（無料）</div>
-            <p className="mt-2 text-neutral-600 text-sm">
-              最短2週間で評価設計・改善効果の検証を行います。
-            </p>
-            <Link href="/contact" className="inline-block mt-3 text-[#0056FF] font-semibold">
-              お問い合わせ →
+      {/* Closing CTA（受託感を避けつつ、プロダクト中心で締め） */}
+      <section className="bg-[#0056FF] text-white py-16 md:py-20">
+        <Container>
+          <h2 className="text-2xl md:text-3xl font-bold">「評価がある導入」で、成果を出し続ける。</h2>
+          <p className="mt-3 text-neutral-100 max-w-3xl">
+            Monitlyはプロダクトを中心に、必要に応じて連携パートナーと共に導入を支援します。
+            まずは貴社の現状を共有ください。最短ルートをご提案します。
+          </p>
+          <div className="mt-6 flex flex-wrap gap-4">
+            <Link href="/contact" className="inline-flex items-center rounded-2xl bg-white text-[#0056FF] px-6 py-3 font-semibold">
+              無料相談
+            </Link>
+            <Link href="/partners" className="inline-flex items-center rounded-2xl border border-white text-white px-6 py-3 font-semibold">
+              協業・OEMの相談
             </Link>
           </div>
-          <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
-            <div className="font-semibold">パートナーとして協業</div>
-            <p className="mt-2 text-neutral-600 text-sm">
-              RAG・エージェント開発や評価連携で共に市場を拡大します。
-            </p>
-            <Link href="/partners" className="inline-block mt-3 text-[#0056FF] font-semibold">
-              詳細を見る →
-            </Link>
-          </div>
-        </section>
-      </Container>
+        </Container>
+      </section>
     </main>
   );
 }
