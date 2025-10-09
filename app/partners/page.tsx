@@ -4,7 +4,9 @@ export default function PartnerProgramPage() {
   return (
     <main className="py-16 md:py-24 bg-white text-neutral-800">
       <Container>
-        <h1 className="text-4xl md:text-5xl font-bold mb-8">パートナープログラム</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-8">
+          パートナープログラム
+        </h1>
 
         <section className="space-y-8">
           <p>
@@ -32,22 +34,36 @@ export default function PartnerProgramPage() {
               </thead>
               <tbody>
                 <tr>
-                  <td className="p-3 border font-semibold">リファラルパートナー</td>
+                  <td className="p-3 border font-semibold">
+                    リファラルパートナー
+                  </td>
                   <td className="p-3 border">顧客への紹介・共同提案</td>
                   <td className="p-3 border">コンサル、SI、販売代理店</td>
-                  <td className="p-3 border">無償PoC枠・営業支援資料・共同セールス</td>
+                  <td className="p-3 border">
+                    無償PoC枠・営業支援資料・共同セールス
+                  </td>
                 </tr>
                 <tr>
-                  <td className="p-3 border font-semibold">インテグレーションパートナー</td>
+                  <td className="p-3 border font-semibold">
+                    インテグレーションパートナー
+                  </td>
                   <td className="p-3 border">自社案件にMonitlyを組込み</td>
                   <td className="p-3 border">AIベンダー、ソリューション企業</td>
-                  <td className="p-3 border">SDK/API特別条件・技術支援・共同マーケティング</td>
+                  <td className="p-3 border">
+                    SDK/API特別条件・技術支援・共同マーケティング
+                  </td>
                 </tr>
                 <tr>
-                  <td className="p-3 border font-semibold">エンベデッドパートナー</td>
-                  <td className="p-3 border">自社製品にMonitlyの評価機能をOEM組込み</td>
+                  <td className="p-3 border font-semibold">
+                    エンベデッドパートナー
+                  </td>
+                  <td className="p-3 border">
+                    自社製品にMonitlyの評価機能をOEM組込み
+                  </td>
                   <td className="p-3 border">SaaS企業、LLMプロバイダー</td>
-                  <td className="p-3 border">OEM契約・再販権・共同ブランド・専用サポート</td>
+                  <td className="p-3 border">
+                    OEM契約・再販権・共同ブランド・専用サポート
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -65,11 +81,15 @@ export default function PartnerProgramPage() {
         </section>
 
         <section className="mt-16">
-          <h2 className="text-2xl font-semibold mb-6">主なパートナー候補（2025年10月時点）</h2>
+          <h2 className="text-2xl font-semibold mb-6">
+            主なパートナー候補（2025年10月時点）
+          </h2>
           <ul className="space-y-2 list-disc list-inside text-sm">
             <li>ジンベイ株式会社：生成AIソリューション開発・RAG構築支援</li>
             <li>Irwin & Co 株式会社：AI戦略コンサルティング・企業導入支援</li>
-            <li>※今後、教育・インフラ・指示文（プロンプト）エンジニアリング領域へも拡大予定</li>
+            <li>
+              ※今後、教育・インフラ・指示文（プロンプト）エンジニアリング領域へも拡大予定
+            </li>
           </ul>
         </section>
 
@@ -78,21 +98,27 @@ export default function PartnerProgramPage() {
           <ol className="list-decimal list-inside space-y-3 text-sm">
             <li>お問い合わせ・申請（hioki@aradia.asia へご連絡ください）</li>
             <li>ヒアリング・適合確認（事業領域・体制・技術構成を確認）</li>
-            <li>契約・共同活動開始（SDK利用、PoC支援、共同プロモーションを開始）</li>
+            <li>
+              契約・共同活動開始（SDK利用、PoC支援、共同プロモーションを開始）
+            </li>
           </ol>
         </section>
 
         <section className="mt-16">
           <h2 className="text-2xl font-semibold mb-6">将来展望</h2>
           <ul className="space-y-2 list-disc list-inside text-sm">
-            <li>Monitlyパートナーマーケットプレイスの公開（評価対応ソリューション一覧）</li>
+            <li>
+              Monitlyパートナーマーケットプレイスの公開（評価対応ソリューション一覧）
+            </li>
             <li>共通評価テンプレート／データセットの共同開発</li>
             <li>年次イベント「Monitly Partner Summit」開催予定</li>
           </ul>
         </section>
 
         <section className="mt-20 text-center">
-          <p className="text-lg font-semibold mb-3">パートナープログラムへの参加・ご相談はこちら</p>
+          <p className="text-lg font-semibold mb-3">
+            パートナープログラムへの参加・ご相談はこちら
+          </p>
           <a
             href="mailto:hioki@aradia.asia"
             className="inline-block bg-[#0056FF] text-white px-6 py-3 rounded-xl font-semibold"

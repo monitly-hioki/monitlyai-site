@@ -31,7 +31,10 @@ export default function ContactPage() {
     // gather multi-select
     const selectedChallenges = fd.getAll("challenges");
     if (selectedChallenges.length || other) {
-      payload["challenges_summary"] = [...selectedChallenges, ...(other ? [other] : [])].join(", ");
+      payload["challenges_summary"] = [
+        ...selectedChallenges,
+        ...(other ? [other] : []),
+      ].join(", ");
     }
 
     // honeypot
@@ -46,7 +49,10 @@ export default function ContactPage() {
       try {
         const res = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
           body: JSON.stringify({
             access_key: key,
             subject: "Monitly.AI：デモ/相談フォーム",
@@ -77,7 +83,7 @@ export default function ContactPage() {
         `メール: ${payload.email || ""}`,
         `電話: ${payload.phone || ""}`,
         `導入フェーズ: ${payload.phase || ""}`,
-        `希望する支援: ${Array.isArray(payload.needs) ? (payload.needs as string[]).join(", ") : (payload.needs || "")}`,
+        `希望する支援: ${Array.isArray(payload.needs) ? (payload.needs as string[]).join(", ") : payload.needs || ""}`,
         `現在の課題: ${payload.challenges_summary || ""}`,
         `連絡希望: ${payload.contact_timing || ""}`,
         `補足: ${payload.message || ""}`,
@@ -96,11 +102,15 @@ export default function ContactPage() {
     <main className="bg-white">
       <section className="bg-gradient-to-b from-[#EAF2FF] to-white py-12 md:py-16">
         <Container>
-          <h1 className="text-3xl md:text-5xl font-bold">お問い合わせ / デモのご依頼</h1>
+          <h1 className="text-3xl md:text-5xl font-bold">
+            お問い合わせ / デモのご依頼
+          </h1>
           <p className="mt-3 text-neutral-600 max-w-3xl">
             現状の課題とゴールをお聞かせください。最短ルートの進め方をご提案します。
             <span className="ml-2 rounded-full bg-[#0056FF]/10 text-[#0056FF] text-xs px-2 py-0.5">
-              {process.env.NEXT_PUBLIC_WEB3FORMS_KEY ? "API送信（推奨）" : "メール送信（即時）"}
+              {process.env.NEXT_PUBLIC_WEB3FORMS_KEY
+                ? "API送信（推奨）"
+                : "メール送信（即時）"}
             </span>
           </p>
         </Container>
@@ -112,37 +122,72 @@ export default function ContactPage() {
             <div className="md:col-span-3">
               <form onSubmit={onSubmit} className="space-y-6">
                 {/* honeypot */}
-                <input type="text" name="_hp" className="hidden" tabIndex={-1} autoComplete="off" />
+                <input
+                  type="text"
+                  name="_hp"
+                  className="hidden"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium">お名前 *</label>
-                    <input name="name" required className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2" />
+                    <label className="block text-sm font-medium">
+                      お名前 *
+                    </label>
+                    <input
+                      name="name"
+                      required
+                      className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2"
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-medium">会社名</label>
-                    <input name="company" className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2" />
+                    <input
+                      name="company"
+                      className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2"
+                    />
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium">メール *</label>
-                    <input type="email" name="email" required className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2" />
+                    <label className="block text-sm font-medium">
+                      メール *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2"
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-medium">電話</label>
-                    <input name="phone" className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2" />
+                    <input
+                      name="phone"
+                      className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2"
+                    />
                   </div>
                 </div>
 
                 {/* 現在の課題（複数選択） */}
                 <div>
-                  <div className="text-sm font-medium">現在の課題（複数選択可）</div>
+                  <div className="text-sm font-medium">
+                    現在の課題（複数選択可）
+                  </div>
                   <div className="mt-2 grid md:grid-cols-2 gap-2">
                     {CHALLENGES.map((c) => (
-                      <label key={c} className="flex items-start gap-2 rounded-xl border border-neutral-200 p-2">
-                        <input type="checkbox" name="challenges" value={c} className="mt-1" />
+                      <label
+                        key={c}
+                        className="flex items-start gap-2 rounded-xl border border-neutral-200 p-2"
+                      >
+                        <input
+                          type="checkbox"
+                          name="challenges"
+                          value={c}
+                          className="mt-1"
+                        />
                         <span className="text-sm">{c}</span>
                       </label>
                     ))}
@@ -163,7 +208,10 @@ export default function ContactPage() {
                   <div className="text-sm font-medium">導入フェーズ</div>
                   <div className="mt-2 grid md:grid-cols-4 gap-2 text-sm">
                     {["検討中", "PoC中", "一部運用", "全社展開"].map((p) => (
-                      <label key={p} className="flex items-center gap-2 rounded-xl border border-neutral-200 p-2">
+                      <label
+                        key={p}
+                        className="flex items-center gap-2 rounded-xl border border-neutral-200 p-2"
+                      >
                         <input type="radio" name="phase" value={p} />
                         {p}
                       </label>
@@ -173,7 +221,9 @@ export default function ContactPage() {
 
                 {/* 希望する支援（複数選択） */}
                 <div>
-                  <div className="text-sm font-medium">希望する支援（複数選択可）</div>
+                  <div className="text-sm font-medium">
+                    希望する支援（複数選択可）
+                  </div>
                   <div className="mt-2 grid md:grid-cols-2 gap-2 text-sm">
                     {[
                       "Monitlyの評価導入",
@@ -182,7 +232,10 @@ export default function ContactPage() {
                       "検索統合AI（RAG)/対話型AI（エージェント）導入支援（パートナー）",
                       "運用改善ワークショップ",
                     ].map((n) => (
-                      <label key={n} className="flex items-center gap-2 rounded-xl border border-neutral-200 p-2">
+                      <label
+                        key={n}
+                        className="flex items-center gap-2 rounded-xl border border-neutral-200 p-2"
+                      >
                         <input type="checkbox" name="needs" value={n} />
                         {n}
                       </label>
@@ -194,7 +247,10 @@ export default function ContactPage() {
                 <div className="grid md:grid-cols-3 gap-2 text-sm">
                   <div className="col-span-1">
                     <label className="block font-medium">連絡希望</label>
-                    <select name="contact_timing" className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2">
+                    <select
+                      name="contact_timing"
+                      className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2"
+                    >
                       <option value="">未指定</option>
                       <option>ASAP</option>
                       <option>今週中</option>
@@ -202,8 +258,14 @@ export default function ContactPage() {
                     </select>
                   </div>
                   <div className="md:col-span-2">
-                    <label className="block text-sm font-medium">補足（任意）</label>
-                    <textarea name="message" rows={4} className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2" />
+                    <label className="block text-sm font-medium">
+                      補足（任意）
+                    </label>
+                    <textarea
+                      name="message"
+                      rows={4}
+                      className="mt-1 w-full rounded-xl border border-neutral-300 px-3 py-2"
+                    />
                   </div>
                 </div>
 
@@ -215,10 +277,14 @@ export default function ContactPage() {
                     {state === "submitting" ? "送信中…" : "送信する"}
                   </button>
                   {state === "success" && (
-                    <span className="ml-3 text-sm text-green-600">送信が完了しました。折り返しご連絡します。</span>
+                    <span className="ml-3 text-sm text-green-600">
+                      送信が完了しました。折り返しご連絡します。
+                    </span>
                   )}
                   {state === "error" && (
-                    <span className="ml-3 text-sm text-red-600">送信に失敗しました。恐れ入りますがメールでご連絡ください。</span>
+                    <span className="ml-3 text-sm text-red-600">
+                      送信に失敗しました。恐れ入りますがメールでご連絡ください。
+                    </span>
                   )}
                 </div>
               </form>
@@ -227,9 +293,18 @@ export default function ContactPage() {
             <aside className="md:col-span-2">
               <div className="rounded-2xl border border-neutral-200 p-6 bg-white shadow-sm">
                 <div className="font-semibold">Monitly.AI株式会社</div>
-                <div className="text-sm mt-1 text-neutral-600">〒141-0033 東京都品川区西品川1-1-1 TUNNEL TOKYO 9F</div>
+                <div className="text-sm mt-1 text-neutral-600">
+                  〒141-0033 東京都品川区西品川1-1-1 TUNNEL TOKYO 9F
+                </div>
                 <div className="text-sm mt-2">
-                  お急ぎの方は <a className="text-[#0056FF] underline" href="mailto:hioki@aradia.asia">hioki@aradia.asia</a> へ
+                  お急ぎの方は{" "}
+                  <a
+                    className="text-[#0056FF] underline"
+                    href="mailto:hioki@aradia.asia"
+                  >
+                    hioki@aradia.asia
+                  </a>{" "}
+                  へ
                 </div>
                 <ul className="mt-4 text-sm text-neutral-600 list-disc list-inside space-y-1">
                   <li>評価からの小さなPoC開始が可能</li>

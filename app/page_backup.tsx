@@ -16,20 +16,33 @@ export default function HomePage() {
                 製品 — 測れる運用で、検索統合AI（RAG)/Agentを強くする。
               </h1>
               <p className="mt-5 text-lg text-neutral-600 max-w-xl">
-                精度・コスト・レイテンシを<strong>同一指標</strong>で継続監視。パターン比較と専門担当者レビューを仕組み化し、
+                精度・コスト・レイテンシを<strong>同一指標</strong>
+                で継続監視。パターン比較と専門担当者レビューを仕組み化し、
                 「なぜ良くなったか」を再現できる状態にする。
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <a href="/contact" className="inline-flex items-center rounded-2xl bg-[#0056FF] text-white px-5 py-3 font-semibold">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center rounded-2xl bg-[#0056FF] text-white px-5 py-3 font-semibold"
+                >
                   デモを見る
                 </a>
-                <a href="/contact" className="inline-flex items-center rounded-2xl border border-[#0056FF] text-[#0056FF] bg-white px-5 py-3 font-semibold">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center rounded-2xl border border-[#0056FF] text-[#0056FF] bg-white px-5 py-3 font-semibold"
+                >
                   PoCを相談
                 </a>
               </div>
             </div>
             <div className="relative">
-              <Image src="/dashboard.png" alt="Dashboard" width={800} height={480} className="rounded-2xl shadow-xl w-full" />
+              <Image
+                src="/dashboard.png"
+                alt="Dashboard"
+                width={800}
+                height={480}
+                className="rounded-2xl shadow-xl w-full"
+              />
               <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-lg p-4 w-56 border border-neutral-200">
                 <div className="text-sm text-neutral-500">Accuracy</div>
                 <div className="text-2xl font-bold">92%</div>
@@ -49,11 +62,23 @@ export default function HomePage() {
       <Section title="現状の課題" bg="soft">
         <div className="grid md:grid-cols-3 gap-6">
           {[
-            ["属人的な運用", "指示文（プロンプト）やデータの変更が記録・比較されず、再現性が低い。"],
-            ["指標の不統一", "精度/コスト/レイテンシが別管理で、意思決定が遅い。"],
-            ["本番のブラックボックス化", "失敗事例や専門担当者レビューが改善サイクルに戻らない。"],
+            [
+              "属人的な運用",
+              "指示文（プロンプト）やデータの変更が記録・比較されず、再現性が低い。",
+            ],
+            [
+              "指標の不統一",
+              "精度/コスト/レイテンシが別管理で、意思決定が遅い。",
+            ],
+            [
+              "本番のブラックボックス化",
+              "失敗事例や専門担当者レビューが改善サイクルに戻らない。",
+            ],
           ].map(([t, d], i) => (
-            <div key={i} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+            <div
+              key={i}
+              className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
+            >
               <div className="font-semibold">{t}</div>
               <p className="mt-2 text-neutral-600 text-sm">{d}</p>
             </div>
@@ -65,12 +90,27 @@ export default function HomePage() {
       <Section title="コア機能">
         <div className="space-y-12">
           {[
-            ["パターン比較（A/B/複数パターン比較）", "Retriever / Prompt / Index / Model / Parameters を構成単位で比較。差分を数値化。"],
-            ["専門担当者レビュー統合", "テンプレ化した評価観点＋合議ワークフロー。人手評価を仕組み化。"],
-            ["本番監視（KPIダッシュボード（結果可視化)）", "品質・コスト・レイテンシを1画面で。閾値通知・インシデント注記に対応。"],
-            ["改善履歴と因果メモ", "誰が何を変えてどう良くなったかを時系列で可視化。再現可能な知見として蓄積。"],
+            [
+              "パターン比較（A/B/複数パターン比較）",
+              "Retriever / Prompt / Index / Model / Parameters を構成単位で比較。差分を数値化。",
+            ],
+            [
+              "専門担当者レビュー統合",
+              "テンプレ化した評価観点＋合議ワークフロー。人手評価を仕組み化。",
+            ],
+            [
+              "本番監視（KPIダッシュボード（結果可視化)）",
+              "品質・コスト・レイテンシを1画面で。閾値通知・インシデント注記に対応。",
+            ],
+            [
+              "改善履歴と因果メモ",
+              "誰が何を変えてどう良くなったかを時系列で可視化。再現可能な知見として蓄積。",
+            ],
           ].map(([t, d], i) => (
-            <div key={i} className={`grid md:grid-cols-2 gap-8 items-start ${i % 2 ? "md:grid-flow-dense" : ""}`}>
+            <div
+              key={i}
+              className={`grid md:grid-cols-2 gap-8 items-start ${i % 2 ? "md:grid-flow-dense" : ""}`}
+            >
               <div className={`${i % 2 ? "md:order-2" : ""}`}>
                 <h3 className="text-2xl font-semibold">{t}</h3>
                 <p className="mt-3 text-neutral-600">{d}</p>
@@ -91,8 +131,11 @@ export default function HomePage() {
       <Section title="データモデル（イベント定義）" bg="soft">
         <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
           <p className="text-neutral-600 text-sm">
-            各リクエストを「Event」として記録：<strong>query</strong> / <strong>response</strong> / <strong>context</strong> / <strong>latency</strong> /
-            <strong>cost</strong> / <strong>scores</strong>（複数指標） / <strong>variant</strong>（構成ID） / <strong>tags</strong>（ユースケース） など。
+            各リクエストを「Event」として記録：<strong>query</strong> /{" "}
+            <strong>response</strong> / <strong>context</strong> /{" "}
+            <strong>latency</strong> /<strong>cost</strong> /{" "}
+            <strong>scores</strong>（複数指標） / <strong>variant</strong>
+            （構成ID） / <strong>tags</strong>（ユースケース） など。
             これにより、パターン比較・専門担当者レビュー・本番監視が同一データで回る。
           </p>
         </div>
@@ -111,7 +154,10 @@ client.log_event({
   "score": 0.95,
   "variant": "retriever=v2,prompt=short"
 })`}</pre>
-          <a href="/contact" className="inline-block mt-4 text-[#0056FF] font-semibold">
+          <a
+            href="/contact"
+            className="inline-block mt-4 text-[#0056FF] font-semibold"
+          >
             デモの相談 →
           </a>
         </div>
@@ -122,10 +168,16 @@ client.log_event({
         <div className="grid md:grid-cols-3 gap-6">
           {[
             ["現状評価（1〜2週）", "既存データの取り込み・KPI仮説の合意形成"],
-            ["改善サイクル設計（2〜4週）", "評価テンプレ・専門担当者フロー・A/B計画の確立"],
+            [
+              "改善サイクル設計（2〜4週）",
+              "評価テンプレ・専門担当者フロー・A/B計画の確立",
+            ],
             ["本番運用へ移行", "閾値設定・通知・月次レビューによる継続改善"],
           ].map(([t, d], i) => (
-            <div key={i} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+            <div
+              key={i}
+              className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm"
+            >
               <div className="text-sm text-neutral-500">Step {i + 1}</div>
               <div className="mt-1 text-lg font-semibold">{t}</div>
               <p className="mt-2 text-neutral-600 text-sm">{d}</p>
@@ -142,12 +194,24 @@ client.log_event({
             <p className="mt-2 text-neutral-600 text-sm">
               1〜2ヶ月の短期検証。評価設計とレポート込み。意思決定に必要な数字を揃える。
             </p>
-            <a href="/contact" className="mt-3 inline-block text-[#0056FF] font-semibold">お問い合わせ →</a>
+            <a
+              href="/contact"
+              className="mt-3 inline-block text-[#0056FF] font-semibold"
+            >
+              お問い合わせ →
+            </a>
           </div>
           <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
             <div className="font-semibold">商談・PoC相談</div>
-            <p className="mt-2 text-neutral-600 text-sm">ユースケースを共有いただければ、最短ルートでセットアップする。</p>
-            <a href="/contact" className="mt-3 inline-block text-[#0056FF] font-semibold">デモ予約 →</a>
+            <p className="mt-2 text-neutral-600 text-sm">
+              ユースケースを共有いただければ、最短ルートでセットアップする。
+            </p>
+            <a
+              href="/contact"
+              className="mt-3 inline-block text-[#0056FF] font-semibold"
+            >
+              デモ予約 →
+            </a>
           </div>
         </div>
       </Section>

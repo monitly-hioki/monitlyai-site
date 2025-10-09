@@ -4,12 +4,18 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Monitly.AI｜検索統合AI（RAG)/AI対話型AI（エージェント）の評価と運用可視化",
-  description: "RAGとAI対話型AI（エージェント）の“結果”を可視化し、継続的に良くする。評価・比較・運用をひとつのダッシュボード（結果可視化)で。",
-  icons: [{ rel: "icon", url: "/favicon.ico" }]
+  title:
+    "Monitly.AI｜検索統合AI（RAG)/AI対話型AI（エージェント）の評価と運用可視化",
+  description:
+    "RAGとAI対話型AI（エージェント）の“結果”を可視化し、継続的に良くする。評価・比較・運用をひとつのダッシュボード（結果可視化)で。",
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="ja">
       <body>
