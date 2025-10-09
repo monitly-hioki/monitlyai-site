@@ -11,9 +11,9 @@ export default function SolutionsPage() {
             生成AIの成果を、評価の仕組みで継続的に高める。
           </h1>
           <p className="mt-4 text-neutral-600 max-w-3xl">
-            Monitly.AIは<strong>評価・比較・運用改善のためのプロダクト</strong>です。
-            モデルやプロンプトを変える前に、まず「測れる」状態をつくり、
-            導入後はダッシュボードで改善を回し続けます。
+            Monitly.AIは、生成AIの“結果を改善し続ける”ための<strong>評価プラットフォーム</strong>です。
+モデルやプロンプトを変える前に「何が良く、何が課題か」を見える化し、
+導入後の成果を<strong>定量的に</strong>高めます。
           </p>
 
           {/* 提供形態（プロダクト主導を明示） */}
@@ -52,7 +52,7 @@ export default function SolutionsPage() {
 
           {/* 1文で“両方可”を宣言 */}
           <p className="mt-4 text-sm text-neutral-500">
-            ※ Monitlyは評価プラットフォームを中心に、一気通貫でもフェーズ単位でも導入できます。
+            ※ Monitly.AIは、導入準備から運用改善までを一気通貫で支援します。すでに導入済みの企業も、評価・改善フェーズだけを切り出して導入可能です。
           </p>
         </Container>
       </section>
@@ -148,8 +148,8 @@ export default function SolutionsPage() {
         <Container>
           <h2 className="text-2xl md:text-3xl font-bold">「評価がある導入」で、成果を出し続ける。</h2>
           <p className="mt-3 text-neutral-100 max-w-3xl">
-            Monitlyはプロダクトを中心に、必要に応じて連携パートナーと共に導入を支援します。
-            まずは貴社の現状を共有ください。最短ルートをご提案します。
+            Monitly.AIは、成果を上げるための“導入後を支える評価基盤”です。
+現状を共有いただければ、貴社の課題とゴールに最適な導入ステップをご提案します。
           </p>
           <div className="mt-6 flex flex-wrap gap-4">
             <Link href="/contact" className="inline-flex items-center rounded-2xl bg-white text-[#0056FF] px-6 py-3 font-semibold">
