@@ -1,6 +1,6 @@
 ---
 title: "パートナープログラム（紹介・導入・OEM）開始のお知らせ"
-date: "2025-09-15"
+date: "2025-09-14"
 slug: "partner-program-launch"
 published: true
 description: "Monitlyパートナープログラム（紹介・導入・OEM）の開始。生成AIの共同提案・技術連携・OEM展開を支援。"
