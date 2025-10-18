@@ -2,6 +2,8 @@
 title: "パートナープログラム（紹介・導入・OEM）開始のお知らせ"
 date: "2025-09-15"
 slug: "partner-program-launch"
+published: true
+description: "Monitlyパートナープログラム（紹介・導入・OEM）の開始。生成AIの共同提案・技術連携・OEM展開を支援。"
 ---
 
 Monitly.AI株式会社（本社：東京都品川区、代表取締役 日置智之）は、生成AI運用評価プラットフォーム「Monitly（モニトリー）」の提供拡大を目的として、パートナー企業様との新たな協業制度「パートナープログラム（紹介・導入・OEM）」を開始いたしました。
