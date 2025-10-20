@@ -17,6 +17,7 @@ export default function Header() {
           <Link href="/solutions" className="hover:text-neutral-900">
             ソリューション
           </Link>
+            <Link href="/product">製品</Link>
           <Link href="/news" className="hover:text-neutral-900">
             お知らせ
           </Link>
