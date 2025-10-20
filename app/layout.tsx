@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-
 export const metadata: Metadata = {
   title:
     "Monitly.AI｜検索統合AI（RAG)/AI対話型AI（エージェント）の評価と運用可視化",
@@ -10,6 +8,8 @@ export const metadata: Metadata = {
     "RAGとAI対話型AI（エージェント）の“結果”を可視化し、継続的に良くする。評価・比較・運用をひとつのダッシュボード（結果可視化)で。",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
+
+import Footer from "@/components/Footer";
 
 export default function RootLayout({
   children,
@@ -27,9 +27,7 @@ export default function RootLayout({
               : "local")}
         </div>
         <Header />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
-        <Footer />
+        <main className="min-h-screen">{children}</main>  <Footer />
 </body>
     </html>
   );
