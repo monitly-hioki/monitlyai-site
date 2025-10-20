@@ -21,6 +21,7 @@ export default function Page() {
           <div className="mt-6 flex gap-3">
             <a href="/contact" className="px-5 py-3 rounded-xl bg-black text-white">デモ相談</a>
             <a href="/solutions" className="px-5 py-3 rounded-xl border">ユースケースを見る</a>
+            <a href="/product" className="hover:opacity-80">製品</a>
           </div>
         </section>
       </div>
