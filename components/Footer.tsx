@@ -5,6 +5,7 @@ export default function Footer() {
     <footer className="mt-20 border-t bg-white">
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+          {/* 会社 */}
           <nav aria-label="会社">
             <div className="font-medium">会社</div>
             <ul className="mt-3 space-y-2">
@@ -14,6 +15,7 @@ export default function Footer() {
             </ul>
           </nav>
 
+          {/* 製品 */}
           <nav aria-label="製品">
             <div className="font-medium">製品</div>
             <ul className="mt-3 space-y-2">
@@ -23,22 +25,30 @@ export default function Footer() {
             </ul>
           </nav>
 
+          {/* リソース */}
           <nav aria-label="リソース">
             <div className="font-medium">リソース</div>
             <ul className="mt-3 space-y-2">
-              <li><Link href="/security" className="hover:underline">セキュリティ</Link></li>
-              <li><Link href="/privacy" className="hover:underline">プライバシー</Link></li>
+              <li><Link href="/security" className="hover:underline">セキュリティポリシー</Link></li>
+              <li><Link href="/privacy" className="hover:underline">プライバシーポリシー</Link></li>
               <li><Link href="/terms" className="hover:underline">利用規約</Link></li>
             </ul>
           </nav>
 
+          {/* ブランド & CTA */}
           <div>
             <div className="font-medium">Monitly.AI</div>
             <p className="mt-3 text-gray-600 leading-6">
               RAG / AIエージェントの運用評価と改善を仕組み化する LLMOps プラットフォーム。
             </p>
+            <p className="mt-4 text-gray-500 text-xs leading-5">
+              〒141-0033 東京都品川区西品川１丁目１−１<br />
+              住友不動産大崎ガーデンタワー 9階
+            </p>
             <div className="mt-4">
-              <Link href="/contact" className="inline-block rounded-xl bg-black text-white px-4 py-2">デモを依頼</Link>
+              <Link href="/contact" className="inline-block rounded-xl bg-black text-white px-4 py-2">
+                デモを依頼
+              </Link>
             </div>
           </div>
         </div>
