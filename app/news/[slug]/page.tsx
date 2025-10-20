@@ -10,8 +10,8 @@ function fmt(d: string) {
   return `${y}.${m}.${day}`;
 }
 
-export default function NewsDetail({ params }: { params: { slug: string } }) {
-  const news = getSortedNews();
+export default async function NewsDetail({ params }: { params: { slug: string } }) {
+  const news = await getSortedNews();
   const item = news.find((n) => n.slug === params.slug);
   if (!item) return notFound();
 
