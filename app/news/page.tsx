@@ -9,8 +9,8 @@ function fmt(d: string) {
   return `${y}.${m}.${day}`;
 }
 
-export default function NewsPage() {
-  const news = getSortedNews();
+export default async function NewsPage() {
+  const news = await getSortedNews();
   const latest = news.slice(0, 3);
   const rest = news.slice(3);
 
