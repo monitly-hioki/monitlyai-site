@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -35,9 +36,17 @@ export default function Footer() {
             </ul>
           </nav>
 
-          {/* ブランド & CTA */}
+          {/* ブランド & 住所 & CTA */}
           <div>
-            <div className="font-medium">Monitly.AI</div>
+            <div className="flex items-center space-x-2">
+              <Image
+                src="/logo.png"
+                alt="Monitly.AI ロゴ"
+                width={120}
+                height={32}
+                className="object-contain"
+              />
+            </div>
             <p className="mt-3 text-gray-600 leading-6">
               RAG / AIエージェントの運用評価と改善を仕組み化する LLMOps プラットフォーム。
             </p>
@@ -46,7 +55,10 @@ export default function Footer() {
               住友不動産大崎ガーデンタワー 9階
             </p>
             <div className="mt-4">
-              <Link href="/contact" className="inline-block rounded-xl bg-black text-white px-4 py-2">
+              <Link
+                href="/contact"
+                className="inline-block rounded-xl bg-black text-white px-4 py-2 hover:bg-gray-800 transition"
+              >
                 デモを依頼
               </Link>
             </div>
