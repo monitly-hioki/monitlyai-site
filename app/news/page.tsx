@@ -1,40 +1,65 @@
-import Section from "@/components/Section";
-import Container from "@/components/Container";
 import Link from "next/link";
-import { NEWS } from "./data";
+import { getSortedNews } from "./data";
 
-export default function NewsListPage() {
-  const sorted = [...NEWS].sort((a, b) => (a.date < b.date ? 1 : -1));
+function fmt(d: string) {
+  const dt = new Date(d);
+  const y = dt.getFullYear();
+  const m = String(dt.getMonth() + 1).padStart(2, "0");
+  const day = String(dt.getDate()).padStart(2, "0");
+  return `${y}.${m}.${day}`;
+}
+
+export default function NewsPage() {
+  const news = getSortedNews();
+  const latest = news.slice(0, 3);
+  const rest = news.slice(3);
+
   return (
-    <>
-      <section className="bg-gradient-to-b from-[#EAF2FF] to-white py-16 md:py-24">
-        <Container>
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            お知らせ
-          </h1>
-          <p className="mt-5 text-lg text-neutral-600 max-w-xl">
-            最新ニュース・出展情報・機能アップデート。
-          </p>
-        </Container>
-      </section>
-      <Section title="最新情報">
-        <div className="grid md:grid-cols-3 gap-6">
-          {sorted.map((n) => (
-            <Link
-              key={n.slug}
-              href={`/news/${n.slug}`}
-              className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm hover:shadow-md transition"
-            >
-              <div className="text-sm text-neutral-500">{n.date}</div>
-              <div className="mt-1 text-[#0056FF] text-xs font-semibold">
-                {n.category}
-              </div>
-              <div className="mt-2 text-lg font-semibold">{n.title}</div>
-              <p className="mt-2 text-neutral-600 text-sm">{n.summary}</p>
-            </Link>
-          ))}
-        </div>
-      </Section>
-    </>
+    <main className="min-h-screen px-6 md:px-10 py-16 bg-gradient-to-b from-white to-gray-50">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-3xl md:text-5xl font-semibold">お知らせ</h1>
+        <p className="mt-3 text-gray-600">最新ニュース・出展情報・機能アップデート。</p>
+
+        <section className="mt-10">
+          <h2 className="text-2xl font-semibold mb-4">最新情報</h2>
+          <div className="grid md:grid-cols-3 gap-5">
+            {latest.map((n) => (
+              <article key={n.slug} className="rounded-2xl border bg-white p-5">
+                <time className="text-sm text-gray-500">{fmt(n.date)}</time>
+                {n.label && <div className="text-xs text-blue-600 mt-1">{n.label}</div>}
+                <h3 className="mt-2 font-medium">
+                  <Link href={`/news/${n.slug}`}>{n.title}</Link>
+                </h3>
+                <p className="mt-2 text-sm text-gray-600">{n.summary}</p>
+                <Link href={`/news/${n.slug}`} className="mt-3 inline-block text-blue-600 text-sm">
+                  続きを読む →
+                </Link>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {rest.length > 0 && (
+          <section className="mt-12">
+            <h2 className="text-xl font-semibold mb-3">過去のお知らせ</h2>
+            <div className="grid md:grid-cols-3 gap-5">
+              {rest.map((n) => (
+                <article key={n.slug} className="rounded-2xl border bg-white p-5">
+                  <time className="text-sm text-gray-500">{fmt(n.date)}</time>
+                  {n.label && <div className="text-xs text-blue-600 mt-1">{n.label}</div>}
+                  <h3 className="mt-2 font-medium">
+                    <Link href={`/news/${n.slug}`}>{n.title}</Link>
+                  </h3>
+                  <p className="mt-2 text-sm text-gray-600">{n.summary}</p>
+                  <Link href={`/news/${n.slug}`} className="mt-3 inline-block text-blue-600 text-sm">
+                    続きを読む →
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+    </main>
   );
 }
