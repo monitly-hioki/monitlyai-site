@@ -14,7 +14,6 @@ export default function Page() {
           <div className="mt-8 flex gap-3">
             <a href="/product" className="px-5 py-3 rounded-xl bg-black text-white">製品を見る</a>
             <a href="/solutions" className="px-5 py-3 rounded-xl border">ユースケース</a>
-            <a href="/product" className="hover:opacity-80">製品</a>
           </div>
         </div>
       </section>
