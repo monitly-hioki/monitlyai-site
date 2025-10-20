@@ -51,6 +51,7 @@ export default function Footer() {
               RAG / AIエージェントの運用評価と改善を仕組み化する LLMOps プラットフォーム。
             </p>
             <p className="mt-4 text-gray-500 text-xs leading-5">
+              Monitly.AI株式会社<br />
               〒141-0033 東京都品川区西品川１丁目１−１<br />
               住友不動産大崎ガーデンタワー 9階
             </p>
@@ -65,8 +66,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 text-xs text-gray-500">
-          © {new Date().getFullYear()} Monitly.AI
+        <div className="mt-10 text-xs text-gray-500 text-center">
+          © {new Date().getFullYear()} Monitly.AI Inc.
         </div>
       </div>
     </footer>
