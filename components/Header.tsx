@@ -14,9 +14,10 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 text-sm text-neutral-700">
-          <Link href="/solutions" className="hover:text-neutral-900">
+          <Link href="/product">製品</Link><Link href="/solutions" className="hover:text-neutral-900">
             ソリューション
           </Link>
+            
           <Link href="/news" className="hover:text-neutral-900">
             お知らせ
           </Link>
