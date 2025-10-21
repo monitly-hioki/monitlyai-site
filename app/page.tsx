@@ -35,6 +35,8 @@ export default async function Page() {
   デモを見る
 </Link>
 
+
+
             <Link href="/product" className="px-5 py-3 rounded-xl border">製品を見る</Link>
             <Link href="/solutions" className="px-5 py-3 rounded-xl border">導入支援</Link>
           </div>
