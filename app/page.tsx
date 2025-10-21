@@ -81,21 +81,42 @@ export default async function Page() {
         </div>
       </section>
 
-      {/* Feature highlight */}
-      <section className="px-6 md:px-10 py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-semibold">機能ハイライト</h2>
-          <ul className="mt-6 grid md:grid-cols-2 gap-4 text-gray-700">
-            <li className="p-4 rounded-xl border bg-white">構成比較（プロンプト／Retriever／データソース）</li>
-            <li className="p-4 rounded-xl border bg-white">ログ収集・グルーピング／ケース再現</li>
-            <li className="p-4 rounded-xl border bg-white">SMEレビュー統合と承認フロー</li>
-            <li className="p-4 rounded-xl border bg-white">運用ダッシュボード＆改善履歴の可視化</li>
-          </ul>
-          <div className="mt-8">
-            <Link href="/product" className="px-5 py-3 rounded-xl bg-black text-white">機能の詳細へ</Link>
-          </div>
-        </div>
-      </section>
+   {/* Feature highlight */}
+<section className="px-6 md:px-10 py-16 bg-gray-50">
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-2xl md:text-3xl font-semibold">機能ハイライト</h2>
+    <ul className="mt-6 grid md:grid-cols-2 gap-4 text-gray-700">
+      <li className="p-5 rounded-xl border bg-white">
+        <h3 className="font-medium">構成比較（プロンプト／Retriever／データソース）</h3>
+        <p className="mt-2 text-sm text-gray-600">
+          モデルやプロンプトの設定差分を横並びで比較し、どの要素が精度や応答速度に影響しているかを特定します。
+        </p>
+      </li>
+      <li className="p-5 rounded-xl border bg-white">
+        <h3 className="font-medium">ログ収集・グルーピング／ケース再現</h3>
+        <p className="mt-2 text-sm text-gray-600">
+          本番運用中のログを安全に収集し、再現ケースを自動生成。改善サイクルのトレーサビリティを実現します。
+        </p>
+      </li>
+      <li className="p-5 rounded-xl border bg-white">
+        <h3 className="font-medium">SMEレビュー統合と承認フロー</h3>
+        <p className="mt-2 text-sm text-gray-600">
+          専門家や担当者によるレビューをスコア化し、チーム全体で改善を推進。承認・差分確認も一元化。
+        </p>
+      </li>
+      <li className="p-5 rounded-xl border bg-white">
+        <h3 className="font-medium">運用ダッシュボード＆改善履歴の可視化</h3>
+        <p className="mt-2 text-sm text-gray-600">
+          品質・コスト・速度などの指標をリアルタイムに監視し、改善履歴を時系列で追跡できます。
+        </p>
+      </li>
+    </ul>
+    <div className="mt-8">
+      <a href="/product" className="px-5 py-3 rounded-xl bg-black text-white">機能の詳細へ</a>
+    </div>
+  </div>
+</section>
+
 
       {/* Latest news */}
       <section className="px-6 md:px-10 py-16">
@@ -120,26 +141,31 @@ export default async function Page() {
         </div>
       </section>
 
-      {/* Deployment options */}
-      <section className="px-6 md:px-10 pb-16">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-semibold">導入形態</h2>
-          <div className="mt-6 grid md:grid-cols-2 gap-4">
-            <div className="p-5 rounded-2xl border bg-white">
-              <h3 className="font-medium">SaaS</h3>
-              <p className="mt-2 text-sm text-gray-600">最短でPoC開始。既存RAG/エージェント構成に軽量追加できます。</p>
-            </div>
-            <div className="p-5 rounded-2xl border bg-white">
-              <h3 className="font-medium">オンプレミス</h3>
-              <p className="mt-2 text-sm text-gray-600">社内ネットワークや各種ポリシーに準拠して構築可能です。</p>
-            </div>
-          </div>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/contact" className="px-5 py-3 rounded-xl bg-black text-white">導入・デモのご相談</Link>
-            <Link href="/product" className="px-5 py-3 rounded-xl border">製品の詳細</Link>
-          </div>
-        </div>
-      </section>
+{/* Deployment options */}
+<section className="px-6 md:px-10 pb-16">
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-2xl md:text-3xl font-semibold">導入形態</h2>
+    <div className="mt-6 grid md:grid-cols-2 gap-4">
+      <div className="p-5 rounded-2xl border bg-white">
+        <h3 className="font-medium">SaaS</h3>
+        <p className="mt-2 text-sm text-gray-600">
+          クラウド上で即利用可能。環境構築なしでPoCを開始でき、最短1日で導入可能です。
+        </p>
+      </div>
+      <div className="p-5 rounded-2xl border bg-white">
+        <h3 className="font-medium">オンプレミス</h3>
+        <p className="mt-2 text-sm text-gray-600">
+          セキュリティポリシーや法規制に準拠。社内ネットワーク環境に合わせて柔軟に構築できます。
+        </p>
+      </div>
+    </div>
+    <div className="mt-8 flex flex-wrap gap-3">
+      <a href="/contact" className="px-5 py-3 rounded-xl bg-black text-white">導入・デモのご相談</a>
+      <a href="/product" className="px-5 py-3 rounded-xl border">製品の詳細</a>
+    </div>
+  </div>
+</section>
+
     </main>
   );
 }
