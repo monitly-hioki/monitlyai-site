@@ -142,29 +142,70 @@ export default async function Page() {
       </section>
 
 {/* Deployment options */}
-<section className="px-6 md:px-10 pb-16">
+<section className="px-6 md:px-10 py-16 bg-white">
   <div className="max-w-6xl mx-auto">
     <h2 className="text-2xl md:text-3xl font-semibold">導入形態</h2>
-    <div className="mt-6 grid md:grid-cols-2 gap-4">
-      <div className="p-5 rounded-2xl border bg-white">
-        <h3 className="font-medium">SaaS</h3>
-        <p className="mt-2 text-sm text-gray-600">
-          クラウド上で即利用可能。環境構築なしでPoCを開始でき、最短1日で導入可能です。
-        </p>
+    <p className="mt-3 text-gray-600">
+      利用開始スピード、セキュリティ要件、社内インフラとの親和性にあわせて柔軟に選べます。
+    </p>
+
+    <div className="mt-8 grid md:grid-cols-3 gap-5">
+      <div className="p-6 rounded-2xl border bg-white">
+        <h3 className="font-medium">SaaS（最短導入）</h3>
+        <ul className="mt-3 space-y-2 text-sm text-gray-700 list-disc pl-4">
+          <li>環境構築不要。最短1日で評価を開始</li>
+          <li>ブラウザアクセスのみ。運用負荷を最小化</li>
+          <li>ログ・評価データはワークスペース単位で分離管理</li>
+          <li>アラート通知・ダッシュボードを即利用可</li>
+        </ul>
       </div>
-      <div className="p-5 rounded-2xl border bg-white">
-        <h3 className="font-medium">オンプレミス</h3>
-        <p className="mt-2 text-sm text-gray-600">
-          セキュリティポリシーや法規制に準拠。社内ネットワーク環境に合わせて柔軟に構築できます。
-        </p>
+
+      <div className="p-6 rounded-2xl border bg-white">
+        <h3 className="font-medium">専用VPC（プライベートクラウド）</h3>
+        <ul className="mt-3 space-y-2 text-sm text-gray-700 list-disc pl-4">
+          <li>貴社クラウドアカウント上に専用環境を構築</li>
+          <li>IP許可制やPrivateLink等のネットワーク制御に対応</li>
+          <li>監査ログの外部出力やキーマネジメントと連携</li>
+          <li>スケーリングやバックアップ方針を貴社基準で運用</li>
+        </ul>
+      </div>
+
+      <div className="p-6 rounded-2xl border bg-white">
+        <h3 className="font-medium">オンプレミス（閉域・規制対応）</h3>
+        <ul className="mt-3 space-y-2 text-sm text-gray-700 list-disc pl-4">
+          <li>閉域網・検疫ネットワークでの運用に対応</li>
+          <li>Kubernetes/Dockerベースのデプロイ</li>
+          <li>更新パッケージ配布・オフライン運用に対応</li>
+          <li>監査・保存ポリシーを社内規程に準拠</li>
+        </ul>
       </div>
     </div>
+
+    <div className="mt-10 grid md:grid-cols-3 gap-5">
+      <div className="p-5 rounded-2xl border bg-gray-50">
+        <div className="text-sm text-gray-500">認証・権限</div>
+        <div className="mt-2 text-sm text-gray-700">SSO、ロール権限、監査ログ、IP制限</div>
+      </div>
+      <div className="p-5 rounded-2xl border bg-gray-50">
+        <div className="text-sm text-gray-500">モデル接続</div>
+        <div className="mt-2 text-sm text-gray-700">
+          OpenAI/Azure OpenAI/Anthropic等。ローカルLLM（Ollama/LM Studio）は強化予定
+        </div>
+      </div>
+      <div className="p-5 rounded-2xl border bg-gray-50">
+        <div className="text-sm text-gray-500">運用</div>
+        <div className="mt-2 text-sm text-gray-700">メトリクス監視、アラート通知、バックアップ方針</div>
+      </div>
+    </div>
+
     <div className="mt-8 flex flex-wrap gap-3">
       <a href="/contact" className="px-5 py-3 rounded-xl bg-black text-white">導入・デモのご相談</a>
       <a href="/product" className="px-5 py-3 rounded-xl border">製品の詳細</a>
+      <a href="/solutions" className="px-5 py-3 rounded-xl border">ユースケース</a>
     </div>
   </div>
 </section>
+
 
     </main>
   );
