@@ -103,7 +103,8 @@ export default async function Page() {
             </li>
           </ul>
           <div className="mt-8">
-            <a href="/product" className="px-5 py-3 rounded-xl bg-black text-white">機能の詳細へ</a>
+            <a href="/product" className="px-5 py-3 rounded-xl text-white bg-gradient-to-r from-gray-900 via-black to-gray-800 shadow transition hover:opacity-90"
+>機能の詳細へ</a>
           </div>
         </div>
       </section>
