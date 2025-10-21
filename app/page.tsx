@@ -28,7 +28,13 @@ export default async function Page() {
             日本語UI／日本企業の運用要件に最適化。PoCから本番まで一貫してご利用いただけます。
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/contact" className="px-5 py-3 rounded-xl bg-black text-white">デモを見る</Link>
+            <Link
+  href="/contact"
+  className="px-5 py-3 rounded-xl text-white bg-gradient-to-r from-gray-900 via-black to-gray-800 shadow transition hover:opacity-90"
+>
+  デモを見る
+</Link>
+
             <Link href="/product" className="px-5 py-3 rounded-xl border">製品を見る</Link>
             <Link href="/solutions" className="px-5 py-3 rounded-xl border">導入支援</Link>
           </div>
