@@ -118,28 +118,76 @@ export default async function Page() {
 </section>
 
 
-      {/* Latest news */}
-      <section className="px-6 md:px-10 py-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-end justify-between">
-            <h2 className="text-2xl md:text-3xl font-semibold">最新のお知らせ</h2>
-            <Link href="/news" className="text-sm text-blue-600">すべて見る →</Link>
-          </div>
-          <div className="mt-6 grid md:grid-cols-3 gap-5">
-            {latest.map(n => (
-              <article key={n.slug} className="rounded-2xl border bg-white p-5 hover:shadow-sm transition">
-                <time className="text-sm text-gray-500">{fmt(n.date)}</time>
-                {n.label && <div className="text-xs text-blue-600 mt-1">{n.label}</div>}
-                <h3 className="mt-2 font-medium">
-                  <Link href={`/news/${n.slug}`}>{n.title}</Link>
-                </h3>
-                <p className="mt-2 text-sm text-gray-600 line-clamp-3">{n.summary}</p>
-                <Link href={`/news/${n.slug}`} className="mt-3 inline-block text-blue-600 text-sm">続きを読む →</Link>
-              </article>
-            ))}
-          </div>
+import Link from "next/link";
+import { getSortedNews } from "@/app/news/data";
+import { Suspense } from "react";
+
+function formatDate(d: string) {
+  const dt = new Date(d);
+  const y = dt.getFullYear();
+  const m = String(dt.getMonth() + 1).padStart(2, "0");
+  const day = String(dt.getDate()).padStart(2, "0");
+  return `${y}.${m}.${day}`;
+}
+
+function NewsSkeleton() {
+  return (
+    <div className="mt-6 grid md:grid-cols-3 gap-5">
+      {[0,1,2].map(i => (
+        <div key={i} className="rounded-2xl border bg-white p-5 animate-pulse">
+          <div className="h-4 w-24 bg-gray-200 rounded" />
+          <div className="mt-2 h-3 w-16 bg-gray-200 rounded" />
+          <div className="mt-3 h-5 w-3/4 bg-gray-200 rounded" />
+          <div className="mt-2 h-4 w-full bg-gray-200 rounded" />
+          <div className="mt-2 h-4 w-5/6 bg-gray-200 rounded" />
         </div>
-      </section>
+      ))}
+    </div>
+  );
+}
+
+async function LatestNewsList() {
+  const latest = (await getSortedNews()).slice(0, 3);
+
+  return (
+    <div className="mt-6 grid md:grid-cols-3 gap-5">
+      {latest.map(n => (
+        <article key={n.slug} className="group relative rounded-2xl border bg-white p-5 hover:shadow-sm transition">
+          <Link
+            href={`/news/${n.slug}`}
+            aria-label={`${n.title} を読む`}
+            className="absolute inset-0"
+          />
+          <time className="text-sm text-gray-500" dateTime={n.date}>
+            {formatDate(n.date)}
+          </time>
+          {n.label && <div className="text-xs inline-block mt-1 px-2 py-0.5 rounded-full bg-blue-50 text-blue-700">{n.label}</div>}
+          <h3 className="mt-2 font-medium pr-6">{n.title}</h3>
+          <p className="mt-2 text-sm text-gray-600 line-clamp-3">{n.summary}</p>
+          <span className="mt-3 inline-block text-blue-600 text-sm">続きを読む →</span>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+export function LatestNewsSection() {
+  return (
+    <section className="px-6 md:px-10 py-16">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex items-end justify-between">
+          <h2 className="text-2xl md:text-3xl font-semibold">最新のお知らせ</h2>
+          <Link href="/news" className="text-sm text-blue-600">すべて見る →</Link>
+        </div>
+        <Suspense fallback={<NewsSkeleton />}>
+          {/* @ts-expect-error Async Server Component */}
+          <LatestNewsList />
+        </Suspense>
+      </div>
+    </section>
+  );
+}
+
 
 {/* Deployment options */}
 <section className="px-6 md:px-10 py-16 bg-white">
