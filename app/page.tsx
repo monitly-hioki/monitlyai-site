@@ -54,7 +54,7 @@ export default async function Page() {
       {/* Values */}
       <section className="px-6 md:px-10 py-14 border-t">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-semibold">Monitly が選ばれる理由</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold">Monitly（モニトリー）が選ばれる理由</h2>
           <div className="mt-6 grid md:grid-cols-3 gap-6">
             <div className="p-5 rounded-2xl border bg-white hover:shadow-sm transition">
               <h3 className="font-medium">評価を“現場の標準”に</h3>
