@@ -25,8 +25,7 @@ export default function Page() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-semibold">Monitly が描く運用サイクル</h2>
           <p className="mt-3 text-gray-700">
-            「データ取得 → 検証 → 評価 → 改善 → 運用」を循環フローとして捉え、チーム単位の継続的学習
-            （Continuous Evaluation）を可能にします。
+            「データ取得 → 検証 → 評価 → 改善 → 運用」を循環フローとして捉え、チーム単位の継続的学習（Continuous Evaluation）を可能にします。
           </p>
 
           <div className="mt-6 rounded-2xl border bg-white p-4">
@@ -68,7 +67,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 機能詳細（説明厚め・トップと重複しない表現） */}
+      {/* 機能詳細（トップのハイライトと重複しない説明） */}
       <section className="px-6 md:px-10 py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-semibold">機能詳細</h2>
@@ -76,36 +75,36 @@ export default function Page() {
             <div className="p-6 rounded-2xl border bg-white">
               <h3 className="font-medium">構成比較</h3>
               <p className="mt-2 text-sm text-gray-700">
-                プロンプト、Retriever、データソースを構成単位で管理。A/B 比較で精度・速度・コストのトレードオフを
-                数値で判断できます。改善前後の差分は自動ハイライト、承認履歴と紐づけて「なぜその構成か」を説明可能。
+                プロンプト、Retriever、データソースを構成単位で管理。A/B 比較で精度・速度・コストのトレードオフを数値で判断。
+                改善前後の差分は自動ハイライト、承認履歴と紐づけて説明容易に。
               </p>
             </div>
             <div className="p-6 rounded-2xl border bg-white">
               <h3 className="font-medium">ログ分析と再現検証</h3>
               <p className="mt-2 text-sm text-gray-700">
-                本番ログから類似パターンを抽出・束ね、代表ケースに再現。発生頻度・影響度の両軸で優先度を決め、
-                修正→再検証を短サイクルで回せます。データ更新の影響範囲もケース単位で追跡できます。
+                本番ログから類似パターンを自動グループ化し代表ケース化。頻度×影響で優先度付けし、修正→再検証を短サイクル化。
+                データ更新の影響範囲もケース単位で追跡可能。
               </p>
             </div>
             <div className="p-6 rounded-2xl border bg-white">
               <h3 className="font-medium">レビュー・承認（SME 統合）</h3>
               <p className="mt-2 text-sm text-gray-700">
-                業務有識者のレビューをスコア化し、自動指標と突き合わせ。差分確認→承認→本番反映までを
-                ワークフロー化。品質ゲートを明確化し、属人化を排除します。
+                業務有識者のレビューをスコア化し、自動指標と突き合わせ。差分確認→承認→本番反映をワークフロー化し、
+                品質ゲートを明確化、属人性を排除。
               </p>
             </div>
             <div className="p-6 rounded-2xl border bg-white">
               <h3 className="font-medium">ダッシュボードと履歴</h3>
               <p className="mt-2 text-sm text-gray-700">
-                精度・応答速度・コスト・運用アラートを横断表示。改善履歴と KPI を同じ時間軸で可視化し、
-                施策の因果を説明しやすくします。監査対応にも有効です。
+                精度・応答速度・コスト・アラートを横断表示。改善履歴と KPI を同時系列で可視化し、施策の因果を説明しやすく、
+                監査対応にも有効。
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 製品画面（スクリーンショット） */}
+      {/* 製品画面（スクリーンショット 3枚） */}
       <section className="px-6 md:px-10 py-16 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-semibold">製品画面</h2>
@@ -146,7 +145,7 @@ export default function Page() {
           <figure className="rounded-2xl border bg-white p-4">
             <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
               <Image
-                src="/screens/perfomance-ui.png"  // ※綴り perfomance のまま
+                src="/screens/perfomance-ui.png"  /* 綴りそのまま */
                 alt="性能・指標ビュー"
                 fill
                 unoptimized
@@ -161,11 +160,11 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 対応環境（導入形態はトップで詳述しているため、ここは要点のみ） */}
+      {/* 対応環境・セキュリティ（要点のみ） */}
       <section className="px-6 md:px-10 py-16 bg-gray-50 border-t">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-semibold">対応環境・セキュリティ</h2>
-          <div className="mt-6 grid md:grid-cols-3 gap-6">
+        <div className="mt-6 grid md:grid-cols-3 gap-6">
             <div className="p-6 rounded-2xl border bg-white">
               <div className="text-sm text-gray-500">デプロイ形態</div>
               <div className="mt-2 text-sm text-gray-700">SaaS／専用 VPC／オンプレミス</div>
