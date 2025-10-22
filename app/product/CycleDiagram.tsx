@@ -1,12 +1,14 @@
 // app/product/CycleDiagram.tsx
-// 外部依存なしの純粋な SVG。正方形で中央寄せ、スケールしても崩れません。
+// 余白を広めに取り、非絶対配置で w-full / h-auto で縮尺崩れを回避
 
 type Props = { className?: string };
 
 export default function CycleDiagram({ className }: Props) {
   return (
     <svg
-      viewBox="0 0 600 600"
+      viewBox="0 0 640 640"
+      width="100%"
+      height="100%"
       preserveAspectRatio="xMidYMid meet"
       className={className}
       role="img"
@@ -17,37 +19,44 @@ export default function CycleDiagram({ className }: Props) {
           <stop offset="0%" stopColor="#ffffff" />
           <stop offset="100%" stopColor="#f6f8fb" />
         </linearGradient>
-        <marker id="arrow" markerWidth="16" markerHeight="16" refX="8" refY="8" orient="auto">
-          <path d="M0,0 L16,8 L0,16 Z" fill="#4b5563" />
+        <marker id="arrow" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto">
+          <path d="M0,0 L12,6 L0,12 Z" fill="#4b5563" />
         </marker>
       </defs>
 
-      {/* 背景 */}
-      <rect x="0" y="0" width="600" height="600" rx="28" fill="url(#bg)" />
+      {/* 背景（外枠との当たりを避けるため 24px 余白） */}
+      <rect x="0" y="0" width="640" height="640" rx="28" fill="url(#bg)" />
 
-      {/* 円弧（5分割、矢印付き） */}
-      <g stroke="#4b5563" strokeWidth="10" fill="none" strokeLinecap="round" markerEnd="url(#arrow)">
-        {/* 中心(300,300)、半径220 */}
-        <path d="M491,190 A220,220 0 0 1 540,300" />  {/* 運用→データ取得 */}
-        <path d="M540,300 A220,220 0 0 1 491,410" />  {/* データ取得→改善 */}
-        <path d="M491,410 A220,220 0 0 1 300,520" />  {/* 改善→検証 */}
-        <path d="M300,520 A220,220 0 0 1 109,410" />  {/* 検証→評価 */}
-        <path d="M109,410 A220,220 0 0 1 491,190" />  {/* 評価→運用 */}
+      {/*
+        円弧：中心(320,320) 半径=220 → 端点が 100〜540 付近に収まる
+        stroke を細め(8)、矢印も小さめにして切れを防止
+      */}
+      <g stroke="#4b5563" strokeWidth="8" fill="none" strokeLinecap="round" markerEnd="url(#arrow)">
+        {/* 運用→データ取得 */}
+        <path d="M470,180 A220,220 0 0 1 540,320" />
+        {/* データ取得→改善 */}
+        <path d="M540,320 A220,220 0 0 1 470,460" />
+        {/* 改善→検証 */}
+        <path d="M470,460 A220,220 0 0 1 320,540" />
+        {/* 検証→評価 */}
+        <path d="M320,540 A220,220 0 0 1 170,460" />
+        {/* 評価→運用 */}
+        <path d="M170,460 A220,220 0 0 1 470,180" />
       </g>
 
       {/* 中央ロゴ */}
-      <text x="300" y="335" textAnchor="middle" fontSize="84" fontWeight="700" fill="#0b0f19">
+      <text x="320" y="340" textAnchor="middle" fontSize="84" fontWeight="700" fill="#0b0f19">
         Monitly
       </text>
 
-      {/* ラベル */}
+      {/* ラベル（余白を考慮して配置） */}
       <g fontSize="54" fontWeight="700" fill="#1d4ed8">
-        <text x="310" y="145">運用</text>
-        <text x="470" y="315">データ</text>
-        <text x="490" y="370">取得</text>
-        <text x="380" y="520">改善</text>
-        <text x="260" y="560">検証</text>
-        <text x="170" y="430">評価</text>
+        <text x="300" y="130">運用</text>
+        <text x="472" y="300">データ</text>
+        <text x="490" y="356">取得</text>
+        <text x="362" y="540">改善</text>
+        <text x="255" y="580">検証</text>
+        <text x="160" y="440">評価</text>
       </g>
     </svg>
   );
