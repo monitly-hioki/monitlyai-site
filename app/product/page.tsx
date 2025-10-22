@@ -32,7 +32,7 @@ export default function Page() {
           <figure className="mt-8 rounded-2xl border bg-white p-4 inline-block">
             <div className="rounded-xl overflow-hidden">
               <img
-                src="/screens/monitlycircle.png"
+                src="/assets/v1/monitlycircle.png"
                 alt="Monitly運用サイクル"
                 className="w-full max-w-[700px] h-auto mx-auto"
                 loading="eager"
