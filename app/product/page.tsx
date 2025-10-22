@@ -5,6 +5,7 @@ import Link from "next/link";
 export default function Page() {
   return (
     <main className="min-h-screen">
+      {/* Hero */}
       <section className="px-6 md:px-10 py-16 md:py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
@@ -21,35 +22,10 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="px-6 md:px-10 py-14 border-t">
+      {/* 機能一覧 */}
+      <section className="px-6 md:px-10 py-16 bg-gray-50 border-t">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-semibold">製品の特長</h2>
-          <div className="mt-6 grid md:grid-cols-3 gap-6">
-            <div className="p-5 rounded-2xl border bg-white hover:shadow-sm transition">
-              <h3 className="font-medium">事象パターン別に原因を特定</h3>
-              <p className="mt-2 text-sm text-gray-600">
-                本番ログを安全に収集し、事象パターン別にグルーピング。条件固定の再現検証で、ボトルネックを素早く突き止めます。
-              </p>
-            </div>
-            <div className="p-5 rounded-2xl border bg-white hover:shadow-sm transition">
-              <h3 className="font-medium">構成差分の効果を比較</h3>
-              <p className="mt-2 text-sm text-gray-600">
-                プロンプト／Retriever／データソースなどの差分を横並び比較。精度・コスト・速度への影響を可視化します。
-              </p>
-            </div>
-            <div className="p-5 rounded-2xl border bg-white hover:shadow-sm transition">
-              <h3 className="font-medium">SMEレビューと承認を一体化</h3>
-              <p className="mt-2 text-sm text-gray-600">
-                業務ドメインレビュー（SMEレビュー）をスコア化し、承認済み構成のみ本番反映。チームで継続的に改善できます。
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 md:px-10 py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-semibold">主要機能</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold">機能一覧</h2>
           <div className="mt-6 grid md:grid-cols-2 gap-5">
             <div className="p-5 rounded-2xl border bg-white">
               <h3 className="font-medium">構成比較（プロンプト／Retriever／データソース）</h3>
@@ -58,7 +34,7 @@ export default function Page() {
               </p>
             </div>
             <div className="p-5 rounded-2xl border bg-white">
-              <h3 className="font-medium">ログ収集・再現検証・グルーピング</h3>
+              <h3 className="font-medium">ログ収集・再現検証・事象パターン分析</h3>
               <p className="mt-2 text-sm text-gray-600">
                 本番ログを取り込み、事象パターン別に束ねて再現。原因分析から改善立案までを一連で管理します。
               </p>
@@ -82,6 +58,7 @@ export default function Page() {
         </div>
       </section>
 
+      {/* スクリーンショット */}
       <section className="px-6 md:px-10 py-16 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-semibold">スクリーンショット</h2>
@@ -114,6 +91,7 @@ export default function Page() {
         </div>
       </section>
 
+      {/* 導入形態 */}
       <section className="px-6 md:px-10 py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-semibold">導入形態</h2>
