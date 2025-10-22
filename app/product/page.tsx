@@ -21,117 +21,54 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 運用サイクル（SVGに置換済） */}
-      <section className="px-6 md:px-10 py-16 border-t bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-semibold">Monitly が描く運用サイクル</h2>
-          <p className="mt-3 text-gray-700">
-            「データ取得 → 検証 → 評価 → 改善 → 運用」を循環フローとして捉え、チーム単位の継続的学習（Continuous Evaluation）を可能にします。
-          </p>
+{/* 運用サイクル（画像版） */}
+<section className="px-6 md:px-10 py-16 border-t bg-white">
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-3xl font-semibold">Monitly が描く運用サイクル</h2>
+    <p className="mt-3 text-gray-700">
+      「データ取得 → 検証 → 評価 → 改善 → 運用」を循環フローとして捉え、チーム単位の継続的学習（Continuous Evaluation）を可能にします。
+    </p>
 
-- <div className="mt-6 rounded-2xl border bg-white p-4">
--   - <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
--   <svg viewBox="0 0 800 800" className="w-full h-auto" role="img" aria-label="Monitly の運用サイクル（データ取得→検証→評価→改善→運用）">
-+ <div className="mx-auto max-w-[820px]">
-<svg
-  viewBox="0 0 800 800"
-  preserveAspectRatio="xMidYMid meet"
-  className="block w-full h-auto"
-  role="img"
-  aria-label="Monitly の運用サイクル（データ取得→検証→評価→改善→運用）"
->
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stopColor="#ffffff" />
-      <stop offset="100%" stopColor="#f6f7fb" />
-    </linearGradient>
-  </defs>
+    <figure className="mt-6 rounded-2xl border bg-white p-4">
+      <div className="rounded-xl overflow-hidden">
+        <Image
+          src="/screens/monitlycircle.png"
+          alt="Monitly運用サイクル"
+          width={1200}
+          height={1200}
+          className="w-full h-auto"
+        />
+      </div>
+      <figcaption className="mt-3 text-sm text-gray-600">
+        データ取得／検証／評価／改善／運用を一体化し、改善の仮説検証を短サイクルで回します。
+      </figcaption>
+    </figure>
 
-  {/* 背景パネル：余白を確保 */}
-  <rect x="20" y="20" width="760" height="760" fill="url(#bg)" rx="24" />
+    <div className="mt-8 grid md:grid-cols-5 gap-4 text-sm text-gray-700">
+      <div className="p-4 rounded-xl border bg-gray-50">
+        <div className="font-medium">データ取得</div>
+        <div className="mt-1">本番ログや既存テストを収集。プライバシー配慮で追跡可能な形式に整備。</div>
+      </div>
+      <div className="p-4 rounded-xl border bg-gray-50">
+        <div className="font-medium">検証</div>
+        <div className="mt-1">再現ケース化して条件固定。構成差分の比較検証が可能。</div>
+      </div>
+      <div className="p-4 rounded-xl border bg-gray-50">
+        <div className="font-medium">評価</div>
+        <div className="mt-1">SME レビュー＋自動指標を統合。チームで合意形成しやすい基準を維持。</div>
+      </div>
+      <div className="p-4 rounded-xl border bg-gray-50">
+        <div className="font-medium">改善</div>
+        <div className="mt-1">プロンプト／Retriever／コーパス更新の効果を時系列で可視化。</div>
+      </div>
+      <div className="p-4 rounded-xl border bg-gray-50">
+        <div className="font-medium">運用</div>
+        <div className="mt-1">KPI 監視とアラート、承認済み構成のみ本番反映。リスクを抑えて継続運用。</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  {/* サークル：半径を-8px、線幅を8pxに */}
-  <g stroke="#4b5563" strokeWidth="8" fill="none" strokeLinecap="round">
-    <path d="M400 144 A252 252 0 0 1 684 342" />
-    <path d="M684 458 A252 252 0 0 1 400 656" />
-    <path d="M216 458 A252 252 0 0 1 116 342" />
-    <path d="M400 144 A252 252 0 0 0 116 342" />
-    <path d="M400 656 A252 252 0 0 0 684 458" />
-  </g>
-
-  {/* 矢尻：位置微調整 */}
-  <g fill="#4b5563">
-    <path d="M668 334 l28 10 -22 18 z" />
-    <path d="M670 450 l22 22 -30 6 z" />
-    <path d="M208 450 l8 30 -28 -12 z" />
-    <path d="M136 330 l28 -8 -10 28 z" />
-    <path d="M486 654 l-28 8 10 -28 z" />
-  </g>
-
-  {/* ロゴをやや右下へ／サイズ少し下げる */}
-  <text x="420" y="468" textAnchor="middle"
-        fontFamily="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
-        fontSize="92" fontWeight="700" fill="#0b0f19">Monitly</text>
-
-  {/* ラベル群：座標＆サイズを詰める（評価は小さめ&左寄せ） */}
-  <g fontFamily="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
-     fontWeight="700" fill="#1d4ed8">
-    {/* 右側：少し内側へ */}
-    <text x="585" y="360" fontSize="56">データ</text>
-    <text x="615" y="430" fontSize="56">取得</text>
-    {/* 下側：上に寄せて空き削減 */}
-    <text x="350" y="690" fontSize="54">検証</text>
-    <text x="515" y="595" fontSize="56">改善</text>
-    {/* 上：少し下げる */}
-    <text x="410" y="155" fontSize="56" textAnchor="middle">運用</text>
-    {/* 左：Monitly に被らない位置へ & 小さめ */}
-    <text x="300" y="360" fontSize="52">評価</text>
-  </g>
-</svg>
-
-
- </div>
-
--     <svg ...>（省略）</svg>
--   </div>
-- </div>
-+ <figure className="mt-6 rounded-2xl border bg-white p-4">
-+   <div className="mx-auto max-w-[820px]">
-+     <svg ... className="block w-full h-auto">（中身は今のSVGそのまま）</svg>
-+   </div>
-+   <figcaption className="mt-3 text-sm text-gray-600">
-+     データ取得／検証／評価／改善／運用を一体化し、改善の仮説検証を短サイクルで回します。
-+   </figcaption>
-+ </figure>
-
-
-
-
-
-          <div className="mt-8 grid md:grid-cols-5 gap-4 text-sm text-gray-700">
-            <div className="p-4 rounded-xl border bg-gray-50">
-              <div className="font-medium">データ取得</div>
-              <div className="mt-1">本番ログや既存テストを収集。プライバシー配慮で追跡可能な形式に整備。</div>
-            </div>
-            <div className="p-4 rounded-xl border bg-gray-50">
-              <div className="font-medium">検証</div>
-              <div className="mt-1">再現ケース化して条件固定。構成差分の比較検証が可能。</div>
-            </div>
-            <div className="p-4 rounded-xl border bg-gray-50">
-              <div className="font-medium">評価</div>
-              <div className="mt-1">SME レビュー＋自動指標を統合。チームで合意形成しやすい基準を維持。</div>
-            </div>
-            <div className="p-4 rounded-xl border bg-gray-50">
-              <div className="font-medium">改善</div>
-              <div className="mt-1">プロンプト／Retriever／コーパス更新の効果を時系列で可視化。</div>
-            </div>
-            <div className="p-4 rounded-xl border bg-gray-50">
-              <div className="font-medium">運用</div>
-              <div className="mt-1">KPI 監視とアラート、承認済み構成のみ本番反映。リスクを抑えて継続運用。</div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 機能詳細 */}
       <section className="px-6 md:px-10 py-16 bg-gray-50">
