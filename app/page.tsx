@@ -35,14 +35,14 @@ export default async function Page() {
           {/* 実例スクリーンショット（2枚） */}
           <div className="mt-10 grid md:grid-cols-2 gap-6">
             <figure className="rounded-2xl border bg-white p-4">
-              <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+              <div className="rounded-xl overflow-hidden">
                 <Image
                   src="/screens/ops-dashboard.png"
                   alt="運用ダッシュボード"
-                  fill
-                  unoptimized
+                  width={1600}
+                  height={900}
                   sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover"
+                  className="h-auto w-full"
                   priority
                 />
               </div>
@@ -50,15 +50,16 @@ export default async function Page() {
                 運用ダッシュボード：品質・コスト・応答速度・アラートをひと目で把握し、異常と改善効果を追跡できます。
               </figcaption>
             </figure>
+
             <figure className="rounded-2xl border bg-white p-4">
-              <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+              <div className="rounded-xl overflow-hidden">
                 <Image
                   src="/screens/improvement-history.png"
                   alt="改善履歴"
-                  fill
-                  unoptimized
+                  width={1600}
+                  height={900}
                   sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover"
+                  className="h-auto w-full"
                 />
               </div>
               <figcaption className="mt-3 text-sm text-gray-600">
