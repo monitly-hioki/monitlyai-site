@@ -87,7 +87,7 @@ export default async function Page() {
         </div>
       </section>
 
-      {/* Feature highlight（ダイジェスト） */}
+      {/* Feature highlight（ダイジェストのみ） */}
       <section className="px-6 md:px-10 py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-semibold">機能ハイライト</h2>
