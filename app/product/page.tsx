@@ -33,15 +33,57 @@ export default function Page() {
 -   - <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
 -   <svg viewBox="0 0 800 800" className="w-full h-auto" role="img" aria-label="Monitly の運用サイクル（データ取得→検証→評価→改善→運用）">
 + <div className="mx-auto max-w-[820px]">
-+   <svg
-+     viewBox="0 0 800 800"
-+     preserveAspectRatio="xMidYMid meet"
-+     className="block w-full h-auto"
-+     role="img"
-+     aria-label="Monitly の運用サイクル（データ取得→検証→評価→改善→運用）"
-+   >
-      {/* 以下 SVG の中身はそのまま */}
-   </svg>
+<svg
+  viewBox="0 0 800 800"
+  preserveAspectRatio="xMidYMid meet"
+  className="block w-full h-auto"
+  role="img"
+  aria-label="Monitly の運用サイクル（データ取得→検証→評価→改善→運用）"
+>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="#ffffff" />
+      <stop offset="100%" stopColor="#f6f7fb" />
+    </linearGradient>
+  </defs>
+
+  {/* 背景パネル（余白を少し広げて窮屈感を軽減） */}
+  <rect x="24" y="24" width="752" height="752" fill="url(#bg)" rx="24" />
+
+  {/* 矢印サークル（線を少し細く） */}
+  <g stroke="#4b5563" strokeWidth="8" fill="none" strokeLinecap="round">
+    <path d="M400 140 A260 260 0 0 1 688 342" />
+    <path d="M688 458 A260 260 0 0 1 400 660" />
+    <path d="M212 458 A260 260 0 0 1 112 342" />
+    <path d="M400 140 A260 260 0 0 0 112 342" />
+    <path d="M400 660 A260 260 0 0 0 688 458" />
+  </g>
+
+  {/* 矢尻 */}
+  <g fill="#4b5563">
+    <path d="M672 332 l30 10 -24 20 z" />
+    <path d="M674 452 l23 22 -31 6 z" />
+    <path d="M206 452 l8 32 -30 -12 z" />
+    <path d="M134 330 l30 -8 -10 30 z" />
+    <path d="M485 658 l-30 8 10 -30 z" />
+  </g>
+
+  {/* ロゴ＆ラベル（フォント小さめ＆座標微調整） */}
+  <text x="400" y="436" textAnchor="middle" fontSize="88" fontWeight="700" fill="#0b0f19">
+    Monitly
+  </text>
+
+  <g fontSize="56" fontWeight="700" fill="#1d4ed8">
+    <text x="600" y="360">データ</text>
+    <text x="635" y="428">取得</text>
+
+    <text x="360" y="735">検証</text>
+    <text x="270" y="350">評価</text>
+    <text x="360" y="200">運用</text>
+    <text x="520" y="620">改善</text>
+  </g>
+</svg>
+
  </div>
 
 -     <svg ...>（省略）</svg>
