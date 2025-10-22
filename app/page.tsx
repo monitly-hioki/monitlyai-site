@@ -1,124 +1,183 @@
-// app/page.tsx
+// app/product/page.tsx
 import Image from "next/image";
 import Link from "next/link";
-import { getSortedNews } from "./news/data";
+import CycleDiagram from "./CycleDiagram";
 
-function fmt(d: string) {
-  const dt = new Date(d);
-  const y = dt.getFullYear();
-  const m = String(dt.getMonth() + 1).padStart(2, "0");
-  const day = String(dt.getDate()).padStart(2, "0");
-  return `${y}.${m}.${day}`;
-}
-
-export default async function Page() {
-  const news = await getSortedNews();
-  const latest = news.slice(0, 3);
-
+export default function Page() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
       <section className="px-6 md:px-10 py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
-            生成AIの「運用評価」を標準化し、改善を加速する
-          </h1>
-          <p className="mt-6 text-gray-700 text-lg leading-relaxed">
-            Monitly.AI は、RAG・AIエージェントの出力品質を継続的に評価し、チームで改善を回すための LLMOps プラットフォームです。
-            日本語UI・権限/監査・オンプレにも対応。PoC から本番まで、手戻りなく評価知見を引き継げます。
+          <h1 className="text-4xl md:text-5xl font-semibold">Monitly（モニトリー）</h1>
+          <p className="mt-5 text-gray-700 text-lg leading-relaxed">
+            生成AIの品質を“継続的に”上げ続けるための LLMOps プラットフォーム。評価ケースの標準化、構成比較、
+            レビュー承認、運用監視までを一本化し、改善の意思決定を速く・確実にします。
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/product" className="px-5 py-3 rounded-xl bg-black text-white">製品を見る</Link>
-            <Link href="/contact" className="px-5 py-3 rounded-xl border">デモを依頼</Link>
-          </div>
-
-          {/* 実例スクリーンショット（2枚） */}
-          <div className="mt-10 grid md:grid-cols-2 gap-6">
-            <figure className="rounded-2xl border bg-white p-4">
-              <div className="rounded-xl overflow-hidden">
-                <Image
-                  src="/screens/ops-dashboard.png"
-                  alt="運用ダッシュボード"
-                  width={1600}
-                  height={900}
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="h-auto w-full"
-                  priority
-                />
-              </div>
-              <figcaption className="mt-3 text-sm text-gray-600">
-                運用ダッシュボード：品質・コスト・応答速度・アラートをひと目で把握し、異常と改善効果を追跡できます。
-              </figcaption>
-            </figure>
-
-            <figure className="rounded-2xl border bg-white p-4">
-              <div className="rounded-xl overflow-hidden">
-                <Image
-                  src="/screens/improvement-history.png"
-                  alt="改善履歴"
-                  width={1600}
-                  height={900}
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="h-auto w-full"
-                />
-              </div>
-              <figcaption className="mt-3 text-sm text-gray-600">
-                改善履歴：プロンプト/Retriever/データ更新などの変更と、精度・速度・コストの結果を時系列に記録します。
-              </figcaption>
-            </figure>
+            <Link href="/contact" className="px-5 py-3 rounded-xl bg-black text-white">デモのご相談</Link>
+            <Link href="/solutions" className="px-5 py-3 rounded-xl border">導入支援を見る</Link>
           </div>
         </div>
       </section>
 
-      {/* 特徴 */}
+      {/* 運用サイクル（SVG 版） */}
       <section className="px-6 md:px-10 py-16 border-t bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-semibold">Monitly の特徴</h2>
-          <div className="mt-6 grid md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-2xl border bg-white hover:shadow-sm transition">
-              <h3 className="font-medium">現場で継続できる評価運用</h3>
+          <h2 className="text-3xl font-semibold">Monitly が描く運用サイクル</h2>
+          <p className="mt-3 text-gray-700">
+            「データ取得 → 検証 → 評価 → 改善 → 運用」を循環フローとして捉え、チーム単位の継続的学習（Continuous Evaluation）を可能にします。
+          </p>
+
+          <figure className="mt-6 rounded-2xl border bg-white p-4">
+            <div className="rounded-xl overflow-hidden">
+              <CycleDiagram />
+            </div>
+            <figcaption className="mt-3 text-sm text-gray-600">
+              データ取得／検証／評価／改善／運用を一体化し、改善の仮説検証を短サイクルで回します。
+            </figcaption>
+          </figure>
+
+          <div className="mt-8 grid md:grid-cols-5 gap-4 text-sm text-gray-700">
+            <div className="p-4 rounded-xl border bg-gray-50">
+              <div className="font-medium">データ取得</div>
+              <div className="mt-1">本番ログや既存テストを収集。プライバシー配慮で追跡可能な形式に整備。</div>
+            </div>
+            <div className="p-4 rounded-xl border bg-gray-50">
+              <div className="font-medium">検証</div>
+              <div className="mt-1">再現ケース化して条件固定。構成差分の比較検証が可能。</div>
+            </div>
+            <div className="p-4 rounded-xl border bg-gray-50">
+              <div className="font-medium">評価</div>
+              <div className="mt-1">SME レビュー＋自動指標を統合。チームで合意形成しやすい基準を維持。</div>
+            </div>
+            <div className="p-4 rounded-xl border bg-gray-50">
+              <div className="font-medium">改善</div>
+              <div className="mt-1">プロンプト／Retriever／コーパス更新の効果を時系列で可視化。</div>
+            </div>
+            <div className="p-4 rounded-xl border bg-gray-50">
+              <div className="font-medium">運用</div>
+              <div className="mt-1">KPI 監視とアラート、承認済み構成のみ本番反映。リスクを抑えて継続運用。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 機能詳細 */}
+      <section className="px-6 md:px-10 py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-semibold">機能詳細</h2>
+          <div className="mt-6 grid md:grid-cols-2 gap-5">
+            <div className="p-6 rounded-2xl border bg-white">
+              <h3 className="font-medium">構成比較</h3>
               <p className="mt-2 text-sm text-gray-700">
-                SME レビュー（業務有識者）と自動指標を統合。テンプレ化したケースと承認フローで、担当が変わっても評価の質を維持できます。
+                プロンプト、Retriever、データソースを構成単位で管理。A/B 比較で精度・速度・コストのトレードオフを数値で判断。
+                改善前後の差分は自動ハイライト、承認履歴と紐づけて説明容易に。
               </p>
             </div>
-            <div className="p-6 rounded-2xl border bg-white hover:shadow-sm transition">
-              <h3 className="font-medium">RAG／エージェントに最適化</h3>
+            <div className="p-6 rounded-2xl border bg-white">
+              <h3 className="font-medium">ログ分析と再現検証</h3>
               <p className="mt-2 text-sm text-gray-700">
-                プロンプト差分・Retriever 設定・コーパス更新の効果を横並び比較。ログ由来の“繰り返し起きる失敗”を束ねて再現→修正→検証を短縮。
+                本番ログから類似パターンを自動グループ化し代表ケース化。頻度×影響で優先度付けし、修正→再検証を短サイクル化。
+                データ更新の影響範囲もケース単位で追跡可能。
               </p>
             </div>
-            <div className="p-6 rounded-2xl border bg-white hover:shadow-sm transition">
-              <h3 className="font-medium">日本企業の運用要件に適合</h3>
+            <div className="p-6 rounded-2xl border bg-white">
+              <h3 className="font-medium">レビュー・承認（SME 統合）</h3>
               <p className="mt-2 text-sm text-gray-700">
-                SaaS／専用VPC／オンプレに対応。SSO・ロール権限・監査ログ・データ保管方針に配慮し、情報システム部門の審査も通しやすくします。
+                業務有識者のレビューをスコア化し、自動指標と突き合わせ。差分確認→承認→本番反映をワークフロー化し、
+                品質ゲートを明確化、属人性を排除。
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl border bg-white">
+              <h3 className="font-medium">ダッシュボードと履歴</h3>
+              <p className="mt-2 text-sm text-gray-700">
+                精度・応答速度・コスト・アラートを横断表示。改善履歴と KPI を同時系列で可視化し、施策の因果を説明しやすく、
+                監査対応にも有効。
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 最新ニュース */}
-      <section className="px-6 md:px-10 py-16 bg-white border-t">
+      {/* 製品画面（スクリーンショット 3枚） */}
+      <section className="px-6 md:px-10 py-16 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="flex items-end justify-between">
-            <h2 className="text-3xl font-semibold">お知らせ</h2>
-            <Link href="/news" className="text-sm text-blue-600">すべて見る →</Link>
+          <h2 className="text-3xl font-semibold">製品画面</h2>
+        </div>
+        <div className="mt-6 max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+          <figure className="rounded-2xl border bg-white p-4">
+            <div className="rounded-xl overflow-hidden">
+              <Image
+                src="/screens/compare-ui.png"
+                alt="構成比較画面"
+                width={1600}
+                height={900}
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="h-auto w-full"
+              />
+            </div>
+            <figcaption className="mt-3 text-sm text-gray-600">
+              構成比較：プロンプト／Retriever／データソースの差分を横並びで把握
+            </figcaption>
+          </figure>
+
+          <figure className="rounded-2xl border bg-white p-4">
+            <div className="rounded-xl overflow-hidden">
+              <Image
+                src="/screens/review-workflow.png"
+                alt="レビューと承認ワークフロー"
+                width={1600}
+                height={900}
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="h-auto w-full"
+              />
+            </div>
+            <figcaption className="mt-3 text-sm text-gray-600">
+              レビュー・承認：差分確認→承認→本番反映までをワークフローで管理
+            </figcaption>
+          </figure>
+
+          <figure className="rounded-2xl border bg-white p-4">
+            <div className="rounded-xl overflow-hidden">
+              <Image
+                src="/screens/perfomance-ui.png"  // 綴りそのまま
+                alt="性能・指標ビュー"
+                width={1600}
+                height={900}
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="h-auto w-full"
+              />
+            </div>
+            <figcaption className="mt-3 text-sm text-gray-600">
+              性能・指標：精度／応答速度／コストを俯瞰し、改善効果を可視化
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      {/* 対応環境・セキュリティ */}
+      <section className="px-6 md:px-10 py-16 bg-gray-50 border-t">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-semibold">対応環境・セキュリティ</h2>
+          <div className="mt-6 grid md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-2xl border bg-white">
+              <div className="text-sm text-gray-500">デプロイ形態</div>
+              <div className="mt-2 text-sm text-gray-700">SaaS／専用 VPC／オンプレミス</div>
+            </div>
+            <div className="p-6 rounded-2xl border bg-white">
+              <div className="text-sm text-gray-500">モデル接続</div>
+              <div className="mt-2 text-sm text-gray-700">OpenAI／Azure OpenAI／Anthropic 等。ローカル LLM（Ollama／LM Studio）は順次強化</div>
+            </div>
+            <div className="p-6 rounded-2xl border bg-white">
+              <div className="text-sm text-gray-500">認証・権限</div>
+              <div className="mt-2 text-sm text-gray-700">SSO、ロール権限、監査ログ、IP 制限。WS/プロジェクト単位の分離管理</div>
+            </div>
           </div>
-          <div className="mt-6 grid md:grid-cols-3 gap-5">
-            {latest.map((n) => (
-              <article key={n.slug} className="relative p-5 border rounded-2xl bg-white hover:shadow-sm">
-                <Link href={`/news/${n.slug}`} className="absolute inset-0" aria-label={`${n.title} を読む`} />
-                <time className="text-sm text-gray-500">{fmt(n.date)}</time>
-                {n.label && (
-                  <span className="ml-2 text-xs px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 align-middle">
-                    {n.label}
-                  </span>
-                )}
-                <h3 className="mt-2 font-medium">{n.title}</h3>
-                <p className="mt-2 text-sm text-gray-600 line-clamp-3">{n.summary}</p>
-                <span className="mt-3 inline-block text-blue-600 text-sm">続きを読む →</span>
-              </article>
-            ))}
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/contact" className="px-5 py-3 rounded-xl bg-black text-white">導入・デモのご相談</Link>
+            <Link href="/news" className="px-5 py-3 rounded-xl border">最新のお知らせ</Link>
           </div>
         </div>
       </section>
