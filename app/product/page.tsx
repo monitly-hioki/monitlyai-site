@@ -30,6 +30,7 @@ export default function Page() {
           </p>
 
 <figure className="mt-6 rounded-2xl border bg-white p-4">
+  {/* ★ aspect/relative/overflow-hidden を使わない */}
   <div className="mx-auto max-w-[820px]">
     <CycleDiagram className="block w-full h-auto" />
   </div>
@@ -37,6 +38,7 @@ export default function Page() {
     データ取得／検証／評価／改善／運用を一体化し、改善の仮説検証を短サイクルで回します。
   </figcaption>
 </figure>
+
 
 
 
