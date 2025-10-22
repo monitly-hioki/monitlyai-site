@@ -29,15 +29,20 @@ export default function Page() {
             「データ取得 → 検証 → 評価 → 改善 → 運用」を循環フローとして捉え、チーム単位の継続的学習（Continuous Evaluation）を可能にします。
           </p>
 
-<figure className="mt-6 rounded-2xl border bg-white p-4">
-  {/* ★ aspect/relative/overflow-hidden を使わない */}
-  <div className="mx-auto max-w-[820px]">
-    <CycleDiagram className="block w-full h-auto" />
-  </div>
-  <figcaption className="mt-3 text-sm text-gray-600">
-    データ取得／検証／評価／改善／運用を一体化し、改善の仮説検証を短サイクルで回します。
-  </figcaption>
-</figure>
+- <div className="mt-6 rounded-2xl border bg-white p-4">
+-   <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+-     <svg ...>（省略）</svg>
+-   </div>
+- </div>
++ <figure className="mt-6 rounded-2xl border bg-white p-4">
++   <div className="mx-auto max-w-[820px]">
++     <svg ... className="block w-full h-auto">（中身は今のSVGそのまま）</svg>
++   </div>
++   <figcaption className="mt-3 text-sm text-gray-600">
++     データ取得／検証／評価／改善／運用を一体化し、改善の仮説検証を短サイクルで回します。
++   </figcaption>
++ </figure>
+
 
 
 
