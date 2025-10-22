@@ -29,7 +29,7 @@ export default function Page() {
       「データ取得 → 検証 → 評価 → 改善 → 運用」を循環フローとして捉え、チーム単位の継続的学習（Continuous Evaluation）を可能にします。
     </p>
 
-    <figure className="mt-6 rounded-2xl border bg-white p-4">
+    <figure className="mt-6 rounded-2xl border bg-gray-50 p-4">
       <div className="rounded-xl overflow-hidden">
       <Image
 +          src="/screens/monitlycircle.png"
