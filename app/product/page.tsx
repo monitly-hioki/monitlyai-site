@@ -29,14 +29,14 @@ export default function Page() {
           </p>
 
           <div className="mt-6 rounded-2xl border bg-white p-4">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+            <div className="rounded-xl overflow-hidden">
               <Image
                 src="/screens/monitly-cycle.png"
                 alt="Monitly の運用サイクル"
-                fill
-                unoptimized
+                width={1600}
+                height={900}
                 sizes="(min-width: 768px) 70vw, 100vw"
-                className="object-contain"
+                className="h-auto w-full"
                 priority
               />
             </div>
@@ -67,7 +67,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 機能詳細（トップのハイライトと重複しない説明） */}
+      {/* 機能詳細 */}
       <section className="px-6 md:px-10 py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-semibold">機能詳細</h2>
@@ -111,14 +111,14 @@ export default function Page() {
         </div>
         <div className="mt-6 max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
           <figure className="rounded-2xl border bg-white p-4">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+            <div className="rounded-xl overflow-hidden">
               <Image
                 src="/screens/compare-ui.png"
                 alt="構成比較画面"
-                fill
-                unoptimized
+                width={1600}
+                height={900}
                 sizes="(min-width: 768px) 33vw, 100vw"
-                className="object-cover"
+                className="h-auto w-full"
               />
             </div>
             <figcaption className="mt-3 text-sm text-gray-600">
@@ -127,14 +127,14 @@ export default function Page() {
           </figure>
 
           <figure className="rounded-2xl border bg-white p-4">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+            <div className="rounded-xl overflow-hidden">
               <Image
                 src="/screens/review-workflow.png"
                 alt="レビューと承認ワークフロー"
-                fill
-                unoptimized
+                width={1600}
+                height={900}
                 sizes="(min-width: 768px) 33vw, 100vw"
-                className="object-cover"
+                className="h-auto w-full"
               />
             </div>
             <figcaption className="mt-3 text-sm text-gray-600">
@@ -143,14 +143,14 @@ export default function Page() {
           </figure>
 
           <figure className="rounded-2xl border bg-white p-4">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+            <div className="rounded-xl overflow-hidden">
               <Image
                 src="/screens/perfomance-ui.png"  /* 綴りそのまま */
                 alt="性能・指標ビュー"
-                fill
-                unoptimized
+                width={1600}
+                height={900}
                 sizes="(min-width: 768px) 33vw, 100vw"
-                className="object-cover"
+                className="h-auto w-full"
               />
             </div>
             <figcaption className="mt-3 text-sm text-gray-600">
@@ -160,11 +160,11 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 対応環境・セキュリティ（要点のみ） */}
+      {/* 対応環境・セキュリティ */}
       <section className="px-6 md:px-10 py-16 bg-gray-50 border-t">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-semibold">対応環境・セキュリティ</h2>
-        <div className="mt-6 grid md:grid-cols-3 gap-6">
+          <div className="mt-6 grid md:grid-cols-3 gap-6">
             <div className="p-6 rounded-2xl border bg-white">
               <div className="text-sm text-gray-500">デプロイ形態</div>
               <div className="mt-2 text-sm text-gray-700">SaaS／専用 VPC／オンプレミス</div>
