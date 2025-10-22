@@ -31,13 +31,16 @@ export default function Page() {
 
     <figure className="mt-6 rounded-2xl border bg-white p-4">
       <div className="rounded-xl overflow-hidden">
-        <Image
-          src="/screens/monitlycircle.png"
-          alt="Monitly運用サイクル"
-          width={1200}
-          height={1200}
-          className="w-full h-auto"
-        />
+      <Image
++          src="/screens/monitlycircle.png"
++          alt="Monitly運用サイクル"
++          width={1600}
++          height={1600}
++          sizes="(min-width: 1024px) 960px, 100vw"
++          priority
++          unoptimized
++          className="block w-full h-auto"
++        />
       </div>
       <figcaption className="mt-3 text-sm text-gray-600">
         データ取得／検証／評価／改善／運用を一体化し、改善の仮説検証を短サイクルで回します。
