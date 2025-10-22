@@ -32,7 +32,7 @@ export default async function Page() {
             <Link href="/contact" className="px-5 py-3 rounded-xl border">デモを依頼</Link>
           </div>
 
-          {/* 実例スクリーンショット（2枚のみ） */}
+          {/* 実例スクリーンショット（トップは2枚のみ） */}
           <div className="mt-10 grid md:grid-cols-2 gap-6">
             <figure className="rounded-2xl border bg-white p-4">
               <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
@@ -69,7 +69,7 @@ export default async function Page() {
         </div>
       </section>
 
-      {/* 特徴（導入時の意思決定に必要な情報を厚めに） */}
+      {/* 特徴（導入判断の要点のみ。詳細は製品ページへ） */}
       <section className="px-6 md:px-10 py-16 border-t bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-semibold">Monitly の特徴</h2>
@@ -77,19 +77,19 @@ export default async function Page() {
             <div className="p-6 rounded-2xl border bg-white hover:shadow-sm transition">
               <h3 className="font-medium">現場で継続できる評価運用</h3>
               <p className="mt-2 text-sm text-gray-700">
-                SME レビュー（業務有識者）と自動指標を統合。テンプレ化したケースと承認フローで、担当が変わっても評価の質を維持できます。
+                SME レビューと自動指標を統合。テンプレ化したケースと承認フローで、担当が変わっても評価の質を維持できます。
               </p>
             </div>
             <div className="p-6 rounded-2xl border bg-white hover:shadow-sm transition">
               <h3 className="font-medium">RAG／エージェントに最適化</h3>
               <p className="mt-2 text-sm text-gray-700">
-                プロンプト差分・Retriever 設定・コーパス更新の効果を横並び比較。ログから“繰り返し起きる失敗”を束ね、再現→修正→検証まで最短化。
+                プロンプト差分・Retriever 設定・コーパス更新の効果を横並び比較。ログから繰り返し起きる失敗を束ね、再現→修正→検証まで最短化。
               </p>
             </div>
             <div className="p-6 rounded-2xl border bg-white hover:shadow-sm transition">
               <h3 className="font-medium">日本企業の運用要件に適合</h3>
               <p className="mt-2 text-sm text-gray-700">
-                SaaS／専用VPC／オンプレに対応。SSO・ロール権限・監査ログ・データ保管方針に配慮し、情報システム部門の審査も通しやすくします。
+                SaaS／専用VPC／オンプレに対応。SSO・ロール権限・監査ログ・データ保管方針に配慮し、情シスの審査も通しやすくします。
               </p>
             </div>
           </div>
