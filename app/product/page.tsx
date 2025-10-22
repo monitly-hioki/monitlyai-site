@@ -1,7 +1,7 @@
 // app/product/page.tsx
 import Image from "next/image";
 import Link from "next/link";
-import CycleDiagram from "./CycleDiagram";
+
 
 export default function Page() {
   return (
