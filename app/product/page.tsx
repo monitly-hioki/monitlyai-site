@@ -41,73 +41,43 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Deep capabilities（TOPと差別化：より深い説明） */}
+      {/* 機能ディープダイブ（TOPの“ハイライト”と役割分担） */}
       <section className="px-6 md:px-10 py-16 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-semibold">製品の特長</h2>
-          <div className="mt-6 grid md:grid-cols-3 gap-6">
-            <div className="p-5 rounded-2xl border bg-white hover:shadow-sm transition">
-              <h3 className="font-medium">事象パターン別に原因を特定</h3>
-              <p className="mt-2 text-sm text-gray-600">
-                本番ログを安全に収集し、類似パターンでグルーピング。条件固定の再現検証で、ボトルネックを素早く突き止めます。
-              </p>
-            </div>
-            <div className="p-5 rounded-2xl border bg-white hover:shadow-sm transition">
-              <h3 className="font-medium">構成差分の効果を比較</h3>
-              <p className="mt-2 text-sm text-gray-600">
-                プロンプト／Retriever／データソースなどの差分を横並び比較。精度・コスト・速度への影響を可視化します。
-              </p>
-            </div>
-            <div className="p-5 rounded-2xl border bg-white hover:shadow-sm transition">
-              <h3 className="font-medium">業務ドメインレビューと承認</h3>
-              <p className="mt-2 text-sm text-gray-600">
-                有識者（SME）レビューをスコア化し、承認済み構成のみ本番反映。チームで継続的に改善できます。
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 機能一覧（詳細） */}
-      <section className="px-6 md:px-10 py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-semibold">主要機能</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold">機能ディープダイブ</h2>
           <div className="mt-6 grid md:grid-cols-2 gap-5">
             <div className="p-5 rounded-2xl border bg-white">
-              <h3 className="font-medium">構成比較（プロンプト／Retriever／データソース）</h3>
+              <h3 className="font-medium">比較スタジオ（A/B/多構成）</h3>
               <p className="mt-2 text-sm text-gray-600">
-                構成差分が精度・コスト・応答速度に与える影響を横並びで把握し、最適解を素早く検証できます。
+                プロンプト／Retriever／データソースなど構成単位で実験を定義。精度・再現率・コスト等を自動集計し、優位差をチャートで可視化します。
               </p>
             </div>
             <div className="p-5 rounded-2xl border bg-white">
-              <h3 className="font-medium">ログ収集・再現検証・パターン分析</h3>
+              <h3 className="font-medium">評価セット & SMEレビュー</h3>
               <p className="mt-2 text-sm text-gray-600">
-                本番ログを取り込み、類似事象で束ねて再現。原因分析から改善立案までを一連で管理します。
+                業務ドメインに沿った評価テンプレートを用意。レビュワー割当・採点・コメントをワークフロー化し、承認ゲートで本番反映を制御します。
               </p>
             </div>
             <div className="p-5 rounded-2xl border bg-white">
-              <h3 className="font-medium">SMEレビュー統合（承認フロー）</h3>
+              <h3 className="font-medium">ログリプレイ & フィードバック</h3>
               <p className="mt-2 text-sm text-gray-600">
-                担当者・専門家のレビューをスコア化し、自動指標と突き合わせ。承認・差分確認・履歴を一元化します。
+                運用ログから“再現ケース”を生成し、類似パターンで束ねて分析。スレッドで議論した改善案を構成変更にひも付けて管理できます。
               </p>
             </div>
             <div className="p-5 rounded-2xl border bg-white">
-              <h3 className="font-medium">運用ダッシュボード＆改善履歴</h3>
+              <h3 className="font-medium">変更履歴 & ロールバック</h3>
               <p className="mt-2 text-sm text-gray-600">
-                品質・コスト・応答速度・評価対象の網羅率などのKPIを可視化し、変更と結果を時系列で追跡できます。
+                誰が何を変更し、結果がどう変わったかを時系列で追跡。問題発生時は前バージョンへ安全にロールバックできます。
               </p>
             </div>
-          </div>
-          <div className="mt-8">
-            <Link href="/contact" className="px-5 py-3 rounded-xl bg-black text-white">デモ・機能説明のご相談</Link>
           </div>
         </div>
       </section>
 
-      {/* スクリーンショット */}
-      <section className="px-6 md:px-10 py-16 bg-white">
+      {/* UIギャラリー（見出しを洗練） */}
+      <section className="px-6 md:px-10 py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-semibold">製品スクリーンショット</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold">UIギャラリー</h2>
           <div className="mt-6 grid md:grid-cols-3 gap-6">
             <figure className="rounded-2xl border bg-white p-4">
               <div className="relative aspect-[16/9] rounded-xl overflow-hidden">
@@ -119,10 +89,10 @@ export default function Page() {
             </figure>
             <figure className="rounded-2xl border bg-white p-4">
               <div className="relative aspect-[16/9] rounded-xl overflow-hidden">
-                <Image src="/screens/review-workflow.png" alt="レビュー・承認ワークフロー" fill className="object-cover" />
+                <Image src="/screens/review-workflow.png" alt="レビュー・承認フロー" fill className="object-cover" />
               </div>
               <figcaption className="mt-3 text-sm text-gray-600">
-                レビュー・承認（差分確認と承認フロー）
+                レビュー・承認（差分確認と承認ワークフロー）
               </figcaption>
             </figure>
             <figure className="rounded-2xl border bg-white p-4">
@@ -138,7 +108,7 @@ export default function Page() {
       </section>
 
       {/* 導入形態（製品ページに集約） */}
-      <section className="px-6 md:px-10 py-16 bg-gray-50">
+      <section className="px-6 md:px-10 py-16 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-semibold">導入形態</h2>
           <p className="mt-3 text-gray-600">
