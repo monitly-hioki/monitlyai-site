@@ -30,7 +30,20 @@ export default function Page() {
           </p>
 
 - <div className="mt-6 rounded-2xl border bg-white p-4">
--   <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+-   - <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+-   <svg viewBox="0 0 800 800" className="w-full h-auto" role="img" aria-label="Monitly の運用サイクル（データ取得→検証→評価→改善→運用）">
++ <div className="mx-auto max-w-[820px]">
++   <svg
++     viewBox="0 0 800 800"
++     preserveAspectRatio="xMidYMid meet"
++     className="block w-full h-auto"
++     role="img"
++     aria-label="Monitly の運用サイクル（データ取得→検証→評価→改善→運用）"
++   >
+      {/* 以下 SVG の中身はそのまま */}
+   </svg>
+ </div>
+
 -     <svg ...>（省略）</svg>
 -   </div>
 - </div>
