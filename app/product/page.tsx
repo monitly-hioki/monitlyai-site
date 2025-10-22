@@ -20,7 +20,8 @@ export default function Page() {
           </div>
         </div>
       </section>
-      {/* 運用サイクル */}
+
+      {/* 運用サイクル（SVGに置換済） */}
       <section className="px-6 md:px-10 py-16 border-t bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-semibold">Monitly が描く運用サイクル</h2>
@@ -28,7 +29,6 @@ export default function Page() {
             「データ取得 → 検証 → 評価 → 改善 → 運用」を循環フローとして捉え、チーム単位の継続的学習（Continuous Evaluation）を可能にします。
           </p>
 
-          {/* SVG コンポーネント版 */}
           <figure className="mt-6 rounded-2xl border bg-white p-4">
             <div className="rounded-xl overflow-hidden">
               <CycleDiagram />
@@ -38,7 +38,6 @@ export default function Page() {
             </figcaption>
           </figure>
 
-          {/* 各工程説明 */}
           <div className="mt-8 grid md:grid-cols-5 gap-4 text-sm text-gray-700">
             <div className="p-4 rounded-xl border bg-gray-50">
               <div className="font-medium">データ取得</div>
@@ -63,7 +62,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-
 
       {/* 機能詳細 */}
       <section className="px-6 md:px-10 py-16 bg-gray-50">
@@ -143,7 +141,7 @@ export default function Page() {
           <figure className="rounded-2xl border bg-white p-4">
             <div className="rounded-xl overflow-hidden">
               <Image
-                src="/screens/perfomance-ui.png"  /* 綴りそのまま */
+                src="/screens/perfomance-ui.png" /* 綴りそのまま */
                 alt="性能・指標ビュー"
                 width={1600}
                 height={900}
@@ -171,7 +169,7 @@ export default function Page() {
               <div className="text-sm text-gray-500">モデル接続</div>
               <div className="mt-2 text-sm text-gray-700">OpenAI／Azure OpenAI／Anthropic 等。ローカル LLM（Ollama／LM Studio）は順次強化</div>
             </div>
-            <div className="p-6 rounded-2xl border bg白">
+            <div className="p-6 rounded-2xl border bg-white">
               <div className="text-sm text-gray-500">認証・権限</div>
               <div className="mt-2 text-sm text-gray-700">SSO、ロール権限、監査ログ、IP 制限。WS/プロジェクト単位の分離管理</div>
             </div>
