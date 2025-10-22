@@ -1,6 +1,7 @@
 // app/product/page.tsx
 import Image from "next/image";
 import Link from "next/link";
+import CycleDiagram from "./CycleDiagram";
 
 export default function Page() {
   return (
@@ -28,23 +29,14 @@ export default function Page() {
             「データ取得 → 検証 → 評価 → 改善 → 運用」を循環フローとして捉え、チーム単位の継続的学習（Continuous Evaluation）を可能にします。
           </p>
 
-          <div className="mt-6 rounded-2xl border bg-white p-4">
+          <figure className="mt-6 rounded-2xl border bg-white p-4">
             <div className="rounded-xl overflow-hidden">
-import CycleDiagram from "./CycleDiagram";
-
-/* ...中略... */
-
-<figure className="mt-6 rounded-2xl border bg-white p-4">
-  <div className="rounded-xl overflow-hidden">
-    <CycleDiagram />
-  </div>
-  <figcaption className="mt-3 text-sm text-gray-600">
-    データ取得／検証／評価／改善／運用を一体化し、改善の仮説検証を短サイクルで回します。
-  </figcaption>
-</figure>
-
+              <CycleDiagram />
             </div>
-          </div>
+            <figcaption className="mt-3 text-sm text-gray-600">
+              データ取得／検証／評価／改善／運用を一体化し、改善の仮説検証を短サイクルで回します。
+            </figcaption>
+          </figure>
 
           <div className="mt-8 grid md:grid-cols-5 gap-4 text-sm text-gray-700">
             <div className="p-4 rounded-xl border bg-gray-50">
@@ -177,7 +169,7 @@ import CycleDiagram from "./CycleDiagram";
               <div className="text-sm text-gray-500">モデル接続</div>
               <div className="mt-2 text-sm text-gray-700">OpenAI／Azure OpenAI／Anthropic 等。ローカル LLM（Ollama／LM Studio）は順次強化</div>
             </div>
-            <div className="p-6 rounded-2xl border bg-white">
+            <div className="p-6 rounded-2xl border bg白">
               <div className="text-sm text-gray-500">認証・権限</div>
               <div className="mt-2 text-sm text-gray-700">SSO、ロール権限、監査ログ、IP 制限。WS/プロジェクト単位の分離管理</div>
             </div>
