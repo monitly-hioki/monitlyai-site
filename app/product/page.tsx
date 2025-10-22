@@ -47,42 +47,48 @@ export default function Page() {
     </linearGradient>
   </defs>
 
-  {/* 背景パネル（余白を少し広げて窮屈感を軽減） */}
-  <rect x="24" y="24" width="752" height="752" fill="url(#bg)" rx="24" />
+  {/* 背景パネル：余白を確保 */}
+  <rect x="20" y="20" width="760" height="760" fill="url(#bg)" rx="24" />
 
-  {/* 矢印サークル（線を少し細く） */}
+  {/* サークル：半径を-8px、線幅を8pxに */}
   <g stroke="#4b5563" strokeWidth="8" fill="none" strokeLinecap="round">
-    <path d="M400 140 A260 260 0 0 1 688 342" />
-    <path d="M688 458 A260 260 0 0 1 400 660" />
-    <path d="M212 458 A260 260 0 0 1 112 342" />
-    <path d="M400 140 A260 260 0 0 0 112 342" />
-    <path d="M400 660 A260 260 0 0 0 688 458" />
+    <path d="M400 144 A252 252 0 0 1 684 342" />
+    <path d="M684 458 A252 252 0 0 1 400 656" />
+    <path d="M216 458 A252 252 0 0 1 116 342" />
+    <path d="M400 144 A252 252 0 0 0 116 342" />
+    <path d="M400 656 A252 252 0 0 0 684 458" />
   </g>
 
-  {/* 矢尻 */}
+  {/* 矢尻：位置微調整 */}
   <g fill="#4b5563">
-    <path d="M672 332 l30 10 -24 20 z" />
-    <path d="M674 452 l23 22 -31 6 z" />
-    <path d="M206 452 l8 32 -30 -12 z" />
-    <path d="M134 330 l30 -8 -10 30 z" />
-    <path d="M485 658 l-30 8 10 -30 z" />
+    <path d="M668 334 l28 10 -22 18 z" />
+    <path d="M670 450 l22 22 -30 6 z" />
+    <path d="M208 450 l8 30 -28 -12 z" />
+    <path d="M136 330 l28 -8 -10 28 z" />
+    <path d="M486 654 l-28 8 10 -28 z" />
   </g>
 
-  {/* ロゴ＆ラベル（フォント小さめ＆座標微調整） */}
-  <text x="400" y="436" textAnchor="middle" fontSize="88" fontWeight="700" fill="#0b0f19">
-    Monitly
-  </text>
+  {/* ロゴをやや右下へ／サイズ少し下げる */}
+  <text x="420" y="468" textAnchor="middle"
+        fontFamily="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+        fontSize="92" fontWeight="700" fill="#0b0f19">Monitly</text>
 
-  <g fontSize="56" fontWeight="700" fill="#1d4ed8">
-    <text x="600" y="360">データ</text>
-    <text x="635" y="428">取得</text>
-
-    <text x="360" y="735">検証</text>
-    <text x="270" y="350">評価</text>
-    <text x="360" y="200">運用</text>
-    <text x="520" y="620">改善</text>
+  {/* ラベル群：座標＆サイズを詰める（評価は小さめ&左寄せ） */}
+  <g fontFamily="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+     fontWeight="700" fill="#1d4ed8">
+    {/* 右側：少し内側へ */}
+    <text x="585" y="360" fontSize="56">データ</text>
+    <text x="615" y="430" fontSize="56">取得</text>
+    {/* 下側：上に寄せて空き削減 */}
+    <text x="350" y="690" fontSize="54">検証</text>
+    <text x="515" y="595" fontSize="56">改善</text>
+    {/* 上：少し下げる */}
+    <text x="410" y="155" fontSize="56" textAnchor="middle">運用</text>
+    {/* 左：Monitly に被らない位置へ & 小さめ */}
+    <text x="300" y="360" fontSize="52">評価</text>
   </g>
 </svg>
+
 
  </div>
 
