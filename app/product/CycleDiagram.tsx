@@ -1,6 +1,3 @@
-// app/product/CycleDiagram.tsx
-// 余白を広めに取り、非絶対配置で w-full / h-auto で縮尺崩れを回避
-
 type Props = { className?: string };
 
 export default function CycleDiagram({ className }: Props) {
@@ -24,32 +21,20 @@ export default function CycleDiagram({ className }: Props) {
         </marker>
       </defs>
 
-      {/* 背景（外枠との当たりを避けるため 24px 余白） */}
       <rect x="0" y="0" width="640" height="640" rx="28" fill="url(#bg)" />
 
-      {/*
-        円弧：中心(320,320) 半径=220 → 端点が 100〜540 付近に収まる
-        stroke を細め(8)、矢印も小さめにして切れを防止
-      */}
       <g stroke="#4b5563" strokeWidth="8" fill="none" strokeLinecap="round" markerEnd="url(#arrow)">
-        {/* 運用→データ取得 */}
         <path d="M470,180 A220,220 0 0 1 540,320" />
-        {/* データ取得→改善 */}
         <path d="M540,320 A220,220 0 0 1 470,460" />
-        {/* 改善→検証 */}
         <path d="M470,460 A220,220 0 0 1 320,540" />
-        {/* 検証→評価 */}
         <path d="M320,540 A220,220 0 0 1 170,460" />
-        {/* 評価→運用 */}
         <path d="M170,460 A220,220 0 0 1 470,180" />
       </g>
 
-      {/* 中央ロゴ */}
       <text x="320" y="340" textAnchor="middle" fontSize="84" fontWeight="700" fill="#0b0f19">
         Monitly
       </text>
 
-      {/* ラベル（余白を考慮して配置） */}
       <g fontSize="54" fontWeight="700" fill="#1d4ed8">
         <text x="300" y="130">運用</text>
         <text x="472" y="300">データ</text>
