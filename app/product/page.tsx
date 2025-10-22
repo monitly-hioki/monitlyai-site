@@ -30,13 +30,14 @@ export default function Page() {
           </p>
 
           <figure className="mt-6 rounded-2xl border bg-white p-4">
-            <div className="rounded-xl overflow-hidden">
-              <CycleDiagram />
-            </div>
-            <figcaption className="mt-3 text-sm text-gray-600">
-              データ取得／検証／評価／改善／運用を一体化し、改善の仮説検証を短サイクルで回します。
-            </figcaption>
-          </figure>
+  {/* 正方形に固定して崩れを防止 */}
+  <div className="relative aspect-[1/1] rounded-xl overflow-hidden">
+    <CycleDiagram className="absolute inset-0" />
+  </div>
+  <figcaption className="mt-3 text-sm text-gray-600">
+    データ取得／検証／評価／改善／運用を一体化し、改善の仮説検証を短サイクルで回します。
+  </figcaption>
+</figure>
 
           <div className="mt-8 grid md:grid-cols-5 gap-4 text-sm text-gray-700">
             <div className="p-4 rounded-xl border bg-gray-50">
