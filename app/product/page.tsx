@@ -8,192 +8,198 @@ export default function Page() {
       {/* Hero */}
       <section className="px-6 md:px-10 py-16 md:py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
-            Monitly（モニトリー）
-          </h1>
+          <h1 className="text-3xl md:text-5xl font-semibold leading-tight">Monitly（モニトリー）</h1>
           <p className="mt-5 text-gray-600 text-base md:text-lg">
-            生成AI（RAG／エージェント）の評価・比較・改善・運用を一つのワークフローに統合。
+            RAG／AIエージェントの評価・比較・改善・運用を一元化する LLMOps プラットフォームです。
             日本語UIと日本企業の運用要件に最適化し、PoCから本番まで継続的な品質向上を支援します。
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/contact"
-              className="px-5 py-3 rounded-xl text-white bg-gradient-to-r from-gray-900 via-black to-gray-800 shadow transition hover:opacity-90"
-            >
-              デモのご相談
-            </Link>
-            <Link href="/solutions" className="px-5 py-3 rounded-xl border">
-              導入支援を見る
-            </Link>
+            <Link href="/contact" className="px-5 py-3 rounded-xl bg-black text-white">デモ・機能説明のご相談</Link>
+            <Link href="/solutions" className="px-5 py-3 rounded-xl border">導入支援の詳細</Link>
           </div>
         </div>
       </section>
 
-      {/* Product narrative (重複なし：ホームの“ハイライト”ではなく、狙いを説明) */}
+      {/* 運用サイクル（公式トーンの図版） */}
       <section className="px-6 md:px-10 py-14 border-t">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-semibold">
-            評価を運用に組み込み、改善を止めない
-          </h2>
-          <div className="mt-6 grid md:grid-cols-3 gap-6">
-            <div className="p-5 rounded-2xl border bg-white">
-              <h3 className="font-medium">現場データで回す</h3>
-              <p className="mt-2 text-sm text-gray-600">
-                本番ログやレビュー結果を評価に直結。机上のベンチではなく、実運用に即した改善を継続できます。
-              </p>
-            </div>
-            <div className="p-5 rounded-2xl border bg-white">
-              <h3 className="font-medium">チームで回す</h3>
-              <p className="mt-2 text-sm text-gray-600">
-                担当者・SME・運用の役割をまたいで、差分の確認・承認・ロールバックまでを一貫管理。
-              </p>
-            </div>
-            <div className="p-5 rounded-2xl border bg-white">
-              <h3 className="font-medium">監査とガバナンス</h3>
-              <p className="mt-2 text-sm text-gray-600">
-                操作履歴・評価根拠・承認経路を可視化。SaaS／専用VPC／オンプレに柔軟対応します。
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Monitly Cycle */}
-      <section className="px-6 md:px-10 py-16 bg-white">
-        <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-semibold">Monitly が描く運用サイクル</h2>
-          <p className="mt-4 text-gray-600">
-            「データ取得 → 検証 → 評価 → 改善 → 運用」をひとつの循環フローとして捉え、
-            チーム単位での継続的学習（Continuous Evaluation）を実現します。
+          <p className="mt-3 text-gray-600">
+            「データ取得 → 検証 → 評価 → 改善 → 運用」を一つの循環フローとして捉え、チーム単位での継続的学習（Continuous Evaluation）を可能にします。
           </p>
-          <div className="mt-10 relative aspect-[16/9] max-w-3xl mx-auto rounded-2xl overflow-hidden border bg-gray-50">
-            <Image
-              src="/screens/monitly-cycle.png"
-              alt="Monitlyの運用サイクル（データ取得→検証→評価→改善→運用）"
-              fill
-              className="object-contain"
-              priority
-            />
+          <div className="mt-6 rounded-2xl border bg-white p-4">
+            <div className="relative aspect-[16/9] rounded-xl overflow-hidden">
+              <Image
+                src="/screens/monitly-cycle.png"
+                alt="Monitlyの運用サイクル（データ取得→検証→評価→改善→運用）"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Deep capabilities（ホームと差別化：より具体的・実務寄り） */}
+      {/* Deep capabilities（TOPと差別化：より深い説明） */}
+      <section className="px-6 md:px-10 py-16 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-semibold">製品の特長</h2>
+          <div className="mt-6 grid md:grid-cols-3 gap-6">
+            <div className="p-5 rounded-2xl border bg-white hover:shadow-sm transition">
+              <h3 className="font-medium">事象パターン別に原因を特定</h3>
+              <p className="mt-2 text-sm text-gray-600">
+                本番ログを安全に収集し、類似パターンでグルーピング。条件固定の再現検証で、ボトルネックを素早く突き止めます。
+              </p>
+            </div>
+            <div className="p-5 rounded-2xl border bg-white hover:shadow-sm transition">
+              <h3 className="font-medium">構成差分の効果を比較</h3>
+              <p className="mt-2 text-sm text-gray-600">
+                プロンプト／Retriever／データソースなどの差分を横並び比較。精度・コスト・速度への影響を可視化します。
+              </p>
+            </div>
+            <div className="p-5 rounded-2xl border bg-white hover:shadow-sm transition">
+              <h3 className="font-medium">業務ドメインレビューと承認</h3>
+              <p className="mt-2 text-sm text-gray-600">
+                有識者（SME）レビューをスコア化し、承認済み構成のみ本番反映。チームで継続的に改善できます。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 機能一覧（詳細） */}
       <section className="px-6 md:px-10 py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-semibold">主要機能（詳細）</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold">主要機能</h2>
           <div className="mt-6 grid md:grid-cols-2 gap-5">
-            <div className="p-5 rounded-2xl border bg-white">
-              <h3 className="font-medium">ケース定義／データセット管理</h3>
-              <p className="mt-2 text-sm text-gray-600">
-                本番ログやテスト入力から評価単位を整理し、再利用可能なケースとして管理。対象カテゴリや難易度、想定ユースケースでフィルタリング可能。
-              </p>
-            </div>
             <div className="p-5 rounded-2xl border bg-white">
               <h3 className="font-medium">構成比較（プロンプト／Retriever／データソース）</h3>
               <p className="mt-2 text-sm text-gray-600">
-                設定差分を横並びで比較し、精度・応答時間・コスト・再現率などへの影響を可視化。改善の打ち手を数値で判断できます。
+                構成差分が精度・コスト・応答速度に与える影響を横並びで把握し、最適解を素早く検証できます。
               </p>
             </div>
             <div className="p-5 rounded-2xl border bg-white">
-              <h3 className="font-medium">本番ログの取り込みと再現検証</h3>
+              <h3 className="font-medium">ログ収集・再現検証・パターン分析</h3>
               <p className="mt-2 text-sm text-gray-600">
-                ログを安全に収集し、事象パターンで束ねて条件固定の再現実行。原因分析から改善案のAB比較、ロールバックまで一元化。
+                本番ログを取り込み、類似事象で束ねて再現。原因分析から改善立案までを一連で管理します。
               </p>
             </div>
             <div className="p-5 rounded-2xl border bg-white">
-              <h3 className="font-medium">業務ドメインレビュー（SME）＆承認</h3>
+              <h3 className="font-medium">SMEレビュー統合（承認フロー）</h3>
               <p className="mt-2 text-sm text-gray-600">
-                SMEコメントをスコア化し、自動指標と突き合わせ。差分確認→承認→本番反映の一連をプロジェクト単位で運用できます。
+                担当者・専門家のレビューをスコア化し、自動指標と突き合わせ。承認・差分確認・履歴を一元化します。
               </p>
             </div>
             <div className="p-5 rounded-2xl border bg-white">
-              <h3 className="font-medium">運用ダッシュボード／SLOモニタリング</h3>
+              <h3 className="font-medium">運用ダッシュボード＆改善履歴</h3>
               <p className="mt-2 text-sm text-gray-600">
-                品質・コスト・速度・失敗率などのKPIを一望。閾値超過時はアラート、改善の前後比較も同画面で確認可能。
-              </p>
-            </div>
-            <div className="p-5 rounded-2xl border bg-white">
-              <h3 className="font-medium">変更履歴・ロールバック・エビデンス出力</h3>
-              <p className="mt-2 text-sm text-gray-600">
-                いつ誰が何を変え、結果がどうなったかを時系列で追跡。承認ログと共にエビデンスとして出力できます。
+                品質・コスト・応答速度・評価対象の網羅率などのKPIを可視化し、変更と結果を時系列で追跡できます。
               </p>
             </div>
           </div>
           <div className="mt-8">
-            <Link href="/contact" className="px-5 py-3 rounded-xl bg-black text-white">
-              機能について相談する
-            </Link>
+            <Link href="/contact" className="px-5 py-3 rounded-xl bg-black text-white">デモ・機能説明のご相談</Link>
           </div>
         </div>
       </section>
 
-      {/* Screenshots（ホームと非重複：比較／レビュー／パフォーマンス） */}
+      {/* スクリーンショット */}
       <section className="px-6 md:px-10 py-16 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-semibold">スクリーンショット</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold">製品スクリーンショット</h2>
           <div className="mt-6 grid md:grid-cols-3 gap-6">
             <figure className="rounded-2xl border bg-white p-4">
               <div className="relative aspect-[16/9] rounded-xl overflow-hidden">
-                <Image src="/screens/compare-ui.png" alt="構成比較（差分の効果を横並び可視化）" fill className="object-cover" />
+                <Image src="/screens/compare-ui.png" alt="構成比較" fill className="object-cover" />
               </div>
               <figcaption className="mt-3 text-sm text-gray-600">
-                構成比較：プロンプト／Retriever／データソースの差分影響を定量把握
+                構成比較（プロンプト／Retriever／データソースの差分）
               </figcaption>
             </figure>
-
             <figure className="rounded-2xl border bg-white p-4">
               <div className="relative aspect-[16/9] rounded-xl overflow-hidden">
                 <Image src="/screens/review-workflow.png" alt="レビュー・承認ワークフロー" fill className="object-cover" />
               </div>
               <figcaption className="mt-3 text-sm text-gray-600">
-                レビュー・承認：SMEスコア、差分確認、承認履歴を一元管理
+                レビュー・承認（差分確認と承認フロー）
               </figcaption>
             </figure>
-
             <figure className="rounded-2xl border bg-white p-4">
               <div className="relative aspect-[16/9] rounded-xl overflow-hidden">
-                {/* ファイル名は perfomance-ui.png（タイポ）で配置済み */}
-                <Image src="/screens/perfomance-ui.png" alt="性能・指標ビュー（品質／コスト／速度）" fill className="object-cover" />
+                <Image src="/screens/perfomance-ui.png" alt="性能・指標ビュー" fill className="object-cover" />
               </div>
               <figcaption className="mt-3 text-sm text-gray-600">
-                性能指標：品質・コスト・応答速度を俯瞰、期間比較も可能
+                性能・指標ビュー（精度／コスト／速度の俯瞰）
               </figcaption>
             </figure>
           </div>
         </div>
       </section>
 
-      {/* Integrations & Deployment（ホームの“導入形態”と役割を分け、対応範囲にフォーカス） */}
+      {/* 導入形態（製品ページに集約） */}
       <section className="px-6 md:px-10 py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-semibold">対応範囲とデプロイ</h2>
-          <div className="mt-6 grid md:grid-cols-3 gap-5">
+          <h2 className="text-2xl md:text-3xl font-semibold">導入形態</h2>
+          <p className="mt-3 text-gray-600">
+            利用開始スピード、セキュリティ要件、社内インフラとの親和性にあわせて柔軟にお選びいただけます。
+          </p>
+
+          <div className="mt-8 grid md:grid-cols-3 gap-5">
+            <div className="p-6 rounded-2xl border bg-white">
+              <h3 className="font-medium">SaaS（最短導入）</h3>
+              <p className="mt-1 text-sm text-gray-500">小規模チームやPoCに最適</p>
+              <ul className="mt-3 space-y-2 text-sm text-gray-700 list-disc pl-4">
+                <li>環境構築不要。最短1日で評価を開始</li>
+                <li>ブラウザのみで運用負荷を最小化</li>
+                <li>ワークスペース単位でログ・評価データを分離管理</li>
+                <li>アラート通知・ダッシュボードを即利用可</li>
+              </ul>
+            </div>
+
+            <div className="p-6 rounded-2xl border bg-white">
+              <h3 className="font-medium">専用VPC（プライベートクラウド）</h3>
+              <p className="mt-1 text-sm text-gray-500">自社クラウドでの厳密な統制</p>
+              <ul className="mt-3 space-y-2 text-sm text-gray-700 list-disc pl-4">
+                <li>貴社クラウド上に専用環境を構築</li>
+                <li>IP許可制やPrivateLink等のネットワーク制御</li>
+                <li>監査ログ出力・KMS連携など拡張</li>
+                <li>スケーリングやバックアップ方針を貴社基準に</li>
+              </ul>
+            </div>
+
+            <div className="p-6 rounded-2xl border bg-white">
+              <h3 className="font-medium">オンプレミス（規制対応）</h3>
+              <p className="mt-1 text-sm text-gray-500">オンプレミス環境・厳格ガバナンス向け</p>
+              <ul className="mt-3 space-y-2 text-sm text-gray-700 list-disc pl-4">
+                <li>オンプレミス環境・検疫ネットワークでの運用</li>
+                <li>Kubernetes／Docker によるデプロイ</li>
+                <li>更新パッケージ配布・オフライン運用</li>
+                <li>監査・保存ポリシーを社内規程に準拠</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-10 grid md:grid-cols-3 gap-5">
+            <div className="p-5 rounded-2xl border bg-white">
+              <div className="text-sm text-gray-500">認証・権限</div>
+              <div className="mt-2 text-sm text-gray-700">SSO、ロール権限、監査ログ、IP制限</div>
+            </div>
             <div className="p-5 rounded-2xl border bg-white">
               <div className="text-sm text-gray-500">モデル接続</div>
               <div className="mt-2 text-sm text-gray-700">
-                OpenAI／Azure OpenAI／Anthropic 等。ローカルLLM（Ollama／LM Studio）は対応強化予定。
+                OpenAI／Azure OpenAI／Anthropic 等。ローカルLLM（Ollama／LM Studio）は強化予定
               </div>
             </div>
             <div className="p-5 rounded-2xl border bg-white">
-              <div className="text-sm text-gray-500">認証・権限・監査</div>
-              <div className="mt-2 text-sm text-gray-700">SSO、ロール権限、監査ログ、IP制限、操作履歴の保持。</div>
-            </div>
-            <div className="p-5 rounded-2xl border bg-white">
-              <div className="text-sm text-gray-500">デプロイ形態</div>
-              <div className="mt-2 text-sm text-gray-700">
-                SaaS／専用VPC／オンプレミスから選択。ネットワーク制御やバックアップ方針に準拠可能。
-              </div>
+              <div className="text-sm text-gray-500">運用</div>
+              <div className="mt-2 text-sm text-gray-700">メトリクス監視、アラート通知、バックアップ方針</div>
             </div>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/contact" className="px-5 py-3 rounded-xl bg-black text-white">
-              導入・評価のご相談
-            </Link>
-            <Link href="/solutions" className="px-5 py-3 rounded-xl border">
-              データ整備や検証支援を見る
-            </Link>
+            <Link href="/contact" className="px-5 py-3 rounded-xl bg-black text-white">デモ・機能説明のご相談</Link>
+            <Link href="/news" className="px-5 py-3 rounded-xl border">最新のお知らせ</Link>
           </div>
         </div>
       </section>
