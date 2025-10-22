@@ -29,28 +29,27 @@ export default function Page() {
       「データ取得 → 検証 → 評価 → 改善 → 運用」を循環フローとして捉え、チーム単位の継続的学習（Continuous Evaluation）を可能にします。
     </p>
 
-   <figure className="mt-6 rounded-2xl border bg-gray-50 p-4">
-  <div className="rounded-xl overflow-hidden flex justify-center">
-    <img
-      src="/screens/monitlycircle.png"
-      alt="Monitly運用サイクル"
-      className="w-full max-w-[800px] h-auto block"
-      loading="eager"
-      decoding="async"
-    />
-  </div>
-  <figcaption className="mt-3 text-sm text-gray-600 text-center">
-    データ取得／検証／評価／改善／運用を一体化し、改善の仮説検証を短サイクルで回します。
-  </figcaption>
-</figure>
-
+    <figure className="mt-6 rounded-2xl border bg-white p-4">
+      <div className="rounded-xl overflow-hidden">
+        <img
+          src="/screens/monitlycircle.png"
+          alt="Monitly運用サイクル"
+          className="w-full max-w-[900px] h-auto block mx-auto"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+      <figcaption className="mt-3 text-sm text-gray-600">
+        データ取得／検証／評価／改善／運用を一体化し、改善の仮説検証を短サイクルで回します。
+      </figcaption>
+    </figure>
 
     <div className="mt-8 grid md:grid-cols-5 gap-4 text-sm text-gray-700">
       <div className="p-4 rounded-xl border bg-gray-50">
         <div className="font-medium">データ取得</div>
         <div className="mt-1">本番ログや既存テストを収集。プライバシー配慮で追跡可能な形式に整備。</div>
       </div>
-      <div className="p-4 rounded-xl border bg-gray-50">
+      <div className="p-4 rounded-XL border bg-gray-50">
         <div className="font-medium">検証</div>
         <div className="mt-1">再現ケース化して条件固定。構成差分の比較検証が可能。</div>
       </div>
