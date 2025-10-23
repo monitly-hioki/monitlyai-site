@@ -11,24 +11,31 @@ export const metadata: Metadata = {
 
 import Footer from "@/components/Footer";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+// app/layout.tsx
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // Vercel でも手元でも効く判定
+  const isProd =
+    process.env.NODE_ENV === "production" ||
+    process.env.VERCEL_ENV === "production";
+
   return (
     <html lang="ja">
       <body>
-        <div className="text-center text-xs text-white bg-[#0056FF] py-1">
-          BUILD:{" "}
-          {process.env.NEXT_PUBLIC_COMMIT ||
-            (process.env.VERCEL_GIT_COMMIT_SHA
-              ? process.env.VERCEL_GIT_COMMIT_SHA.slice(0, 7)
-              : "local")}
-        </div>
+        {/* ← ここがバナー */}
+        {!isProd && (
+          <div className="text-center text-xs text-white bg-[#0056FF] py-1">
+            BUILD: {/* 任意のラベル。なければ 'local' */}
+            {" "}
+            {process.env.NEXT_PUBLIC_BUILD_LABEL || "local"}
+          </div>
+        )}
+
+        {/* 既存 */}
         <Header />
-        <main className="min-h-screen">{children}</main>  <Footer />
-</body>
+        <main className="min-h-screen">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
+
