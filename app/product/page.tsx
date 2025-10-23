@@ -133,11 +133,12 @@ export default function Page() {
     <figcaption className="mt-3 text-sm text-gray-700 font-medium">
       構成比較：プロンプト／Retriever／データソースの差分を横並びで把握
     </figcaption>
-    <ul className="mt-2 text-sm text-gray-600 list-disc pl-5 space-y-1">
-      <li>A/B 比較で精度・速度・コストのトレードオフを数値化</li>
-      <li>改善前後の差分を自動ハイライト</li>
-      <li>承認履歴と紐付けて説明容易に</li>
-    </ul>
+{/* 構成比較のfigcaptionの直後に追加 */}
+<ul className="mt-2 text-sm text-gray-600 list-disc pl-5 space-y-1">
+  <li>A/B 比較で精度・速度・コストのトレードオフを数値化</li>
+  <li>改善前後の差分を自動ハイライト</li>
+  <li>承認履歴と紐付けて説明容易に</li>
+</ul>
   </figure>
 
   {/* レビュー・承認 */}
@@ -151,11 +152,12 @@ export default function Page() {
     <figcaption className="mt-3 text-sm text-gray-700 font-medium">
       レビュー・承認：差分確認→承認→本番反映までをワークフローで管理
     </figcaption>
-    <ul className="mt-2 text-sm text-gray-600 list-disc pl-5 space-y-1">
-      <li>SMEレビューをスコア化し自動指標と突き合わせ</li>
-      <li>承認プロセスを可視化、品質ゲートを明確化</li>
-      <li>属人性を排除し、変更の責任範囲を明確に</li>
-    </ul>
+  {/* レビュー・承認のfigcaptionの直後に追加 */}
+<ul className="mt-2 text-sm text-gray-600 list-disc pl-5 space-y-1">
+  <li>SMEレビューをスコア化し自動指標と突き合わせ</li>
+  <li>承認プロセスを可視化、品質ゲートを明確化</li>
+  <li>属人性を排除し、変更の責任範囲を明確に</li>
+</ul>
   </figure>
 
   {/* 性能・指標 */}
@@ -169,11 +171,12 @@ export default function Page() {
     <figcaption className="mt-3 text-sm text-gray-700 font-medium">
       性能・指標：精度／応答速度／コストを俯瞰し、改善効果を可視化
     </figcaption>
-    <ul className="mt-2 text-sm text-gray-600 list-disc pl-5 space-y-1">
-      <li>KPIを横断表示し、異常兆候を早期検知</li>
-      <li>改善施策と時系列を重ねて因果を説明</li>
-      <li>監査対応に有効な履歴とエビデンスの一元化</li>
-    </ul>
+   {/* 性能・指標のfigcaptionの直後に追加 */}
+<ul className="mt-2 text-sm text-gray-600 list-disc pl-5 space-y-1">
+  <li>KPIを横断表示し、異常兆候を早期検知</li>
+  <li>改善施策と時系列を重ねて因果を説明</li>
+  <li>監査対応に有効な履歴とエビデンスの一元化</li>
+</ul>
   </figure>
 </div>
 </section>
