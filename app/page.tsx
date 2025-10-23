@@ -100,61 +100,80 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 製品画面（スクリーンショット 3枚） */}
-      <section className="px-6 md:px-10 py-16 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-semibold">製品画面</h2>
-        </div>
-        <div className="mt-6 max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
-          <figure className="rounded-2xl border bg-white p-4">
-            <div className="rounded-xl overflow-hidden">
-              <Image
-                src="/screens/compare-ui.png"
-                alt="構成比較画面"
-                width={1600}
-                height={900}
-                sizes="(min-width: 768px) 33vw, 100vw"
-                className="h-auto w-full"
-              />
-            </div>
-            <figcaption className="mt-3 text-sm text-gray-600">
-              構成比較：プロンプト／Retriever／データソースの差分を横並びで把握
-            </figcaption>
-          </figure>
+{/* 製品画面（スクリーンショット 3枚） */}
+<section className="px-6 md:px-10 py-16 bg-white">
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-3xl font-semibold">製品画面</h2>
+  </div>
 
-          <figure className="rounded-2xl border bg-white p-4">
-            <div className="rounded-xl overflow-hidden">
-              <Image
-                src="/screens/review-workflow.png"
-                alt="レビューと承認ワークフロー"
-                width={1600}
-                height={900}
-                sizes="(min-width: 768px) 33vw, 100vw"
-                className="h-auto w-full"
-              />
-            </div>
-            <figcaption className="mt-3 text-sm text-gray-600">
-              レビュー・承認：差分確認→承認→本番反映までをワークフローで管理
-            </figcaption>
-          </figure>
+  {/* ここ：幅を 5xl → 4xl、縦間隔を少し広めに */}
+  <div className="mt-6 max-w-4xl mx-auto space-y-10">
+    {/* 1. 構成比較 */}
+    <figure className="rounded-2xl border bg-white p-4">
+      <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+        <Image
+          src="/assets/v1/compare-ui.png"
+          alt="構成比較画面"
+          fill
+          sizes="(min-width: 1024px) 860px, (min-width: 768px) 92vw, 96vw"
+          className="object-cover"
+        />
+      </div>
+      <figcaption className="mt-3 text-sm text-gray-600">
+        構成比較：プロンプト／Retriever／データソースの差分を横並びで把握
+      </figcaption>
+      {/* 機能ポイント */}
+      <ul className="mt-2 text-xs text-gray-500 list-disc list-inside space-y-1">
+        <li>A/B 比較で精度・速度・コストを同時評価</li>
+        <li>差分ハイライトと構成単位の履歴管理</li>
+        <li>数値指標と画面の見た目差分をワンビュー化</li>
+      </ul>
+    </figure>
 
-          <figure className="rounded-2xl border bg-white p-4">
-            <div className="rounded-xl overflow-hidden">
-              <Image
-                src="/screens/perfomance-ui.png"  // 綴りそのまま
-                alt="性能・指標ビュー"
-                width={1600}
-                height={900}
-                sizes="(min-width: 768px) 33vw, 100vw"
-                className="h-auto w-full"
-              />
-            </div>
-            <figcaption className="mt-3 text-sm text-gray-600">
-              性能・指標：精度／応答速度／コストを俯瞰し、改善効果を可視化
-            </figcaption>
-          </figure>
-        </div>
-      </section>
+    {/* 2. レビュー・承認 */}
+    <figure className="rounded-2xl border bg-white p-4">
+      <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+        <Image
+          src="/assets/v1/review-workflow.png"
+          alt="レビューと承認ワークフロー"
+          fill
+          sizes="(min-width: 1024px) 860px, (min-width: 768px) 92vw, 96vw"
+          className="object-cover"
+        />
+      </div>
+      <figcaption className="mt-3 text-sm text-gray-600">
+        レビュー・承認：差分確認→承認→本番反映までをワークフローで管理
+      </figcaption>
+      <ul className="mt-2 text-xs text-gray-500 list-disc list-inside space-y-1">
+        <li>SME レビューをスコア化し自動指標と突合</li>
+        <li>承認履歴・コメントを構成にひも付け</li>
+        <li>承認済みのみリリースする品質ゲート</li>
+      </ul>
+    </figure>
+
+    {/* 3. 性能・指標 */}
+    <figure className="rounded-2xl border bg-white p-4">
+      <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+        <Image
+          src="/assets/v1/perfomance-ui.png" // 綴りそのまま
+          alt="性能・指標ビュー"
+          fill
+          sizes="(min-width: 1024px) 860px, (min-width: 768px) 92vw, 96vw"
+          className="object-cover"
+        />
+      </div>
+      <figcaption className="mt-3 text-sm text-gray-600">
+        性能・指標：精度／応答速度／コストを俯瞰し、改善効果を可視化
+      </figcaption>
+      <ul className="mt-2 text-xs text-gray-500 list-disc list-inside space-y-1">
+        <li>精度・速度・コストのトレンドを時系列で把握</li>
+        <li>しきい値アラートで劣化を即検知</li>
+        <li>構成タグや期間でフィルタリング</li>
+      </ul>
+    </figure>
+  </div>
+</section>
+
 
       {/* 対応環境・セキュリティ */}
       <section className="px-6 md:px-10 py-16 bg-gray-50 border-t">
