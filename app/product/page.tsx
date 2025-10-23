@@ -29,22 +29,22 @@ export default function Page() {
             「データ取得 → 検証 → 評価 → 改善 → 運用」を循環フローとして捉え、チーム単位の継続的学習（Continuous Evaluation）を可能にします。
           </p>
 
-      <figure className="mt-8 rounded-2xl border bg-white p-4 inline-block">
+ <figure className="mt-8 rounded-2xl border bg-white p-4 inline-block">
   <div className="mx-auto rounded-xl overflow-hidden max-w-[700px]">
-    <Image
-      src="/assets/v1/monitlycircle.png"
+    {/* Next/Image だと正方形固定になりがちなので、ここは素直に <img> */}
+    <img
+      src="/assets/v1/monitlycircle.png?v=2"  /* キャッシュ破り */
       alt="Monitly運用サイクル"
-      width={1200}
-      height={1200}
-      sizes="(min-width: 1280px) 700px, (min-width: 1024px) 640px, (min-width: 768px) 560px, 92vw"
       className="w-full h-auto block"
-      priority
+      loading="eager"
+      decoding="async"
     />
   </div>
   <figcaption className="mt-3 text-sm text-gray-600 text-center">
     データ取得／検証／評価／改善／運用を一体化し、改善の仮説検証を短サイクルで回します。
   </figcaption>
 </figure>
+
 
 
 
