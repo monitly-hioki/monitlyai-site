@@ -121,21 +121,18 @@ export default function Page() {
 
   {/* 1カラムで縦に並べる（画像は16:9で大きめ）。max-w を広げて見やすく */}
   <div className="mt-6 max-w-5xl mx-auto space-y-8">
-    <figure className="rounded-2xl border bg-white p-4">
-      <div className="relative overflow-hidden rounded-xl aspect-[16/9]">
-        <Image
-          src="/assets/v1/compare-ui.png"
-          alt="構成比較画面"
-          fill
-          sizes="(min-width: 1280px) 1024px, (min-width: 1024px) 960px, 100vw"
-          className="object-cover"
-          priority={false}
-        />
-      </div>
-      <figcaption className="mt-3 text-sm text-gray-600">
-        構成比較：プロンプト／Retriever／データソースの差分を横並びで把握
-      </figcaption>
-    </figure>
+<figure className="rounded-2xl border bg-white p-4">
+  <div className="relative md:aspect-[4/3] aspect-[16/9] overflow-hidden rounded-xl">
+    <LightboxImage
+      src="/assets/v1/compare-ui.png"
+      alt="構成比較画面"
+      sizes="(min-width: 1024px) 860px, (min-width: 768px) 92vw, 96vw"
+      className="object-cover"
+    />
+  </div>
+  <figcaption className="mt-3 text-sm text-gray-600">…</figcaption>
+  <ul className="mt-2 text-xs text-gray-500 list-disc list-inside space-y-1">…</ul>
+</figure>
 
     <figure className="rounded-2xl border bg-white p-4">
       <div className="relative overflow-hidden rounded-xl aspect-[16/9]">
