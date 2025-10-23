@@ -29,15 +29,15 @@ export default function Page() {
             「データ取得 → 検証 → 評価 → 改善 → 運用」を循環フローとして捉え、チーム単位の継続的学習（Continuous Evaluation）を可能にします。
           </p>
 
-         <figure className="mt-8 rounded-2xl border bg-white p-4 inline-block">
-  {/* 正方形のキャンバス + object-contain で潰れを防止 */}
-  <div className="relative mx-auto aspect-square max-w-[520px] sm:max-w-[560px] md:max-w-[600px] lg:max-w-[640px] xl:max-w-[680px]">
+      <figure className="mt-8 rounded-2xl border bg-white p-4 inline-block">
+  <div className="mx-auto rounded-xl overflow-hidden max-w-[700px]">
     <Image
       src="/assets/v1/monitlycircle.png"
       alt="Monitly運用サイクル"
-      fill
-      sizes="(min-width: 1280px) 680px, (min-width: 1024px) 640px, (min-width: 768px) 560px, 92vw"
-      className="object-contain"
+      width={1200}
+      height={1200}
+      sizes="(min-width: 1280px) 700px, (min-width: 1024px) 640px, (min-width: 768px) 560px, 92vw"
+      className="w-full h-auto block"
       priority
     />
   </div>
@@ -45,6 +45,7 @@ export default function Page() {
     データ取得／検証／評価／改善／運用を一体化し、改善の仮説検証を短サイクルで回します。
   </figcaption>
 </figure>
+
 
 
           <div className="mt-10 grid md:grid-cols-5 gap-4 text-sm text-gray-700 text-left">
