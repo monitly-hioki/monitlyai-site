@@ -1,7 +1,7 @@
 // app/product/page.tsx
 import Image from "next/image";
 import Link from "next/link";
-import ZoomImage from "@/components/ZoomImage";
+import ZoomImage from "./components/ZoomImage";
 
 export default function Page() {
   return (

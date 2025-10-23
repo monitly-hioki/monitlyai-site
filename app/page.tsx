@@ -31,7 +31,21 @@ export default function Page() {
 
           <figure className="mt-6 rounded-2xl border bg-white p-4">
             <div className="rounded-xl overflow-hidden">
-              <CycleDiagram />
+              <figure className="mt-8 rounded-2xl border bg-white p-4 inline-block">
+  <div className="rounded-xl overflow-hidden mx-auto max-w-[520px] sm:max-w-[560px] md:max-w-[600px] lg:max-w-[640px] xl:max-w-[680px]">
+    <img
+      src="/assets/v1/monitlycircle.png"
+      alt="Monitly運用サイクル"
+      className="w-full h-auto"
+      width="1024"
+      height="1024"
+      loading="lazy"
+    />
+  </div>
+  <figcaption className="mt-3 text-sm text-gray-600 text-center">
+    データ取得／検証／評価／改善／運用を一体化し、改善の仮説検証を短サイクルで回します。
+  </figcaption>
+</figure>
             </div>
             <figcaption className="mt-3 text-sm text-gray-600">
               データ取得／検証／評価／改善／運用を一体化し、改善の仮説検証を短サイクルで回します。
