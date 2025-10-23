@@ -1,3 +1,4 @@
+import { latest as latestNews } from "./news/_list";
 import Image from "next/image";
 import Link from "next/link";
 
