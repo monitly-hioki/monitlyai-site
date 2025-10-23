@@ -110,59 +110,65 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 製品画面（スクリーンショット 3枚） */}
-      <section className="px-6 md:px-10 py-16 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-semibold">製品画面</h2>
-        </div>
-        <div className="mt-6 max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
-          <figure className="rounded-2xl border bg-white p-4">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
-              <Image
-                src="/assets/v1/compare-ui.png"
-                alt="構成比較画面"
-                fill
-                sizes="(min-width: 768px) 33vw, 100vw"
-                className="object-cover"
-                priority={false}
-              />
-            </div>
-            <figcaption className="mt-3 text-sm text-gray-600">
-              構成比較：プロンプト／Retriever／データソースの差分を横並びで把握
-            </figcaption>
-          </figure>
+    {/* 製品画面（スクリーンショット 3枚） */}
+<section className="px-6 md:px-10 py-16 bg-white">
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-3xl font-semibold">製品画面</h2>
+    <p className="mt-2 text-gray-700">
+      実際のUIイメージをご確認ください。主要な画面を大きめに表示しています。
+    </p>
+  </div>
 
-          <figure className="rounded-2xl border bg-white p-4">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
-              <Image
-                src="/assets/v1/review-workflow.png"
-                alt="レビューと承認ワークフロー"
-                fill
-                sizes="(min-width: 768px) 33vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-            <figcaption className="mt-3 text-sm text-gray-600">
-              レビュー・承認：差分確認→承認→本番反映までをワークフローで管理
-            </figcaption>
-          </figure>
+  {/* 1カラムで縦に並べる（画像は16:9で大きめ）。max-w を広げて見やすく */}
+  <div className="mt-6 max-w-5xl mx-auto space-y-8">
+    <figure className="rounded-2xl border bg-white p-4">
+      <div className="relative overflow-hidden rounded-xl aspect-[16/9]">
+        <Image
+          src="/assets/v1/compare-ui.png"
+          alt="構成比較画面"
+          fill
+          sizes="(min-width: 1280px) 1024px, (min-width: 1024px) 960px, 100vw"
+          className="object-cover"
+          priority={false}
+        />
+      </div>
+      <figcaption className="mt-3 text-sm text-gray-600">
+        構成比較：プロンプト／Retriever／データソースの差分を横並びで把握
+      </figcaption>
+    </figure>
 
-          <figure className="rounded-2xl border bg-white p-4">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
-              <Image
-                src="/assets/v1/perfomance-ui.png" // 綴りそのまま
-                alt="性能・指標ビュー"
-                fill
-                sizes="(min-width: 768px) 33vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-            <figcaption className="mt-3 text-sm text-gray-600">
-              性能・指標：精度／応答速度／コストを俯瞰し、改善効果を可視化
-            </figcaption>
-          </figure>
-        </div>
-      </section>
+    <figure className="rounded-2xl border bg-white p-4">
+      <div className="relative overflow-hidden rounded-xl aspect-[16/9]">
+        <Image
+          src="/assets/v1/review-workflow.png"
+          alt="レビューと承認ワークフロー"
+          fill
+          sizes="(min-width: 1280px) 1024px, (min-width: 1024px) 960px, 100vw"
+          className="object-cover"
+        />
+      </div>
+      <figcaption className="mt-3 text-sm text-gray-600">
+        レビュー・承認：差分確認→承認→本番反映までをワークフローで管理
+      </figcaption>
+    </figure>
+
+    <figure className="rounded-2xl border bg-white p-4">
+      <div className="relative overflow-hidden rounded-xl aspect-[16/9]">
+        <Image
+          src="/assets/v1/perfomance-ui.png" // 綴りそのまま
+          alt="性能・指標ビュー"
+          fill
+          sizes="(min-width: 1280px) 1024px, (min-width: 1024px) 960px, 100vw"
+          className="object-cover"
+        />
+      </div>
+      <figcaption className="mt-3 text-sm text-gray-600">
+        性能・指標：精度／応答速度／コストを俯瞰し、改善効果を可視化
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
 
       {/* 対応環境・セキュリティ */}
       <section className="px-6 md:px-10 py-16 bg-gray-50 border-t">
