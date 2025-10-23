@@ -29,22 +29,23 @@ export default function Page() {
             「データ取得 → 検証 → 評価 → 改善 → 運用」を循環フローとして捉え、チーム単位の継続的学習（Continuous Evaluation）を可能にします。
           </p>
 
-          <figure className="mt-8 rounded-2xl border bg-white p-4 inline-block">
-            <div className="rounded-xl overflow-hidden mx-auto max-w-[680px] md:max-w-[720px]">
-              <Image
-                src="/assets/v1/monitlycircle.png"
-                alt="Monitly運用サイクル"
-                width={1440}
-                height={1440}
-                priority
-                sizes="(min-width: 768px) 720px, 92vw"
-                className="w-full h-auto"
-              />
-            </div>
-            <figcaption className="mt-3 text-sm text-gray-600 text-center">
-              データ取得／検証／評価／改善／運用を一体化し、改善の仮説検証を短サイクルで回します。
-            </figcaption>
-          </figure>
+         <figure className="mt-8 rounded-2xl border bg-white p-4 inline-block">
+  {/* 正方形のキャンバス + object-contain で潰れを防止 */}
+  <div className="relative mx-auto aspect-square max-w-[520px] sm:max-w-[560px] md:max-w-[600px] lg:max-w-[640px] xl:max-w-[680px]">
+    <Image
+      src="/assets/v1/monitlycircle.png"
+      alt="Monitly運用サイクル"
+      fill
+      sizes="(min-width: 1280px) 680px, (min-width: 1024px) 640px, (min-width: 768px) 560px, 92vw"
+      className="object-contain"
+      priority
+    />
+  </div>
+  <figcaption className="mt-3 text-sm text-gray-600 text-center">
+    データ取得／検証／評価／改善／運用を一体化し、改善の仮説検証を短サイクルで回します。
+  </figcaption>
+</figure>
+
 
           <div className="mt-10 grid md:grid-cols-5 gap-4 text-sm text-gray-700 text-left">
             <div className="p-4 rounded-xl border bg-gray-50">
