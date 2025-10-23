@@ -97,7 +97,7 @@ export default function Page() {
               <h3 className="font-medium">レビュー・承認（SME 統合）</h3>
               <p className="mt-2 text-sm text-gray-700">
                 業務有識者のレビューをスコア化し、自動指標と突き合わせ。差分確認→承認→本番反映をワークフロー化し、
-                品質ゲートを明確化、属人性を排除。
+                品質水準を明確化、属人性を排除。
               </p>
             </div>
             <div className="p-6 rounded-2xl border bg-white">
