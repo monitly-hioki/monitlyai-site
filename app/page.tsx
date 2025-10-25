@@ -7,11 +7,8 @@ export default function Page() {
     <main className="min-h-screen">
       <section className="px-6 md:px-10 py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-semibold">Monitly（モニトリー）</h1>
-          <p className="mt-5 text-gray-700 text-lg leading-relaxed max-w-3xl">
-            生成AI・RAG・エージェントの品質改善を継続的に回す LLMOps プラットフォーム。
-            テスト・比較・承認・運用監視をひとつにまとめ、改善の意思決定を速く・確実にします。
-          </p>
+          <h1 className="text-4xl md:text-5xl font-semibold">生成AIを「測り」「良くし」「守る」<br className="hidden md:block"/>日本企業のための LLMOps プラットフォーム</h1>
+          <p className="mt-5 text-gray-700 text-lg leading-relaxed max-w-3xl">Monitly.AI は、生成AI・RAG・エージェントの運用を可視化・評価・改善まで統合。 属人的な判断から脱却し、品質を継続的に高める仕組みを提供します。</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/contact" className="px-5 py-3 rounded-xl bg-black text-white">デモのご相談</Link>
             <Link href="/product" className="px-5 py-3 rounded-xl border">製品を見る</Link>
