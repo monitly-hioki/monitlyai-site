@@ -1,41 +1,34 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import Header from "@/components/Header";
+
 export const metadata: Metadata = {
-  title:
-    "Monitly.AI｜検索統合AI（RAG)/AI対話型AI（エージェント）の評価と運用可視化",
-  description:
-    "RAGとAI対話型AI（エージェント）の“結果”を可視化し、継続的に良くする。評価・比較・運用をひとつのダッシュボード（結果可視化)で。",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  metadataBase: new URL("https://monitlyai-site.vercel.app"),
+  title: {
+    default: "Monitly.AI｜RAG/エージェント評価と運用可視化 LLMOps",
+    template: "%s｜Monitly.AI"
+  },
+  description: "RAGとAIエージェントの“結果”を可視化し、継続的に良くする。評価・比較・運用をひとつのダッシュボードで。",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: "https://monitlyai-site.vercel.app/",
+    siteName: "Monitly.AI",
+    title: "Monitly.AI｜RAG/エージェント評価と運用可視化 LLMOps",
+    description: "RAGとAIエージェントの“結果”を可視化し、継続的に良くする。",
+    images: [{ url: "/og/og-default.jpg", width: 1200, height: 630 }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Monitly.AI｜RAG/エージェント評価と運用可視化 LLMOps",
+    description: "RAGとAIエージェントの“結果”を可視化し、継続的に良くする。",
+    images: ["/og/og-default.jpg"]
+  },
+  icons: { icon: "/favicon.ico" }
 };
 
-import Footer from "@/components/Footer";
-
-// app/layout.tsx
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // Vercel でも手元でも効く判定
-  const isProd =
-    process.env.NODE_ENV === "production" ||
-    process.env.VERCEL_ENV === "production";
-
   return (
     <html lang="ja">
-      <body>
-        {/* ← ここがバナー */}
-        {!isProd && (
-          <div className="text-center text-xs text-white bg-[#0056FF] py-1">
-            BUILD: {/* 任意のラベル。なければ 'local' */}
-            {" "}
-            {process.env.NEXT_PUBLIC_BUILD_LABEL || "local"}
-          </div>
-        )}
-
-        {/* 既存 */}
-        <Header />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
-

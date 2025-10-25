@@ -1,65 +1,69 @@
-import { latest as latestNews } from "./news/_list";
 import Image from "next/image";
-import Link from "next/link";
+import Script from "next/script";
 
 export default function Page() {
   return (
     <main className="min-h-screen">
       <section className="px-6 md:px-10 py-20 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-semibold">生成AIを「測り」「良くし」「守る」<br className="hidden md:block"/>日本企業のための LLMOps プラットフォーム</h1>
-          <p className="mt-5 text-gray-700 text-lg leading-relaxed max-w-3xl">Monitly.AI は、生成AI・RAG・エージェントの運用を可視化・評価・改善まで統合。 属人的な判断から脱却し、品質を継続的に高める仕組みを提供します。</p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/contact" className="px-5 py-3 rounded-xl bg-black text-white">デモのご相談</Link>
-            <Link href="/product" className="px-5 py-3 rounded-xl border">製品を見る</Link>
+        <div className="max-w-6xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
+            生成AIを「測り」「良くし」「守る」
+            <br className="hidden md:block" />
+            日本企業のための LLMOps プラットフォーム
+          </h1>
+          <p className="mt-5 text-gray-700 text-lg leading-relaxed max-w-3xl mx-auto">
+            Monitly.AI は、生成AI・RAG・エージェントの運用を可視化・評価・改善まで統合。
+            属人的判断から脱却し、品質を継続的に高める仕組みを提供します。
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3 justify-center">
+            <a className="px-5 py-3 rounded-xl bg-black text-white" href="/contact" aria-label="デモのご相談">
+              デモのご相談
+            </a>
+            <a className="px-5 py-3 rounded-xl border" href="/product" aria-label="製品を見る">
+              製品を見る
+            </a>
+          </div>
+          <div className="relative mx-auto mt-10 aspect-[16/9] max-w-4xl overflow-hidden rounded-2xl border bg-gray-50">
+            <Image
+              src="/assets/v1/compare-ui.png"
+              alt="構成比較画面ダイジェスト"
+              fill
+              priority
+              sizes="(min-width: 1024px) 768px, 90vw"
+              className="object-cover"
+            />
           </div>
         </div>
       </section>
 
-      <section className="px-6 md:px-10 py-16 border-t bg-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold">できること</h2>
-          <div className="mt-10 grid md:grid-cols-4 gap-4 text-sm text-gray-700 text-left">
-            <div className="p-4 rounded-xl border bg-gray-50">
-              <div className="font-medium">構成比較</div>
-              <div className="mt-1">プロンプトやRetrieverの変更を安全に比較・承認。</div>
-            </div>
-            <div className="p-4 rounded-xl border bg-gray-50">
-              <div className="font-medium">再現検証</div>
-              <div className="mt-1">本番ログをケース化し、影響範囲を特定。</div>
-            </div>
-            <div className="p-4 rounded-xl border bg-gray-50">
-              <div className="font-medium">ダッシュボード</div>
-              <div className="mt-1">精度・速度・コスト・アラートを横断可視化。</div>
-            </div>
-            <div className="p-4 rounded-xl border bg-gray-50">
-              <div className="font-medium">ガバナンス</div>
-              <div className="mt-1">承認済み構成のみ反映し、監査に耐える履歴を保持。</div>
-            </div>
-          </div>
-          <div className="mt-8">
-            <Link href="/product" className="inline-block rounded-xl bg-black text-white px-5 py-3">詳しい機能を見る</Link>
-          </div>
-        </div>
-      </section>
-    
-<section className="px-6 md:px-10 py-20 bg-white border-t">
-  <div className="max-w-6xl mx-auto">
-    <div className="flex items-center justify-between">
-      <h2 className="text-3xl font-semibold">最新のお知らせ</h2>
-      <a href="/news" className="text-sm text-blue-600 underline">すべて見る</a>
-    </div>
-    <div className="mt-6 grid md:grid-cols-3 gap-6">
-      {latestNews(3).map(n => (
-        <a key={n.slug} href={"/news/" + n.slug} className="p-5 border rounded-2xl bg-gray-50 hover:bg-gray-100 transition block">
-          <div className="font-medium text-lg">{n.title}</div>
-          <p className="mt-2 text-sm text-gray-700">{n.excerpt}</p>
-          <div className="mt-3 text-sm text-blue-600 underline">続きを読む</div>
-        </a>
-      ))}
-    </div>
-  </div>
-</section>
-</main>
+      <Script
+        id="ld-faq"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Monitly.AIは何ができますか？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "RAGやエージェントの評価・比較・承認・運用監視を統合し、継続的な品質改善を支援します。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "どんな導入効果がありますか？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "開発スピード向上、品質スコア安定化、運用コスト削減などの効果が期待できます。"
+                }
+              }
+            ]
+          })
+        }}
+      />
+    </main>
   );
 }
