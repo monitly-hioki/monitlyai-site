@@ -1,28 +1,42 @@
-import Link from "next/link";
-import { NEWS } from "./_list";
-export default function Page() {
-  const items = [...NEWS];
+import fs from "fs/promises"
+import path from "path"
+import matter from "gray-matter"
+import Link from "next/link"
+
+export const metadata = {
+  title: "お知らせ｜Monitly.AI",
+  description: "Monitly.AIの最新ニュース・リリース情報・イベント出展情報をお届けします。"
+}
+
+export default async function NewsPage() {
+  const dir = path.join(process.cwd(), "content/news")
+  const files = await fs.readdir(dir)
+  const posts = await Promise.all(
+    files.filter(f => f.endsWith(".md")).map(async (file) => {
+      const raw = await fs.readFile(path.join(dir, file), "utf8")
+      const { data } = matter(raw)
+      return {
+        slug: file.replace(/\.md$/, ""),
+        title: data.title ?? "",
+        date: typeof data.date === "string" ? data.date : new Date(data.date).toISOString().slice(0, 10)
+      }
+    })
+  )
+  const sorted = posts.sort((a, b) => (a.date < b.date ? 1 : -1))
+
   return (
-    <main className="min-h-screen">
-      <section className="px-6 md:px-10 py-16 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-3xl font-semibold">お知らせ</h1>
-          <div className="mt-8 space-y-4">
-            {items.map(n => (
-              <article key={n.slug} className="p-5 border rounded-2xl bg-gray-50 hover:bg-gray-100 transition">
-                <div className="text-sm text-gray-500">{new Date(n.date).toLocaleDateString("ja-JP")}</div>
-                <h2 className="mt-1 text-xl font-medium">
-                  <Link href={`/news/${n.slug}`} className="hover:underline">{n.title}</Link>
-                </h2>
-                {n.excerpt && <p className="mt-2 text-sm text-gray-700">{n.excerpt}</p>}
-                <div className="mt-3 text-sm text-blue-600 underline">
-                  <Link href={`/news/${n.slug}`}>続きを読む</Link>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+    <main className="px-6 md:px-10 py-16 max-w-3xl mx-auto">
+      <h1 className="text-3xl font-semibold mb-10">お知らせ</h1>
+      <ul className="space-y-6">
+        {sorted.map((p) => (
+          <li key={p.slug}>
+            <Link href={`/news/${p.slug}`} className="block group">
+              <div className="text-sm text-gray-500">{p.date}</div>
+              <div className="text-lg font-medium group-hover:underline">{p.title}</div>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </main>
-  );
+  )
 }
