@@ -1,5 +1,8 @@
 export const dynamic = 'force-static'
 export const dynamicParams = false
+import manifest from "@/content/news/manifest.json"
+export const dynamic = 'force-static'
+export const dynamicParams = false
 
 import path from "path"
 import fs from "fs/promises"
@@ -14,9 +17,8 @@ async function listSlugs() {
   return files.filter(f => f.endsWith(".md")).map(f => f.replace(/\.md$/, ""))
 }
 
-export async function generateStaticParams() {
-  const slugs = await listSlugs()
-  return slugs.map(slug => ({ slug }))
+export async function generateStaticParams(){
+  return (manifest.slugs||[]).map(slug=>({slug}))
 }
 
 export default async function NewsDetail({ params }: { params: { slug: string } }) {
