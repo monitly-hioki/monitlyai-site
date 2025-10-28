@@ -1,9 +1,7 @@
 export const dynamic = 'force-static'
 export const dynamicParams = false
-import manifest from "@/content/news/manifest.json"
-export const dynamic = 'force-static'
-export const dynamicParams = false
 
+import manifest from "@/content/news/manifest.json"
 import path from "path"
 import fs from "fs/promises"
 import matter from "gray-matter"
@@ -11,14 +9,8 @@ import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import { notFound } from "next/navigation"
 
-async function listSlugs() {
-  const dir = path.join(process.cwd(), "content/news")
-  const files = await fs.readdir(dir).catch(() => [])
-  return files.filter(f => f.endsWith(".md")).map(f => f.replace(/\.md$/, ""))
-}
-
 export async function generateStaticParams(){
-  return (manifest.slugs||[]).map(slug=>({slug}))
+  return (manifest.slugs || []).map(slug => ({ slug }))
 }
 
 export default async function NewsDetail({ params }: { params: { slug: string } }) {
@@ -27,7 +19,7 @@ export default async function NewsDetail({ params }: { params: { slug: string } 
     const raw = await fs.readFile(file, "utf8")
     const { data, content } = matter(raw)
     const title = String(data.title ?? "")
-    const d = (data as any).date
+    const d: any = (data as any).date
     const date = typeof d === "string" ? d : d instanceof Date ? d.toISOString().slice(0,10) : ""
     return (
       <article className="px-6 md:px-10 py-16">
