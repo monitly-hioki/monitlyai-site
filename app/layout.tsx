@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+import "./globals.css"
+import type { Metadata } from "next"
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://monitlyai-site.vercel.app"),
-  title: {
-    default: "Monitly.AI｜RAG/エージェント評価と運用可視化 LLMOps",
-    template: "%s｜Monitly.AI"
-  },
+  title: { default: "Monitly.AI｜RAG/エージェント評価と運用可視化 LLMOps", template: "%s｜Monitly.AI" },
   description: "RAGとAIエージェントの“結果”を可視化し、継続的に良くする。評価・比較・運用をひとつのダッシュボードで。",
   alternates: { canonical: "/" },
   openGraph: {
@@ -23,12 +23,16 @@ export const metadata: Metadata = {
     images: ["/og/og-default.jpg"]
   },
   icons: { icon: "/favicon.ico" }
-};
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
-  );
+  )
 }

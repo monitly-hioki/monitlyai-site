@@ -2,5 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-html { scroll-behavior: smooth; }
-body { @apply text-neutral-900 bg-white; }
+@layer components {
+  .prose-article {
+    @apply prose prose-zinc max-w-none md:prose-lg leading-8;
+    @apply prose-headings:font-semibold prose-h1:text-3xl md:prose-h1:text-4xl;
+    @apply prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4;
+    @apply prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3;
+    @apply prose-p:my-4 prose-strong:font-semibold;
+    @apply prose-a:text-blue-600 hover:prose-a:underline;
+    @apply prose-img:rounded-2xl prose-img:shadow-sm;
+    @apply prose-hr:my-10;
+    @apply prose-ul:list-disc prose-ol:list-decimal prose-li:my-1;
+    @apply prose-table:my-6 prose-th:font-semibold prose-td:align-top;
+    @apply prose-code:bg-zinc-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md;
+    @apply prose-pre:rounded-xl prose-pre:bg-zinc-900 prose-pre:text-zinc-100;
+    @apply selection:bg-zinc-200;
+  }
+}
+
+.prose-article{
+  @apply prose prose-zinc max-w-none md:prose-lg leading-8;
+  @apply prose-headings:font-semibold prose-h1:text-3xl md:prose-h1:text-4xl;
+  @apply prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4;
+  @apply prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3;
+  @apply prose-p:my-4 prose-strong:font-semibold;
+  @apply prose-a:text-blue-600 hover:prose-a:underline;
+  @apply prose-img:rounded-2xl prose-img:shadow-sm;
+  @apply prose-hr:my-10;
+  @apply prose-ul:list-disc prose-ol:list-decimal prose-li:my-1;
+  @apply prose-table:my-6 prose-th:font-semibold prose-td:align-top;
+  @apply prose-code:bg-zinc-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md;
+  @apply prose-pre:rounded-xl prose-pre:bg-zinc-900 prose-pre:text-zinc-100;
+  @apply selection:bg-zinc-200;
+}
