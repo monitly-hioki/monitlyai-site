@@ -1,42 +1,85 @@
-import fs from "fs/promises"
 import path from "path"
+import fs from "fs/promises"
 import matter from "gray-matter"
 import Link from "next/link"
+import Image from "next/image"
 
-export const metadata = {
-  title: "お知らせ｜Monitly.AI",
-  description: "Monitly.AIの最新ニュース・リリース情報・イベント出展情報をお届けします。"
+type Post = {
+  slug: string
+  title: string
+  date: string
+  hero?: string
+  excerpt: string
 }
 
-export default async function NewsPage() {
+function toExcerpt(md: string, max = 120) {
+  const text = md
+    .replace(/```[\s\S]*?```/g, "")
+    .replace(/`[^`]*`/g, "")
+    .replace(/!\[[^\]]*\]\([^)]+\)/g, "")
+    .replace(/\[[^\]]*\]\([^)]+\)/g, "")
+    .replace(/[#>*_~\-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+  return text.length > max ? text.slice(0, max) + "…" : text
+}
+
+export const revalidate = 60
+
+export default async function NewsIndex() {
   const dir = path.join(process.cwd(), "content/news")
   const files = await fs.readdir(dir)
-  const posts = await Promise.all(
-    files.filter(f => f.endsWith(".md")).map(async (file) => {
-      const raw = await fs.readFile(path.join(dir, file), "utf8")
-      const { data } = matter(raw)
-      return {
-        slug: file.replace(/\.md$/, ""),
-        title: data.title ?? "",
-        date: typeof data.date === "string" ? data.date : new Date(data.date).toISOString().slice(0, 10)
-      }
-    })
-  )
-  const sorted = posts.sort((a, b) => (a.date < b.date ? 1 : -1))
+  const items: Post[] = []
+
+  for (const f of files.filter(v => v.endsWith(".md"))) {
+    const slug = f.replace(/\.md$/, "")
+    const raw = await fs.readFile(path.join(dir, f), "utf8")
+    const { data, content } = matter(raw)
+    const title = String(data.title ?? "")
+    const date = typeof data.date === "string" ? data.date : ""
+    const hero = typeof (data as any).hero === "string" ? (data as any).hero : undefined
+    const excerpt = String((data as any).excerpt ?? toExcerpt(content))
+    items.push({ slug, title, date, hero, excerpt })
+  }
+
+  items.sort((a, b) => (a.date < b.date ? 1 : -1))
 
   return (
-    <main className="px-6 md:px-10 py-16 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-semibold mb-10">お知らせ</h1>
-      <ul className="space-y-6">
-        {sorted.map((p) => (
-          <li key={p.slug}>
-            <Link href={`/news/${p.slug}`} className="block group">
-              <div className="text-sm text-gray-500">{p.date}</div>
-              <div className="text-lg font-medium group-hover:underline">{p.title}</div>
+    <main className="px-6 md:px-10 py-16">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">お知らせ</h1>
+        <p className="mt-3 text-sm text-zinc-600">最新順に表示しています。</p>
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map(post => (
+            <Link
+              href={`/news/${post.slug}`}
+              key={post.slug}
+              className="group rounded-2xl border bg-white hover:shadow-md transition-shadow"
+              aria-label={post.title}
+            >
+              <div className="p-4">
+                {post.hero ? (
+                  <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-zinc-50">
+                    <Image
+                      src={post.hero}
+                      alt={post.title}
+                      fill
+                      sizes="(min-width: 1024px) 400px, 90vw"
+                      className="object-cover group-hover:scale-105 transition-transform"
+                      priority={false}
+                    />
+                  </div>
+                ) : null}
+                <div className="mt-4 text-xs text-zinc-500">{post.date}</div>
+                <h2 className="mt-1 text-lg font-semibold leading-snug line-clamp-2">{post.title}</h2>
+                <p className="mt-2 text-sm text-zinc-700 line-clamp-3">{post.excerpt}</p>
+                <div className="mt-4 text-sm font-medium text-blue-600">続きを読む →</div>
+              </div>
             </Link>
-          </li>
-        ))}
-      </ul>
+          ))}
+        </div>
+      </div>
     </main>
   )
 }
