@@ -1,3 +1,6 @@
+export const dynamic = 'force-static'
+export const dynamicParams = false
+
 import path from "path"
 import fs from "fs/promises"
 import matter from "gray-matter"

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prebuild": "node scripts/gen-news-list.js"
+    "prebuild": "node scripts/gen-news-list.js",
+    "postbuild": "node scripts/verify-news.js"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
