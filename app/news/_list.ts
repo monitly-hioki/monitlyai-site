@@ -1,7 +1,45 @@
-export type NewsItem={slug:string;title:string;excerpt:string;date:string}
-export const NEWS:NewsItem[]=[
-  {slug:"partner-program-launch",title:"パートナープログラム開始のお知らせ",excerpt:"紹介・導入・OEMの各プランを正式リリースしました。",date:"2025-04-18T00:00:00.000Z"},
-  {slug:"ai-expo-report",title:"AI EXPO出展レポート",excerpt:"NEC・NTT西日本・KIRINなど大手企業との対話ハイライト。",date:"2025-04-20T00:00:00.000Z"},
-  {slug:"monitly-update-2025q2",title:"Monitly 2025Q2 アップデート",excerpt:"評価ワークフロー機能を強化し、より柔軟な比較分析を実現。",date:"2025-06-30T00:00:00.000Z"}
-]
-export const latest=(n:number=3)=>[...NEWS].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,n)
+export type NewsItem = { slug: string; title: string; excerpt: string; date: string };
+export const NEWS: NewsItem[] = [
+  {
+    "slug": "2025-10-01-board-appointment",
+    "title": "取締役CTO就任のお知らせ",
+    "excerpt": "",
+    "date": "2025-10-02"
+  },
+  {
+    "slug": "2025-09-25-product-update-ui",
+    "title": "製品アップデートのお知らせ（UI刷新・レビュー機能強化・運用ダッシュボード追加）",
+    "excerpt": "",
+    "date": "2025-09-20"
+  },
+  {
+    "slug": "2025-08-10-partner-program",
+    "title": "パートナープログラム（紹介・導入・OEM）開始のお知らせ",
+    "excerpt": "",
+    "date": "2025-08-10"
+  },
+  {
+    "slug": "2025-07-27-monohojo",
+    "title": "第19次ものづくり補助金に採択されました",
+    "excerpt": "",
+    "date": "2025-07-27"
+  },
+  {
+    "slug": "2025-06-01-poc-plan",
+    "title": "PoCプラン提供開始のお知らせ",
+    "excerpt": "",
+    "date": "2025-06-01"
+  },
+  {
+    "slug": "2025-04-20-ai-expo-spring",
+    "title": "第9回 AI・人工知能EXPO【春】に出展しました",
+    "excerpt": "",
+    "date": "2025-04-20"
+  },
+  {
+    "slug": "2025-04-04-alpha-start",
+    "title": "評価プラットフォーム「Monitly（モニトリー）」アルファ版のプロダクト開発を開始しました",
+    "excerpt": "",
+    "date": "2025-04-04"
+  }
+];
