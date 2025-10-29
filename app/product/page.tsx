@@ -175,43 +175,22 @@ export default function ProductPage() {
           </div>
         </div>
       </section>
-    <section id="adoption" className="px-6 md:px-10 py-12 bg-zinc-50">
+    
+<section id="adoption" className="px-6 md:px-10 py-12 bg-zinc-50">
   <div className="max-w-6xl mx-auto">
-    <h2 className="text-2xl md:text-3xl font-semibold">実装共創プログラム（PoCではありません）</h2>
-    <p className="mt-3 text-zinc-700">導入容易性を測る小規模検証ではなく、業務KPIに直結する評価指標の設計、モデル/プロンプト/構成の比較・改善手順、本番モニタリングとフィードバック動線までを御社チームと共同で実装します。標準6〜8週間で、成果物はそのまま本番運用へ移行可能です。</p>
-    <div className="mt-6 grid md:grid-cols-3 gap-6">
-      <div className="p-6 rounded-2xl bg-white shadow-sm">
-        <h3 className="text-lg font-semibold">参加条件</h3>
-        <ul className="mt-2 text-zinc-600 list-disc list-inside space-y-1">
-<li className="py-3 border-b">
-  <p className="font-medium">PoCはスモールスタートの試験導入ですか？</p>
-  <p className="text-sm text-zinc-600 mt-1">いいえ。Monitlyの「実装共創プログラム」は検証のための縮小導入ではなく、本番想定の評価・改善・監視の仕組みを御社データと業務文脈で共同構築し、そのまま本番へ移行できる状態を作ることを目的とします。</p>
-</li>
-
-          <li>自社または委託でRAG/エージェントを開発・運用中</li>
-          <li>評価と改善を内製運用する意思がある</li>
-          <li>匿名化した成果の事例化に同意可能</li>
-        </ul>
-      </div>
-      <div className="p-6 rounded-2xl bg-white shadow-sm">
-        <h3 className="text-lg font-semibold">アウトカム</h3>
-        <ul className="mt-2 text-zinc-600 list-disc list-inside space-y-1">
-          <li>業務KPIに紐づく評価指標セット</li>
-          <li>モデル/プロンプト/構成の比較・改善手順</li>
-          <li>本番計測・監視・フィードバックの仕組み</li>
-        </ul>
-      </div>
-      <div className="p-6 rounded-2xl bg-white shadow-sm">
-        <h3 className="text-lg font-semibold">期間・体制</h3>
-        <ul className="mt-2 text-zinc-600 list-disc list-inside space-y-1">
-          <li>標準6〜8週間</li>
-          <li>御社PM/SME × Monitly混成チーム</li>
-          <li>有償・枠数限定（要件適合）</li>
-        </ul>
-      </div>
-    </div>
+    <h2 className="text-2xl md:text-3xl font-semibold">実装共創プログラム</h2>
+    <p className="mt-3 text-zinc-700">PoCの小規模検証ではなく、業務KPIに直結する評価指標設計、モデル/プロンプト/構成の比較・改善手順、本番モニタリングとフィードバック導線までを御社チームと共同構築します。標準6〜8週間で、そのまま本番運用へ移行可能です。</p>
   </div>
 </section>
+
+<section id="diff" className="px-6 md:px-10 py-12"><div className="max-w-6xl mx-auto"><h2 className="text-2xl md:text-3xl font-semibold">他サービスとの違い</h2><div className="mt-6 grid md:grid-cols-3 gap-6"><div className="p-6 rounded-2xl bg-white shadow-sm"><h3 className="text-lg font-semibold">RAG/Agent特化評価</h3><p className="text-zinc-700 mt-2">実データ×業務KPIで評価。人手評価と自動評価を統合。</p></div><div className="p-6 rounded-2xl bg-white shadow-sm"><h3 className="text-lg font-semibold">運用まで一気通貫</h3><p className="text-zinc-700 mt-2">比較・改善・監視・フィードバックを単一ワークフローで。</p></div><div className="p-6 rounded-2xl bg-white shadow-sm"><h3 className="text-lg font-semibold">日本企業要件に準拠</h3><p className="text-zinc-700 mt-2">日本語UI/運用、データ保全と社内IT連携に配慮。</p></div></div></div></section>
+
+
+<section id="how" className="px-6 md:px-10 py-12"><div className="max-w-6xl mx-auto"><h2 className="text-2xl md:text-3xl font-semibold">導入手順</h2><ol className="mt-6 space-y-3 list-decimal list-inside text-zinc-700"><li>ユースケース定義と評価観点の合意</li><li>データ接続・評価指標セットアップ</li><li>モデル/プロンプト/構成の比較実行</li><li>本番監視・改善サイクルの運用移管</li></ol></div></section>
+
+
+<section id="deployment" className="px-6 md:px-10 py-12"><div className="max-w-6xl mx-auto"><h2 className="text-2xl md:text-3xl font-semibold">提供形態（SaaS/オンプレ）</h2><div className="mt-6 grid md:grid-cols-2 gap-6"><div className="p-6 rounded-2xl bg-white shadow-sm"><h3 className="text-lg font-semibold">SaaS</h3><p className="text-zinc-700 mt-2">即日開始。最小限の初期設定で利用可能。</p></div><div className="p-6 rounded-2xl bg-white shadow-sm"><h3 className="text-lg font-semibold">オンプレ/専有</h3><p className="text-zinc-700 mt-2">閉域/社内規程に準拠。要件に応じてカスタマイズ可能。</p></div></div></div></section>
+
 </main>
   )
 }
