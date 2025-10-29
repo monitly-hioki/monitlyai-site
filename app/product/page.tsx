@@ -188,6 +188,38 @@ export default function ProductPage() {
           </div>
         </div>
       </section>
-    </main>
+    <section id="poc" className="px-6 md:px-10 py-12 bg-zinc-50">
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-2xl md:text-3xl font-semibold">共創PoC（導入容易性テストではありません）</h2>
+    <p className="mt-3 text-zinc-700">MonitlyのPoCは、導入容易性を試す簡易検証ではありません。貴社の業務KPIに直結する評価指標の設計、モデル/プロンプト/構成の比較・改善手順、本番モニタリングとフィードバック動線を、実データと運用文脈で<strong>共同構築</strong>します。</p>
+    <div className="mt-6 grid md:grid-cols-3 gap-6">
+      <div className="p-6 rounded-2xl bg-white shadow-sm">
+        <h3 className="text-lg font-semibold">参加条件</h3>
+        <ul className="mt-2 text-zinc-600 list-disc list-inside space-y-1">
+          <li>自社または委託でRAG/エージェントを運用・開発中</li>
+          <li>評価・改善プロセスの内製化に意欲がある</li>
+          <li>成果の一部の匿名事例化に同意可能</li>
+        </ul>
+      </div>
+      <div className="p-6 rounded-2xl bg-white shadow-sm">
+        <h3 className="text-lg font-semibold">アウトカム</h3>
+        <ul className="mt-2 text-zinc-600 list-disc list-inside space-y-1">
+          <li>業務KPIに紐づく評価指標セット</li>
+          <li>モデル/プロンプト/構成の比較・改善手順</li>
+          <li>本番計測・監視・フィードバックの仕組み</li>
+        </ul>
+      </div>
+      <div className="p-6 rounded-2xl bg-white shadow-sm">
+        <h3 className="text-lg font-semibold">期間と体制</h3>
+        <ul className="mt-2 text-zinc-600 list-disc list-inside space-y-1">
+          <li>標準6〜8週間</li>
+          <li>貴社PM/SME × Monitly混成チーム</li>
+          <li>有償・枠数限定（要件適合）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
   )
 }
