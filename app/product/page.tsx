@@ -105,7 +105,7 @@ export default function ProductPage() {
             <ul className="mt-3 text-sm text-slate-700 space-y-2">
               <li>登録即利用、主要LLMはGUIで接続</li>
               <li>SSO・IP制限・監査ログ</li>
-              <li>PoCからスモールスタート</li>
+              <li>PoCから共創PoC</li>
             </ul>
           </div>
           <div className="rounded-2xl ring-1 ring-slate-200 bg-white p-6">
@@ -188,17 +188,22 @@ export default function ProductPage() {
           </div>
         </div>
       </section>
-    <section id="poc" className="px-6 md:px-10 py-12 bg-zinc-50">
+    <section id="adoption" className="px-6 md:px-10 py-12 bg-zinc-50">
   <div className="max-w-6xl mx-auto">
-    <h2 className="text-2xl md:text-3xl font-semibold">共創PoC（導入容易性テストではありません）</h2>
-    <p className="mt-3 text-zinc-700">MonitlyのPoCは、導入容易性を試す簡易検証ではありません。貴社の業務KPIに直結する評価指標の設計、モデル/プロンプト/構成の比較・改善手順、本番モニタリングとフィードバック動線を、実データと運用文脈で<strong>共同構築</strong>します。</p>
+    <h2 className="text-2xl md:text-3xl font-semibold">実装共創プログラム（PoCではありません）</h2>
+    <p className="mt-3 text-zinc-700">導入容易性を測る小規模検証ではなく、業務KPIに直結する評価指標の設計、モデル/プロンプト/構成の比較・改善手順、本番モニタリングとフィードバック動線までを御社チームと共同で実装します。標準6〜8週間で、成果物はそのまま本番運用へ移行可能です。</p>
     <div className="mt-6 grid md:grid-cols-3 gap-6">
       <div className="p-6 rounded-2xl bg-white shadow-sm">
         <h3 className="text-lg font-semibold">参加条件</h3>
         <ul className="mt-2 text-zinc-600 list-disc list-inside space-y-1">
-          <li>自社または委託でRAG/エージェントを運用・開発中</li>
-          <li>評価・改善プロセスの内製化に意欲がある</li>
-          <li>成果の一部の匿名事例化に同意可能</li>
+<li className="py-3 border-b">
+  <p className="font-medium">PoCはスモールスタートの試験導入ですか？</p>
+  <p className="text-sm text-zinc-600 mt-1">いいえ。Monitlyの「実装共創プログラム」は検証のための縮小導入ではなく、本番想定の評価・改善・監視の仕組みを御社データと業務文脈で共同構築し、そのまま本番へ移行できる状態を作ることを目的とします。</p>
+</li>
+
+          <li>自社または委託でRAG/エージェントを開発・運用中</li>
+          <li>評価と改善を内製運用する意思がある</li>
+          <li>匿名化した成果の事例化に同意可能</li>
         </ul>
       </div>
       <div className="p-6 rounded-2xl bg-white shadow-sm">
@@ -210,10 +215,10 @@ export default function ProductPage() {
         </ul>
       </div>
       <div className="p-6 rounded-2xl bg-white shadow-sm">
-        <h3 className="text-lg font-semibold">期間と体制</h3>
+        <h3 className="text-lg font-semibold">期間・体制</h3>
         <ul className="mt-2 text-zinc-600 list-disc list-inside space-y-1">
           <li>標準6〜8週間</li>
-          <li>貴社PM/SME × Monitly混成チーム</li>
+          <li>御社PM/SME × Monitly混成チーム</li>
           <li>有償・枠数限定（要件適合）</li>
         </ul>
       </div>
