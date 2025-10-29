@@ -20,3 +20,7 @@ pnpm-debug.log*
 *.bak*
 *.broken.*
 app/page.backup.*
+# local backups / temp
+*.backup.*.tsx
+*.tsxes
+.fix_*.js
