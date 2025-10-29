@@ -27,7 +27,10 @@ export async function getSortedNews(): Promise<NewsItem[]> {
     mdFiles.map(async (f) => {
       const raw = await fs.readFile(path.join(NEWS_DIR, f), "utf8");
       const { data, content } = matter(raw);
-      const slug = String((data as any).slug ?? f.replace(/\.md$/i, ""));
+      const rawSlug = String(((data as any).slug ?? f));
+const slug = rawSlug
+  .replace(/\.md$/i, "")
+  .replace(/^\d{4}-\d{2}-\d{2}-/, "");
 
       return {
         date: String((data as any).date),

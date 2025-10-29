@@ -14,13 +14,13 @@ export default function ProductPage() {
     },
     {
       img: "/product/compare-ui.png",
-      title: "構成比較・性能比較",
-      text: "プロンプト、モデル、RAG構成を定量比較。ベスト構成を素早く見極め改善の打ち手を明確化します。"
+      title: "構成比較・A/Bテスト",
+      text: "プロンプト、モデル、RAG構成を定量比較。勝ちパターンを素早く見極め改善の打ち手を明確化します。"
     },
     {
       img: "/product/review-workflow.png",
       title: "レビュー・評価ワークフロー",
-      text: "業務担当者の評価を標準化。属人的判断を排し、共通指標でレビューを回すことで品質の底上げを実現します。"
+      text: "SME評価を標準化。属人的判断を排し、共通指標でレビューを回すことで品質の底上げを実現します。"
     },
     {
       img: "/product/ops-alerts.png",
@@ -59,19 +59,18 @@ export default function ProductPage() {
 
   return (
     <main className="bg-white text-zinc-800">
-      {/* Hero */}
-<section className="px-6 md:px-10 pt-10 pb-20 bg-gradient-to-b from-zinc-50 to-white">
-  <div className="max-w-6xl mx-auto text-center">
-    <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
-      生成AIの「品質」を見える化し、確実に高める
-    </h1>
-    <p className="mt-6 text-zinc-600 text-lg leading-relaxed">
-      モニトリーAIは、RAGやAIエージェントの出力を継続的に評価・改善するための
-      <br className="hidden md:block" />
-      日本企業向けの運用評価プラットフォームです。
-    </p>
-  </div>
-</section>
+      <section className="px-6 md:px-10 pt-12 pb-14 bg-gradient-to-b from-zinc-50 to-white">
+        <div className="max-w-6xl mx-auto text-center">
+          <h1 className="text-3xl md:text-5xl font-bold tracking-tight">生成AIを測り、良くし、守る。</h1>
+          <p className="mt-6 text-zinc-600 text-lg leading-relaxed">
+            Monitlyは、RAG・AIエージェント・LLMの本番品質を継続改善するための運用評価プラットフォーム。
+            トップページが全体像を語るのに対し、本ページでは機能・導入・運用の実務に踏み込みます。
+          </p>
+          <div className="mt-8">
+            <a href="/contact" className="inline-block px-6 py-3 bg-black text-white rounded-xl text-sm font-medium">デモ・相談を申し込む</a>
+          </div>
+        </div>
+      </section>
 
       <section className="px-6 md:px-10 py-16 bg-zinc-50">
         <div className="max-w-6xl mx-auto space-y-16">
@@ -110,7 +109,7 @@ export default function ProductPage() {
             <ul className="mt-6 space-y-2 text-zinc-700 list-disc list-inside">
               <li>国内リージョンでの暗号化・分離運用</li>
               <li>アクセス制御・権限管理・監査ログを標準実装</li>
-              <li>SaaSとオンプレミスの両提供に対応</li>
+              <li>SaaSとオンプレミス（オンプレ）の両提供に対応</li>
             </ul>
           </div>
           <div>
@@ -154,6 +153,7 @@ export default function ProductPage() {
     </div>
   </div>
 </section>
+     
 
       <section className="px-6 md:px-10 py-16 bg-white">
         <div className="max-w-6xl mx-auto">
