@@ -89,23 +89,10 @@ export default function ProductPage() {
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold">継続的な改善をプロセスに組み込む</h2>
             <ul className="mt-6 space-y-3 text-slate-700 text-sm">
-              <li>構成比較とテストを自動実行</li>
-              <li>精度とコストを同時に最適化</li>
-              <li>いつでもロールバック可能な履歴管理</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <h2 className="text-2xl md:text-3xl font-semibold">導入形態</h2>
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl ring-1 ring-slate-200 bg-white p-6">
-            <h3 className="text-lg font-medium">SaaS</h3>
-            <ul className="mt-3 text-sm text-slate-700 space-y-2">
-              <li>登録即利用、主要LLMはGUIで接続</li>
-              <li>SSO・IP制限・監査ログ</li>
-              <li>PoCから共創PoC</li>
+              <li className="py-3 border-b">
+  <p className="font-medium">PoCはスモールスタートの試験導入ですか？</p>
+  <p className="text-sm text-zinc-600 mt-1">いいえ。Monitlyの「実装共創プログラム」は検証のための縮小導入ではなく、本番想定の評価・改善・監視の仕組みを御社データと業務文脈で共同構築し、そのまま本番へ移行できる状態を作ることを目的とします。</p>
+</li>
             </ul>
           </div>
           <div className="rounded-2xl ring-1 ring-slate-200 bg-white p-6">
