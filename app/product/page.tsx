@@ -1,4 +1,4 @@
-import Image from "next/image"
+
 import Link from "next/link"
 
 export const metadata = {
@@ -32,6 +32,7 @@ const faqs = [
 export default function ProductPage() {
   return (
     <main className="min-h-screen">
+<section className="px-6 md:px-10 pt-8"><div className="max-w-6xl mx-auto"><img src="/product/hero.png" alt="Monitly" className="w-full max-h-[520px] object-cover rounded-2xl shadow" /></div></section>
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-white to-slate-50" />
         <div className="relative mx-auto max-w-6xl px-6 py-20">
@@ -51,7 +52,7 @@ export default function ProductPage() {
               <p className="mt-4 text-xs text-slate-500">SaaSとオンプレの両プランに対応</p>
             </div>
             <div className="relative rounded-2xl shadow-lg ring-1 ring-slate-200 bg-white p-3">
-              <Image src={heroImages.compare} alt="複数構成比較" width={1000} height={640} className="rounded-xl w-full h-auto" priority />
+              <img src={heroImages.compare} alt="複数構成比較"   className="rounded-xl w-full h-auto" priority >
             </div>
           </div>
         </div>
@@ -64,17 +65,17 @@ export default function ProductPage() {
         </p>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           <div className="rounded-2xl ring-1 ring-slate-200 bg-white p-5">
-            <Image src={heroImages.ops} alt="運用ダッシュボード" width={1200} height={760} className="rounded-lg w-full h-auto" />
+            <img src={heroImages.ops} alt="運用ダッシュボード"   className="rounded-lg w-full h-auto" >
             <h3 className="mt-4 font-medium">運用ダッシュボード</h3>
             <p className="text-sm text-slate-600 mt-1">品質・コスト・応答を監視し、異常を素早く検知。</p>
           </div>
           <div className="rounded-2xl ring-1 ring-slate-200 bg-white p-5">
-            <Image src={heroImages.metrics} alt="メトリクス統合" width={1200} height={760} className="rounded-lg w-full h-auto" />
+            <img src={heroImages.metrics} alt="メトリクス統合"   className="rounded-lg w-full h-auto" >
             <h3 className="mt-4 font-medium">比較・分析</h3>
             <p className="text-sm text-slate-600 mt-1">精度・再現率・F1・コストを構成横断で比較。</p>
           </div>
           <div className="rounded-2xl ring-1 ring-slate-200 bg-white p-5">
-            <Image src={heroImages.review} alt="レビュー承認" width={1200} height={760} className="rounded-lg w-full h-auto" />
+            <img src={heroImages.review} alt="レビュー承認"   className="rounded-lg w-full h-auto" >
             <h3 className="mt-4 font-medium">レビュー承認</h3>
             <p className="text-sm text-slate-600 mt-1">SME承認をテンプレ化し、監査対応を簡潔に。</p>
           </div>
@@ -84,7 +85,7 @@ export default function ProductPage() {
       <section className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid gap-10 md:grid-cols-2 items-center">
           <div className="rounded-2xl ring-1 ring-slate-200 bg-white p-5">
-            <Image src={heroImages.history} alt="改善履歴" width={1200} height={760} className="rounded-lg w-full h-auto" />
+            <img src={heroImages.history} alt="改善履歴"   className="rounded-lg w-full h-auto" >
           </div>
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold">継続的な改善をプロセスに組み込む</h2>
@@ -185,9 +186,7 @@ export default function ProductPage() {
 
 <section id="diff" className="px-6 md:px-10 py-12"><div className="max-w-6xl mx-auto"><h2 className="text-2xl md:text-3xl font-semibold">他サービスとの違い</h2><div className="mt-6 grid md:grid-cols-3 gap-6"><div className="p-6 rounded-2xl bg-white shadow-sm"><h3 className="text-lg font-semibold">RAG/Agent特化評価</h3><p className="text-zinc-700 mt-2">実データ×業務KPIで評価。人手評価と自動評価を統合。</p></div><div className="p-6 rounded-2xl bg-white shadow-sm"><h3 className="text-lg font-semibold">運用まで一気通貫</h3><p className="text-zinc-700 mt-2">比較・改善・監視・フィードバックを単一ワークフローで。</p></div><div className="p-6 rounded-2xl bg-white shadow-sm"><h3 className="text-lg font-semibold">日本企業要件に準拠</h3><p className="text-zinc-700 mt-2">日本語UI/運用、データ保全と社内IT連携に配慮。</p></div></div></div></section>
 
-
 <section id="how" className="px-6 md:px-10 py-12"><div className="max-w-6xl mx-auto"><h2 className="text-2xl md:text-3xl font-semibold">導入手順</h2><ol className="mt-6 space-y-3 list-decimal list-inside text-zinc-700"><li>ユースケース定義と評価観点の合意</li><li>データ接続・評価指標セットアップ</li><li>モデル/プロンプト/構成の比較実行</li><li>本番監視・改善サイクルの運用移管</li></ol></div></section>
-
 
 <section id="deployment" className="px-6 md:px-10 py-12"><div className="max-w-6xl mx-auto"><h2 className="text-2xl md:text-3xl font-semibold">提供形態（SaaS/オンプレ）</h2><div className="mt-6 grid md:grid-cols-2 gap-6"><div className="p-6 rounded-2xl bg-white shadow-sm"><h3 className="text-lg font-semibold">SaaS</h3><p className="text-zinc-700 mt-2">即日開始。最小限の初期設定で利用可能。</p></div><div className="p-6 rounded-2xl bg-white shadow-sm"><h3 className="text-lg font-semibold">オンプレ/専有</h3><p className="text-zinc-700 mt-2">閉域/社内規程に準拠。要件に応じてカスタマイズ可能。</p></div></div></div></section>
 
