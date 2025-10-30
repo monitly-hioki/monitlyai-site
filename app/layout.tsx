@@ -4,13 +4,13 @@ import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://monitlyai-site.vercel.app"),
+  metadataBase: new URL("https://monitly.ai"),
   title: { default: "Monitly.AI｜RAG/エージェント評価と運用可視化 LLMOps", template: "%s｜Monitly.AI" },
   description: "RAGとAIエージェントの“結果”を可視化し、継続的に良くする。評価・比較・運用をひとつのダッシュボードで。",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    url: "https://monitlyai-site.vercel.app/",
+    url: "https://monitly.ai/",
     siteName: "Monitly.AI",
     title: "Monitly.AI｜RAG/エージェント評価と運用可視化 LLMOps",
     description: "RAGとAIエージェントの“結果”を可視化し、継続的に良くする。",
