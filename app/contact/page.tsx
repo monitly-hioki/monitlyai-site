@@ -14,12 +14,46 @@ export default function ContactPage() {
     company: '',
     dept: '',
     title: '',
+    phone: '',
+    category: '',
+    phase: '',
+    challenges: [] as string[],
+    supports: [] as string[],
     body: '',
   });
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setForm((p) => ({ ...p, [name]: value }));
+  const categories = ['デモ依頼', '資料請求', 'パートナーシップについて', 'その他', '営業'];
+  const phases = ['検討中', 'PoC中', '一部運用', '全社展開'];
+  const challengeOptions = [
+    '精度が安定しない',
+    '回答が遅い',
+    'コストが高い',
+    'プロンプト改善が回らない',
+    '評価指標が定まってない',
+    'データが散在している/活用しづらい',
+    '本番監視ができていない',
+    'RAG/AIエージェント導入支援が欲しい',
+    'ローカルLLMを検討している',
+  ];
+  const supportOptions = [
+    'Monitly.AIの評価導入',
+    'データ整備',
+    'プロンプト評価改善',
+    'RAG・AIエージェント導入支援',
+    '運用改善ワークショップ',
+  ];
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value, type, checked } = e.target;
+    if (type === 'checkbox') {
+      const list = form[name as keyof typeof form] as string[];
+      setForm((prev) => ({
+        ...prev,
+        [name]: checked ? [...list, value] : list.filter((v) => v !== value),
+      }));
+    } else {
+      setForm((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const resetMessages = () => {
@@ -27,51 +61,58 @@ export default function ContactPage() {
     setMessage('');
   };
 
-  const onSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (status === 'loading') return;
+  const onSubmit = useCallback(
+    async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      if (status === 'loading') return;
+      resetMessages();
+      setStatus('loading');
 
-    // 送信前に必ずリセット（成功と失敗が同時表示されるのを防ぐ）
-    resetMessages();
-    setStatus('loading');
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: form.name.trim(),
+            email: form.email.trim(),
+            company: form.company.trim(),
+            phone: form.phone.trim(),
+            department: form.dept.trim(),
+            title: form.title.trim(),
+            category: form.category,
+            phase: form.phase,
+            challenges: form.challenges,
+            supports: form.supports,
+            message: form.body.trim(),
+          }),
+        });
 
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({
-          name: form.name.trim(),
-          email: form.email.trim(),
-          company: form.company.trim(),
-          dept: form.dept.trim(),
-          title: form.title.trim(),
-          message: form.body.trim(),
-        }),
-      });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        await res.json().catch(() => ({}));
 
-      // 2xx 以外は明示的にエラーにする
-      if (!res.ok) {
-        const t = await res.text().catch(() => '');
-        throw new Error(`HTTP ${res.status} ${t || ''}`.trim());
+        setStatus('success');
+        setMessage('送信しました。担当者よりご連絡いたします。');
+        setForm({
+          name: '',
+          email: '',
+          company: '',
+          dept: '',
+          title: '',
+          phone: '',
+          category: '',
+          phase: '',
+          challenges: [],
+          supports: [],
+          body: '',
+        });
+      } catch (err: any) {
+        setStatus('error');
+        setMessage('送信に失敗しました。時間をおいて再度お試しください。');
+        console.error('[contact] submit failed:', err?.message || err);
       }
-
-      // API が JSON を返すことを前提にする（返らない場合は無視して良い）
-      await res
-        .json()
-        .catch(() => ({} as any));
-
-      setStatus('success');
-      setMessage('送信しました。担当者よりご連絡いたします。');
-
-      // 必要ならフォーム初期化
-      setForm({ name: '', email: '', company: '', dept: '', title: '', body: '' });
-    } catch (err: any) {
-      // 成功ルートからは来ない（上で return/throw しているため）
-      setStatus('error');
-      setMessage('送信に失敗しました。時間をおいて再度お試しください。');
-      console.error('[contact] submit failed:', err?.message || err);
-    }
-  }, [form, status]);
+    },
+    [form, status]
+  );
 
   const disabled = status === 'loading';
 
@@ -83,85 +124,99 @@ export default function ContactPage() {
           下記フォームよりお問い合わせください。内容を確認のうえ、担当者からご連絡いたします。
         </p>
 
-        <form className="mt-8 space-y-6" onSubmit={onSubmit} noValidate>
+        <form className="mt-8 space-y-8" onSubmit={onSubmit} noValidate>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label className="block text-sm text-zinc-600 mb-1">お名前（必須）</label>
-              <input
-                name="name"
-                required
-                value={form.name}
-                onChange={onChange}
-                className="w-full rounded-lg border border-zinc-300 px-3 py-2"
-                autoComplete="name"
-              />
+              <label className="block text-sm mb-1">お名前（必須）</label>
+              <input name="name" required value={form.name} onChange={onChange}
+                className="w-full rounded-lg border border-zinc-300 px-3 py-2" />
             </div>
             <div>
-              <label className="block text-sm text-zinc-600 mb-1">メールアドレス（必須）</label>
-              <input
-                name="email"
-                type="email"
-                required
-                value={form.email}
-                onChange={onChange}
-                className="w-full rounded-lg border border-zinc-300 px-3 py-2"
-                autoComplete="email"
-              />
+              <label className="block text-sm mb-1">メールアドレス（必須）</label>
+              <input type="email" name="email" required value={form.email} onChange={onChange}
+                className="w-full rounded-lg border border-zinc-300 px-3 py-2" />
             </div>
             <div>
-              <label className="block text-sm text-zinc-600 mb-1">会社名（必須）</label>
-              <input
-                name="company"
-                required
-                value={form.company}
-                onChange={onChange}
-                className="w-full rounded-lg border border-zinc-300 px-3 py-2"
-                autoComplete="organization"
-              />
+              <label className="block text-sm mb-1">会社名（必須）</label>
+              <input name="company" required value={form.company} onChange={onChange}
+                className="w-full rounded-lg border border-zinc-300 px-3 py-2" />
             </div>
             <div>
-              <label className="block text-sm text-zinc-600 mb-1">部署（任意）</label>
-              <input
-                name="dept"
-                value={form.dept}
-                onChange={onChange}
-                className="w-full rounded-lg border border-zinc-300 px-3 py-2"
-                autoComplete="organization-title"
-              />
+              <label className="block text-sm mb-1">電話番号（任意）</label>
+              <input name="phone" value={form.phone} onChange={onChange}
+                className="w-full rounded-lg border border-zinc-300 px-3 py-2" />
             </div>
-            <div className="md:col-span-2">
-              <label className="block text-sm text-zinc-600 mb-1">役職（任意）</label>
-              <input
-                name="title"
-                value={form.title}
-                onChange={onChange}
-                className="w-full rounded-lg border border-zinc-300 px-3 py-2"
-                autoComplete="organization-title"
-              />
+            <div>
+              <label className="block text-sm mb-1">部署（任意）</label>
+              <input name="dept" value={form.dept} onChange={onChange}
+                className="w-full rounded-lg border border-zinc-300 px-3 py-2" />
+            </div>
+            <div>
+              <label className="block text-sm mb-1">役職（任意）</label>
+              <input name="title" value={form.title} onChange={onChange}
+                className="w-full rounded-lg border border-zinc-300 px-3 py-2" />
             </div>
           </div>
 
           <div>
-            <label className="block text-sm text-zinc-600 mb-1">お問い合わせ内容</label>
-            <textarea
-              name="body"
-              rows={6}
-              value={form.body}
-              onChange={onChange}
-              className="w-full rounded-lg border border-zinc-300 px-3 py-2"
-            />
+            <label className="block text-sm mb-1">お問い合わせ種別（必須）</label>
+            <select name="category" required value={form.category} onChange={onChange}
+              className="w-full rounded-lg border border-zinc-300 px-3 py-2">
+              <option value="">選択してください</option>
+              {categories.map((v) => (
+                <option key={v} value={v}>{v}</option>
+              ))}
+            </select>
           </div>
 
-          {/* ステータス表示（相互排他） */}
+          <div>
+            <label className="block text-sm mb-1">生成AI導入フェーズ（必須）</label>
+            <select name="phase" required value={form.phase} onChange={onChange}
+              className="w-full rounded-lg border border-zinc-300 px-3 py-2">
+              <option value="">選択してください</option>
+              {phases.map((v) => (
+                <option key={v} value={v}>{v}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <label className="block text-sm mb-1">現在の課題（複数選択可）</label>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {challengeOptions.map((opt) => (
+                <label key={opt} className="flex items-center space-x-2 text-sm">
+                  <input type="checkbox" name="challenges" value={opt}
+                    checked={form.challenges.includes(opt)} onChange={onChange} />
+                  <span>{opt}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm mb-1">希望する支援内容（複数選択可）</label>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {supportOptions.map((opt) => (
+                <label key={opt} className="flex items-center space-x-2 text-sm">
+                  <input type="checkbox" name="supports" value={opt}
+                    checked={form.supports.includes(opt)} onChange={onChange} />
+                  <span>{opt}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm mb-1">お問い合わせ内容（必須）</label>
+            <textarea name="body" rows={6} required value={form.body} onChange={onChange}
+              className="w-full rounded-lg border border-zinc-300 px-3 py-2" />
+          </div>
+
           {status === 'success' && (
-            <p className="text-sm text-green-700 bg-green-50 border border-green-200 rounded-md px-3 py-2">
-              {message}
-            </p>
+            <p className="text-sm text-green-700 bg-green-50 border border-green-200 rounded-md px-3 py-2">{message}</p>
           )}
           {status === 'error' && (
-            <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-md px-3 py-2">
-              {message}
-            </p>
+            <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-md px-3 py-2">{message}</p>
           )}
 
           <div className="pt-2">
