@@ -1,8 +1,25 @@
-// app/privacy/page.tsx
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "プライバシーポリシー | Monitly.AI",
+  description: "Monitly.AIの個人情報の取扱い方針。",
+  alternates: { canonical: "/privacy" },
+  openGraph: {
+    title: "プライバシーポリシー | Monitly.AI",
+    description: "Monitly.AIの個人情報の取扱い方針。",
+    url: "https://monitlyai-site.vercel.app/privacy",
+    siteName: "Monitly.AI",
+    type: "article"
+  },
+  twitter: {
+    card: "summary"
+  }
+};
+
 export default function Page() {
   return (
-    <main className="prose prose-neutral max-w-3xl mx-auto px-4 py-12"
-      <h1プライバシーポリシー</h1
+    <main className="prose prose-neutral max-w-3xl mx-auto px-4 py-12">
+      <h1>プライバシーポリシー</h1>
 
       <pMonitly.AI株式会社（以下「当社」）は、当社が提供するウェブサイト、製品、SaaSサービス、サポート等（以下総称して「本サービス」）における個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」）を定めます。</p
 

@@ -1,4 +1,21 @@
-export const metadata = { title: "利用規約 | Monitly.AI" };
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "利用規約 | Monitly.AI",
+  description: "Monitly.AIのサービス利用条件。",
+  alternates: { canonical: "/terms" },
+  openGraph: {
+    title: "利用規約 | Monitly.AI",
+    description: "Monitly.AIのサービス利用条件。",
+    url: "https://monitlyai-site.vercel.app/terms",
+    siteName: "Monitly.AI",
+    type: "article"
+  },
+  twitter: {
+    card: "summary"
+  }
+};
+
 export default function Page() {
   return (
     <main className="prose prose-neutral max-w-3xl mx-auto px-4 py-12">
