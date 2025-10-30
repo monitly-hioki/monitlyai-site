@@ -1,132 +1,114 @@
-import Container from "@/components/Container";
+import Link from "next/link";
 
-export default function PartnerProgramPage() {
+export default function PartnersPage() {
   return (
-    <main className="py-16 md:py-24 bg-white text-neutral-800">
-      <Container>
-        <h1 className="text-4xl md:text-5xl font-bold mb-8">
-          パートナープログラム
-        </h1>
-
-        <section className="space-y-8">
-          <p>
-            Monitly.AIは、生成AI導入における「品質評価と継続的改善」を社会に定着させるため、
-            パートナー企業との共創を通じて、より高品質で持続的なAI運用の実現を目指しています。
+    <main className="bg-white text-zinc-800">
+      <section className="px-6 md:px-10 pt-12 pb-16 bg-gradient-to-b from-zinc-50 to-white">
+        <div className="max-w-6xl mx-auto text-center">
+          <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
+            Monitly.AI パートナーシッププログラム
+          </h1>
+          <p className="mt-5 text-zinc-600 text-lg leading-relaxed max-w-3xl mx-auto">
+            生成AIの導入・運用・評価における共創を通じて、企業の変革を加速させるための
+            パートナープログラムです。共に持続的な価値を生み出すパートナーを募集しています。
           </p>
-          <p>
-            RAG構築、対話型AI（エージェント）設計、LLM統合、データ基盤整備など、
-            各社の強みとMonitlyの評価基盤を組み合わせ、
-            “導入で終わらない生成AI”を共に創り上げます。
-          </p>
-        </section>
+        </div>
+      </section>
 
-        <section className="mt-16">
-          <h2 className="text-2xl font-semibold mb-6">パートナー区分</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full border border-neutral-200 text-sm">
-              <thead className="bg-neutral-50">
-                <tr>
-                  <th className="p-3 border">区分</th>
-                  <th className="p-3 border">目的</th>
-                  <th className="p-3 border">主な対象</th>
-                  <th className="p-3 border">提供内容</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="p-3 border font-semibold">
-                    リファラルパートナー
-                  </td>
-                  <td className="p-3 border">顧客への紹介・共同提案</td>
-                  <td className="p-3 border">コンサル、SI、販売代理店</td>
-                  <td className="p-3 border">
-                    無償PoC枠・営業支援資料・共同セールス
-                  </td>
-                </tr>
-                <tr>
-                  <td className="p-3 border font-semibold">
-                    インテグレーションパートナー
-                  </td>
-                  <td className="p-3 border">自社案件にMonitlyを組込み</td>
-                  <td className="p-3 border">AIベンダー、ソリューション企業</td>
-                  <td className="p-3 border">
-                    SDK/API特別条件・技術支援・共同マーケティング
-                  </td>
-                </tr>
-                <tr>
-                  <td className="p-3 border font-semibold">
-                    エンベデッドパートナー
-                  </td>
-                  <td className="p-3 border">
-                    自社製品にMonitlyの評価機能をOEM組込み
-                  </td>
-                  <td className="p-3 border">SaaS企業、LLMプロバイダー</td>
-                  <td className="p-3 border">
-                    OEM契約・再販権・共同ブランド・専用サポート
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section className="mt-16">
-          <h2 className="text-2xl font-semibold mb-6">参加のメリット</h2>
-          <ul className="space-y-3 list-disc list-inside text-sm">
-            <li>SDK/API連携・PoC伴走・評価設計支援・導入サポート</li>
-            <li>PoC期間中の特別条件でのライセンス提供</li>
-            <li>共同ブランド展開・展示会やイベントでの共催</li>
-            <li>Monitly公式サイトでの製品紹介・連携事例掲載</li>
-          </ul>
-        </section>
-
-        <section className="mt-16">
-          <h2 className="text-2xl font-semibold mb-6">
-            主なパートナー候補（2025年10月時点）
+      <section id="tiers" className="px-6 md:px-10 py-16 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-semibold text-center">
+            3つのパートナー区分
           </h2>
-          <ul className="space-y-2 list-disc list-inside text-sm">
-            <li>ジンベイ株式会社：生成AIソリューション開発・RAG構築支援</li>
-            <li>Irwin & Co 株式会社：AI戦略コンサルティング・企業導入支援</li>
-            <li>
-              ※今後、教育・インフラ・指示文（プロンプト）エンジニアリング領域へも拡大予定
-            </li>
-          </ul>
-        </section>
+          <div className="mt-10 grid md:grid-cols-3 gap-6">
+            <div className="p-6 rounded-2xl ring-1 ring-zinc-200 bg-white">
+              <h3 className="text-xl font-semibold">アライアンスパートナー</h3>
+              <p className="mt-3 text-zinc-700 leading-relaxed">
+                Monitly.AIの理念に共感し、企業への導入を共に推進いただくパートナーです。
+                新たな顧客接点を開拓し、双方のネットワークを活かして市場価値を拡大します。
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl ring-1 ring-zinc-200 bg-white">
+              <h3 className="text-xl font-semibold">インテグレーションパートナー</h3>
+              <p className="mt-3 text-zinc-700 leading-relaxed">
+                システムインテグレーターやAI開発企業向けの協業枠です。
+                RAG・エージェント構築、評価、運用設計をMonitly.AIと連携しながら提供します。
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl ring-1 ring-zinc-200 bg-white">
+              <h3 className="text-xl font-semibold">共同ソリューションパートナー</h3>
+              <p className="mt-3 text-zinc-700 leading-relaxed">
+                Monitly.AIを中核に据えた新規サービスやプロダクトを共創するパートナーです。
+                技術、知見、データ基盤を統合し、クライアント企業に最適な生成AIソリューションを提供します。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section className="mt-16">
-          <h2 className="text-2xl font-semibold mb-6">参加までの流れ</h2>
-          <ol className="list-decimal list-inside space-y-3 text-sm">
-            <li>お問い合わせ・申請（hioki@aradia.asia へご連絡ください）</li>
-            <li>ヒアリング・適合確認（事業領域・体制・技術構成を確認）</li>
-            <li>
-              契約・共同活動開始（SDK利用、PoC支援、共同プロモーションを開始）
-            </li>
-          </ol>
-        </section>
+      <section className="px-6 md:px-10 py-16 bg-zinc-50">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-semibold">支援領域</h2>
+            <ul className="mt-6 space-y-2 text-zinc-700 list-disc list-inside leading-relaxed">
+              <li>生成AI導入・評価の技術コンサルティング</li>
+              <li>RAG・エージェントの構築・モニタリング連携支援</li>
+              <li>データ基盤の設計・構築および社内データ整備支援</li>
+              <li>継続的改善サイクル設計と評価プロセス標準化</li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="text-2xl md:text-3xl font-semibold">パートナーへの提供価値</h2>
+            <ul className="mt-6 space-y-2 text-zinc-700 list-disc list-inside leading-relaxed">
+              <li>技術・営業両面での共同提案支援</li>
+              <li>共通の評価テンプレートと分析ダッシュボードの利用</li>
+              <li>マーケティング・広報面での共催施策</li>
+              <li>共同案件での収益分配・契約スキーム設計</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-        <section className="mt-16">
-          <h2 className="text-2xl font-semibold mb-6">将来展望</h2>
-          <ul className="space-y-2 list-disc list-inside text-sm">
-            <li>
-              Monitlyパートナーマーケットプレイスの公開（評価対応ソリューション一覧）
-            </li>
-            <li>共通評価テンプレート／データセットの共同開発</li>
-            <li>年次イベント「Monitly Partner Summit」開催予定</li>
-          </ul>
-        </section>
+      <section className="px-6 md:px-10 py-16 bg-white">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-semibold">参加までの流れ</h2>
+            <ol className="mt-6 space-y-2 text-zinc-700 list-decimal list-inside leading-relaxed">
+              <li>お問い合わせフォームよりエントリー</li>
+              <li>オンラインでの事前ヒアリング</li>
+              <li>目的・体制に応じた協業スキームの策定</li>
+              <li>合意後、協定締結および共同活動開始</li>
+            </ol>
+          </div>
+          <div>
+            <h2 className="text-2xl md:text-3xl font-semibold">主な協業テーマ</h2>
+            <ul className="mt-6 space-y-2 text-zinc-700 list-disc list-inside leading-relaxed">
+              <li>生成AI導入支援・評価・運用モニタリング</li>
+              <li>社内データ整備・RAG基盤構築</li>
+              <li>生成AIサービスの共同開発・共同提供</li>
+              <li>業界横断での評価基準策定や標準化への貢献</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-        <section className="mt-20 text-center">
-          <p className="text-lg font-semibold mb-3">
-            パートナープログラムへの参加・ご相談はこちら
+      <section id="apply" className="px-6 md:px-10 py-16 bg-zinc-50">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-semibold">お問い合わせ・参画のご相談</h2>
+          <p className="mt-4 text-zinc-600 leading-relaxed">
+            ご関心をお持ちの企業様は、下記フォームよりご連絡ください。
+            目的や体制を伺い、最適な協業スキームをご提案いたします。
           </p>
-          <a
-            href="mailto:hioki@aradia.asia"
-            className="inline-block bg-[#0056FF] text-white px-6 py-3 rounded-xl font-semibold"
-          >
-            お問い合わせ
-          </a>
-        </section>
-      </Container>
+          <div className="mt-8">
+            <Link
+              href="/contact"
+              className="px-6 py-3 bg-black text-white rounded-xl text-sm font-medium"
+            >
+              お問い合わせフォームへ
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
