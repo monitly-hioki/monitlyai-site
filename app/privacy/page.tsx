@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "プライバシーポリシー | Monitly.AI",
-  description: "Monitly.AIの個人情報の取扱い方針。",
-  alternates: { canonical: "/privacy" },
-  openGraph: {
+export async function generateMetadata(): Promise<Metadata> {
+  return {
     title: "プライバシーポリシー | Monitly.AI",
     description: "Monitly.AIの個人情報の取扱い方針。",
-    url: "https://monitlyai-site.vercel.app/privacy",
-    siteName: "Monitly.AI",
-    type: "article"
-  },
-  twitter: {
-    card: "summary"
-  }
-};
+    alternates: { canonical: "https://monitlyai-site.vercel.app/privacy" },
+    openGraph: {
+      title: "プライバシーポリシー | Monitly.AI",
+      description: "Monitly.AIの個人情報の取扱い方針。",
+      url: "https://monitlyai-site.vercel.app/privacy",
+      siteName: "Monitly.AI",
+      type: "article",
+    },
+    twitter: {
+      card: "summary",
+    },
+  };
+}
 
 export default function Page() {
   return (
