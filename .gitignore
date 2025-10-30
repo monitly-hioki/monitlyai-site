@@ -24,3 +24,6 @@ app/page.backup.*
 *.backup.*.tsx
 *.tsxes
 .fix_*.js
+
+.env*
+
