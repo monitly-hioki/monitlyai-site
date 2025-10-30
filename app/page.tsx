@@ -38,7 +38,7 @@ export default async function Page() {
             日本企業のための LLMOps プラットフォーム
           </h1>
           <p className="mt-6 text-zinc-700 text-lg leading-relaxed max-w-3xl mx-auto">
-            Monitly.AI は、生成AI・RAG・エージェントの運用を可視化・評価・改善まで統合。
+            Monitly.AI（モニトリーAI）は、生成AI・RAG・エージェントの運用を可視化・評価・改善まで統合。
             属人的な判断から脱却し、品質を継続的に高める仕組みを提供します。
           </p>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
@@ -171,7 +171,7 @@ export default async function Page() {
       <section className="px-6 md:px-10 py-20 bg-white border-t">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-semibold">お知らせ</h2>
+            <h2 className="text-3xl font-semibold">最新のお知らせ</h2>
             <Link href="/news" className="text-sm text-zinc-600 hover:text-zinc-800">
               一覧を見る →
             </Link>

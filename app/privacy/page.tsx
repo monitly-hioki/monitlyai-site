@@ -81,7 +81,7 @@ export default function Page() {
       <p>
         Monitly.AI株式会社<br />
         〒141-0033 東京都品川区西品川１丁目１−１ 住友不動産大崎ガーデンタワー 9階<br />
-        E-mail: contact@monitly.ai
+        info@monitly.ai
       </p>
 
       <p>制定日：2025年5月30日</p>

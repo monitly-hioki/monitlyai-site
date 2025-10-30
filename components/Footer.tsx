@@ -52,7 +52,8 @@ export default function Footer() {
             </p>
             <p className="mt-4 text-gray-500 text-xs leading-5">
               Monitly.AI株式会社<br />
-              〒141-0033 東京都品川区西品川１丁目１−１<br />
+              〒141-0033
+	      東京都品川区西品川１丁目１−１<br />
               住友不動産大崎ガーデンタワー 9階
             </p>
             <div className="mt-4">
