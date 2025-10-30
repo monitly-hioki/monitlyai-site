@@ -71,7 +71,7 @@ export default function SecurityPolicyPage() {
       <hr />
       <p>
         改定日：2025年10月30日<br />
-        初版策定日：2025年10月30日<br />
+        初版策定日：2025年5月30日<br />
         責任者：代表取締役 日置 智之
       </p>
     </main>
