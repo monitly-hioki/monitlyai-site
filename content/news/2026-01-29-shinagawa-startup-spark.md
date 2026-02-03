@@ -28,7 +28,7 @@ Monitly.AIは、**RAG（Retrieval Augmented Generation）およびAIエージェ
 
 ---
 
-## 当日の展示・ピッチ内容（予定）
+## 当日の展示・ピッチ内容
 当日は、以下の内容を中心にご紹介します。
 
 - RAG / AIエージェント運用における「評価設計」の考え方
